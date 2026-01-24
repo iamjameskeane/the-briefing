@@ -13,6 +13,8 @@ Raw Events → Editorial Pipeline → Structured Briefing
 (n events)    (8 phases, 8 agents)   (markdown output)
 ```
 
+**Data Source:** This project is part of the [realpolitik](https://github.com/iamjameskeane/realpolitik) ecosystem. Event data is sourced from the realpolitik intelligence aggregator.
+
 ---
 
 ## Key Features
@@ -185,7 +187,9 @@ The output will be saved to `outputs/` as a markdown file.
 
 ### Using Your Own Data
 
-To use your own event data, you'll need to:
+**Default Data Source:** This project uses event data from the [realpolitik](https://github.com/iamjameskeane/realpolitik) intelligence aggregator. The realpolitik system collects, processes, and stores events in R2 storage, which this briefing pipeline consumes.
+
+To use your own event data instead, you'll need to:
 
 1. Set up an R2/S3-compatible storage bucket with your events
 2. Configure R2 environment variables (see `env.example`)
