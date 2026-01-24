@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment
+.env
+.env.local
+.env.production
+.env.*.local
+
+# Outputs (keep examples, ignore runs)
+outputs/*/
+!outputs/.gitkeep
+
+# Legacy checkpoint directory (now stored in outputs/{run_id}/.checkpoints/)
+.checkpoints/
+
+# API Keys
+*.key
+secrets/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Plans (work in progress notes)
+plans/

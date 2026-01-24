@@ -1,0 +1,258 @@
+[
+  {
+    "id": "evt_001",
+    "title": "Federal Reserve Signals Extended High Interest Rate Period",
+    "summary": "Fed Chair Jerome Powell indicated that interest rates will remain elevated through 2026 amid persistent inflation concerns. Markets reacted negatively with S&P 500 dropping 2.3%. Policy shift reflects concern over wage growth and service sector inflation.",
+    "severity": 8,
+    "region": "AMERICAS",
+    "category": "ECONOMIC",
+    "timestamp": "2026-01-22T14:30:00Z",
+    "sources": [
+      {"name": "Federal Reserve", "url": "https://federalreserve.gov"},
+      {"name": "Bloomberg", "url": "https://bloomberg.com"}
+    ]
+  },
+  {
+    "id": "evt_002",
+    "title": "EU Energy Security Summit Reaches Framework Agreement",
+    "summary": "European leaders agreed on a framework for collective natural gas purchasing and emergency sharing protocols. Agreement covers 27 member states and establishes strategic reserves. Norway and UK included as associate partners.",
+    "severity": 7,
+    "region": "EUROPE",
+    "category": "ENERGY",
+    "timestamp": "2026-01-21T09:15:00Z",
+    "sources": [
+      {"name": "European Commission", "url": "https://ec.europa.eu"},
+      {"name": "Reuters", "url": "https://reuters.com"}
+    ]
+  },
+  {
+    "id": "evt_003",
+    "title": "China Launches Digital Yuan Cross-Border Settlement Pilot",
+    "summary": "People's Bank of China expanded digital currency pilot to include cross-border settlements with Hong Kong, Singapore, and UAE. Daily transaction volume already exceeds $500M. Move seen as challenge to dollar dominance in Asian trade.",
+    "severity": 9,
+    "region": "EAST_ASIA",
+    "category": "ECONOMIC",
+    "timestamp": "2026-01-23T02:00:00Z",
+    "sources": [
+      {"name": "PBOC", "url": "https://pboc.gov.cn"},
+      {"name": "Financial Times", "url": "https://ft.com"},
+      {"name": "South China Morning Post", "url": "https://scmp.com"}
+    ]
+  },
+  {
+    "id": "evt_004",
+    "title": "Iran Nuclear Facilities Report Cyber Intrusion",
+    "summary": "IAEA confirmed detection of sophisticated malware at Natanz enrichment facility. No disruption to operations reported. Attribution unclear but techniques match previous Stuxnet-style attacks. Iran threatens retaliation.",
+    "severity": 8,
+    "region": "MIDDLE_EAST",
+    "category": "SECURITY",
+    "timestamp": "2026-01-20T18:45:00Z",
+    "sources": [
+      {"name": "IAEA", "url": "https://iaea.org"},
+      {"name": "The Guardian", "url": "https://theguardian.com"}
+    ]
+  },
+  {
+    "id": "evt_005",
+    "title": "India-Pakistan Water Sharing Negotiations Stall",
+    "summary": "Talks over Indus Waters Treaty modifications broke down after three days. India insists on renegotiating 1960 agreement to account for climate change impacts. Pakistan rejects any changes. Affects 300 million people across both nations.",
+    "severity": 7,
+    "region": "SOUTH_ASIA",
+    "category": "POLITICAL",
+    "timestamp": "2026-01-22T11:20:00Z",
+    "sources": [
+      {"name": "Times of India", "url": "https://timesofindia.com"},
+      {"name": "Dawn", "url": "https://dawn.com"}
+    ]
+  },
+  {
+    "id": "evt_006",
+    "title": "Nigeria Election Violence Escalates in Northern States",
+    "summary": "Pre-election violence killed at least 47 people across Kano, Kaduna, and Sokoto states. Attacks attributed to both Boko Haram splinter groups and political militias. Opposition calls for election delay; government refuses.",
+    "severity": 8,
+    "region": "AFRICA",
+    "category": "SECURITY",
+    "timestamp": "2026-01-21T15:00:00Z",
+    "sources": [
+      {"name": "BBC", "url": "https://bbc.com"},
+      {"name": "Al Jazeera", "url": "https://aljazeera.com"}
+    ]
+  },
+  {
+    "id": "evt_007",
+    "title": "Australia Announces Major Rare Earth Mining Expansion",
+    "summary": "Government committed A$2.3 billion to develop rare earth processing capacity, aiming to challenge Chinese market dominance. Projects in Western Australia and Northern Territory. First refined output expected 2028.",
+    "severity": 6,
+    "region": "OCEANIA",
+    "category": "ECONOMIC",
+    "timestamp": "2026-01-23T04:30:00Z",
+    "sources": [
+      {"name": "ABC News Australia", "url": "https://abc.net.au"}
+    ]
+  },
+  {
+    "id": "evt_008",
+    "title": "Kazakhstan Nationalizes Three Foreign-Owned Oil Fields",
+    "summary": "President Tokayev signed decree nationalizing oil fields operated by ExxonMobil, Chevron, and TotalEnergies, citing 'strategic necessity.' Compensation terms disputed. Raises questions about property rights across Central Asia.",
+    "severity": 7,
+    "region": "CENTRAL_ASIA",
+    "category": "ENERGY",
+    "timestamp": "2026-01-20T08:00:00Z",
+    "sources": [
+      {"name": "Reuters", "url": "https://reuters.com"},
+      {"name": "Bloomberg", "url": "https://bloomberg.com"}
+    ]
+  },
+  {
+    "id": "evt_009",
+    "title": "Indonesia and Philippines Launch Joint South China Sea Patrols",
+    "summary": "Defense ministers announced coordinated naval patrols in disputed waters, first such cooperation between ASEAN members. Excludes direct confrontation with Chinese vessels but establishes 'freedom of navigation' protocol.",
+    "severity": 7,
+    "region": "SOUTHEAST_ASIA",
+    "category": "SECURITY",
+    "timestamp": "2026-01-22T06:00:00Z",
+    "sources": [
+      {"name": "The Straits Times", "url": "https://straitstimes.com"},
+      {"name": "Nikkei Asia", "url": "https://asia.nikkei.com"}
+    ]
+  },
+  {
+    "id": "evt_010",
+    "title": "Germany Reverses Nuclear Phase-Out Policy",
+    "summary": "Bundestag voted to extend remaining nuclear plants' operational life by 15 years and restart two recently closed facilities. Energy security concerns override longstanding anti-nuclear consensus. Green Party fractured over vote.",
+    "severity": 8,
+    "region": "EUROPE",
+    "category": "ENERGY",
+    "timestamp": "2026-01-23T10:00:00Z",
+    "sources": [
+      {"name": "Deutsche Welle", "url": "https://dw.com"},
+      {"name": "Financial Times", "url": "https://ft.com"}
+    ]
+  },
+  {
+    "id": "evt_011",
+    "title": "Saudi Arabia Cuts Oil Production by Additional 500K Barrels Daily",
+    "summary": "Kingdom announced unilateral production cut despite OPEC+ disagreement. Move aims to support prices but alienates Russia and UAE. Brent crude jumped 4% on news. Analysts see attempt to pressure U.S. on security guarantees.",
+    "severity": 7,
+    "region": "MIDDLE_EAST",
+    "category": "ENERGY",
+    "timestamp": "2026-01-21T12:30:00Z",
+    "sources": [
+      {"name": "Saudi Press Agency", "url": "https://spa.gov.sa"},
+      {"name": "Wall Street Journal", "url": "https://wsj.com"}
+    ]
+  },
+  {
+    "id": "evt_012",
+    "title": "Brazil and Argentina Propose Common Currency for Trade",
+    "summary": "Presidents announced exploratory talks for 'Sur' common currency for bilateral trade, potentially expanding to Mercosur bloc. Would reduce dollar dependency in regional commerce. Technical challenges remain substantial.",
+    "severity": 6,
+    "region": "AMERICAS",
+    "category": "ECONOMIC",
+    "timestamp": "2026-01-22T16:00:00Z",
+    "sources": [
+      {"name": "Reuters", "url": "https://reuters.com"}
+    ]
+  },
+  {
+    "id": "evt_013",
+    "title": "Taiwan Semiconductor Announces Major U.S. Fab Expansion",
+    "summary": "TSMC committed additional $40 billion to Arizona facilities, bringing total U.S. investment to $100 billion. Will produce 3nm chips by 2027. Move reflects geopolitical pressure to diversify production away from Taiwan.",
+    "severity": 7,
+    "region": "EAST_ASIA",
+    "category": "TECHNOLOGY",
+    "timestamp": "2026-01-20T23:00:00Z",
+    "sources": [
+      {"name": "TSMC", "url": "https://tsmc.com"},
+      {"name": "Bloomberg", "url": "https://bloomberg.com"}
+    ]
+  },
+  {
+    "id": "evt_014",
+    "title": "Egypt Faces Acute Foreign Currency Shortage",
+    "summary": "Central bank reserves fell below $20 billion, triggering import restrictions on non-essential goods. Black market dollar premium exceeds 50%. IMF bailout negotiations ongoing. Wheat supplies critically low.",
+    "severity": 8,
+    "region": "AFRICA",
+    "category": "ECONOMIC",
+    "timestamp": "2026-01-21T13:00:00Z",
+    "sources": [
+      {"name": "Financial Times", "url": "https://ft.com"},
+      {"name": "Al Ahram", "url": "https://ahram.org.eg"}
+    ]
+  },
+  {
+    "id": "evt_015",
+    "title": "South Korea Deploys Additional THAAD Batteries",
+    "summary": "Defense Ministry confirmed installation of two more Terminal High Altitude Area Defense systems in response to North Korean missile tests. China lodged formal protest. Deployment completed despite domestic opposition.",
+    "severity": 7,
+    "region": "EAST_ASIA",
+    "category": "SECURITY",
+    "timestamp": "2026-01-23T05:00:00Z",
+    "sources": [
+      {"name": "Yonhap", "url": "https://yonhapnews.co.kr"},
+      {"name": "Reuters", "url": "https://reuters.com"}
+    ]
+  },
+  {
+    "id": "evt_016",
+    "title": "Turkey Blocks Swedish NATO Accession Again",
+    "summary": "Turkish parliament postponed ratification vote indefinitely, citing insufficient action on PKK-linked organizations in Sweden. Erdogan demands extradition of 130 individuals. NATO expansion timeline uncertain.",
+    "severity": 6,
+    "region": "EUROPE",
+    "category": "POLITICAL",
+    "timestamp": "2026-01-22T14:00:00Z",
+    "sources": [
+      {"name": "Anadolu Agency", "url": "https://aa.com.tr"}
+    ]
+  },
+  {
+    "id": "evt_017",
+    "title": "Vietnam Approves Major Mekong Delta Infrastructure Plan",
+    "summary": "National Assembly approved $12 billion program for delta protection against sea level rise. Includes seawalls, freshwater reservoirs, and agricultural adaptation. Affects 17 million people. Financing mix of domestic and World Bank loans.",
+    "severity": 6,
+    "region": "SOUTHEAST_ASIA",
+    "category": "CLIMATE",
+    "timestamp": "2026-01-21T07:30:00Z",
+    "sources": [
+      {"name": "VNA", "url": "https://vietnamnews.vn"}
+    ]
+  },
+  {
+    "id": "evt_018",
+    "title": "Israel Conducts Airstrikes on Syrian Chemical Weapons Facilities",
+    "summary": "IDF confirmed strikes on three facilities near Damascus and Homs allegedly producing chemical weapons precursors. Syria reports 12 killed. Russia condemns violation of sovereignty. OPCW investigation requested.",
+    "severity": 8,
+    "region": "MIDDLE_EAST",
+    "category": "SECURITY",
+    "timestamp": "2026-01-20T22:00:00Z",
+    "sources": [
+      {"name": "Jerusalem Post", "url": "https://jpost.com"},
+      {"name": "Al Jazeera", "url": "https://aljazeera.com"}
+    ]
+  },
+  {
+    "id": "evt_019",
+    "title": "Major Ransomware Attack Disrupts Australian Healthcare System",
+    "summary": "Cyber attack on health data provider affected 500+ hospitals and clinics across eastern states. Patient records encrypted, elective surgeries postponed. Ransom demand $50 million in cryptocurrency. Government refuses to pay.",
+    "severity": 7,
+    "region": "OCEANIA",
+    "category": "TECHNOLOGY",
+    "timestamp": "2026-01-23T01:00:00Z",
+    "sources": [
+      {"name": "ABC News Australia", "url": "https://abc.net.au"},
+      {"name": "The Guardian", "url": "https://theguardian.com"}
+    ]
+  },
+  {
+    "id": "evt_020",
+    "title": "Bangladesh Cancels $2.5B Chinese Port Development Deal",
+    "summary": "Government terminated Sonadia deep-sea port agreement with China Harbour Engineering Company, citing environmental concerns and debt sustainability. Beijing warns of 'serious consequences' for bilateral relations.",
+    "severity": 6,
+    "region": "SOUTH_ASIA",
+    "category": "POLITICAL",
+    "timestamp": "2026-01-22T09:00:00Z",
+    "sources": [
+      {"name": "The Daily Star", "url": "https://thedailystar.net"}
+    ]
+  }
+]

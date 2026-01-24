@@ -1,0 +1,24 @@
+# The Briefing - Intelligence Analysis Pipeline
+# Python 3.11+
+
+# LLM clients (Gemini only - using new google-genai SDK)
+google-genai>=1.0.0            # New Gemini SDK for all LLM tasks + image generation
+tavily-python>=0.3.0           # Tavily search API for current event verification
+
+# Embeddings & clustering
+scikit-learn>=1.4.0            # HDBSCAN, cosine similarity
+hdbscan>=0.8.33                # Density-based clustering
+numpy>=1.26.0                  # Array operations
+
+# Image handling (future - Nano Banana integration)
+Pillow>=10.0.0                 # For saving generated images
+
+# Storage
+boto3>=1.34.0                  # R2 (S3-compatible)
+redis>=5.0.0                   # Upstash Redis
+requests>=2.31.0               # HTTP requests
+
+# Utilities
+python-dateutil>=2.8.0         # Date parsing/manipulation
+pydantic>=2.5.0                # Data validation
+python-dotenv>=1.0.0           # Environment variable management
