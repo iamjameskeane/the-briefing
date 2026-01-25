@@ -842,13 +842,16 @@ def assemble_document(
         featured_cluster_id = skeleton.featured.source_cluster_id
         featured_content = get_styled_content(featured_cluster_id) if featured_cluster_id else ""
         if featured_content:
-            # Get first substantial sentence (skip headlines/formatting)
+            # Get first substantial sentence (skip headlines/formatting/comments)
             import re
-            sentences = re.split(r'[.!?]\s+', featured_content)
-            teaser = next((s for s in sentences if len(s) > 50 and not s.startswith('#') and not s.startswith('<!--')), "")
+            # Strip HTML comments and leading whitespace first
+            clean_content = re.sub(r'<!--.*?-->', '', featured_content, flags=re.DOTALL).strip()
+            # Split into sentences, keeping the punctuation
+            sentences = re.split(r'(?<=[.!?])\s+', clean_content)
+            teaser = next((s for s in sentences if len(s) > 50 and not s.startswith('#') and not s.startswith('*')), "")
             if teaser:
                 exec_summary_parts.append(
-                    f"The week's defining story: {skeleton.featured.headline} — {teaser[:150]}..."
+                    f"The week's defining story: {skeleton.featured.headline} — {teaser}"
                 )
             else:
                 exec_summary_parts.append(
@@ -1110,7 +1113,7 @@ async def run_pipeline(
     log_file = setup_file_logging(run_output_dir)
     
     try:
-        return await _run_pipeline_inner(mode, dry_run, max_phase, run_output_dir, start_time)
+        return await _run_pipeline_inner(mode, dry_run, max_phase, run_output_dir, start_time, skip_images)
     finally:
         # Always close file logging, even on early return or exception
         close_file_logging()
@@ -1122,6 +1125,7 @@ async def _run_pipeline_inner(
     max_phase: int,
     run_output_dir: Path,
     start_time: float,
+    skip_images: bool = True,
 ) -> int:
     """Inner pipeline function wrapped by run_pipeline for proper cleanup."""
     

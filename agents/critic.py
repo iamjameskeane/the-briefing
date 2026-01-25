@@ -224,7 +224,7 @@ def _check_entity_density(draft: str) -> tuple[int, list[str]]:
     numbers = re.findall(r"\d+(?:,\d+)*(?:\.\d+)?%?", first_para)
     
     entity_count = len(capitalized) + len(numbers)
-    
+
     if entity_count >= 5:
         return 10, []
     elif entity_count >= 3:
@@ -365,19 +365,19 @@ def extract_factual_claims(draft: str) -> list[FactualClaim]:
         
         # Find dates
         if not re.search(r'\[\d+\]', sentence):
-            dates = re.findall(
-                r'(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2}(?:,?\s+\d{4})?',
-                sentence,
-                re.IGNORECASE
-            )
-            for date in dates:
-                claims.append(FactualClaim(
-                    id=f"claim_{claim_id}",
-                    claim_text=date,
-                    claim_type="DATE",
-                    source_sentence=sentence
-                ))
-                claim_id += 1
+        dates = re.findall(
+            r'(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2}(?:,?\s+\d{4})?',
+            sentence,
+            re.IGNORECASE
+        )
+        for date in dates:
+            claims.append(FactualClaim(
+                id=f"claim_{claim_id}",
+                claim_text=date,
+                claim_type="DATE",
+                source_sentence=sentence
+            ))
+            claim_id += 1
     
     return claims[:20]
 
@@ -498,7 +498,7 @@ def run_content_critic(
         source_events: Source documents for CoVe
         editorial_angle: Optional angle to check delivery
         region: Region name for logging
-        
+
     Returns:
         ContentCriticResult with score, issues, and feedback
     """
@@ -623,7 +623,7 @@ def _check_weasel_free(draft: str) -> tuple[int, list[str]]:
 def _check_sentence_variety(draft: str) -> tuple[int, list[str]]:
     """
     Check for varied sentence openings.
-    
+
     Returns:
         (score out of 15, issues list)
     """
@@ -727,7 +727,7 @@ def _check_closing_resonance(draft: str) -> tuple[int, list[str]]:
 def _check_quotable_line(draft: str) -> tuple[int, list[str]]:
     """
     Check for one memorable/quotable phrase.
-    
+
     Returns:
         (score out of 10, issues list)
     """
@@ -764,7 +764,7 @@ def _check_orwell_compliance(draft: str) -> tuple[int, list[str]]:
     if len(long_words) > 5:
         score -= 5
         issues.append(f"Too many long words: {long_words[:3]}... Use shorter alternatives")
-    
+        
     # Check for common jargon
     jargon = ["utilize", "leverage", "synergy", "paradigm", "holistic", "proactive"]
     jargon_found = [j for j in jargon if j in draft.lower()]
@@ -994,7 +994,7 @@ def run_style_critic(
     content_penalty, content_issues = _check_content_preserved(styled_draft, writer_draft)
     
     # Add content issues with clear labeling
-    if content_issues:
+                if content_issues:
         all_issues.insert(0, "⚠️ CONTENT REGRESSION (Stylist broke Writer's analysis):")
         all_issues.extend([f"  {issue}" for issue in content_issues])
     
@@ -1071,7 +1071,7 @@ async def run_writer_loop(
     - analyst_output (source of truth)
     - previous_draft (if retry)
     - content_feedback (if retry)
-    
+        
     Returns:
         (approved_draft, final_critic_result)
     """
