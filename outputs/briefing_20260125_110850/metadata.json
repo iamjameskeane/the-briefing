@@ -1,0 +1,46 @@
+{
+  "run_id": "briefing_20260125_110850",
+  "version": "3.1",
+  "event_count": 487,
+  "source_count": 1,
+  "regions_analyzed": [
+    "cluster_0",
+    "cluster_16",
+    "cluster_19",
+    "cluster_1",
+    "cluster_18",
+    "cluster_15"
+  ],
+  "regions_published": [
+    "cluster_1",
+    "US Intervention in Venezuela (cluster_16)",
+    "Iran Protests Crackdown (cluster_15)",
+    "Syria-SDF Power Shift (cluster_19)",
+    "cluster_0"
+  ],
+  "regions_killed": [
+    "cluster_12",
+    "cluster_7",
+    "cluster_6",
+    "cluster_9",
+    "cluster_5",
+    "cluster_17",
+    "cluster_11",
+    "cluster_8",
+    "cluster_14",
+    "cluster_13",
+    "cluster_4"
+  ],
+  "narrative_arc": "The post-1945 order is being liquidated, replacing alliance commitments with transactional coercion that triggers kinetic shockwaves from Caracas to Tehran.",
+  "critic_scores": {
+    "cluster_1": 83,
+    "cluster_15": 82,
+    "cluster_16": 90,
+    "cluster_19": 81,
+    "cluster_18": 86,
+    "cluster_0": 90
+  },
+  "errors": [],
+  "warnings": [],
+  "elapsed_seconds": 720.670981168747
+}
