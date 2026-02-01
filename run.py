@@ -99,6 +99,133 @@ if TYPE_CHECKING:
 
 
 # =============================================================================
+# PREVIOUS EDITION DISCOVERY
+# =============================================================================
+
+
+def _load_published_editions(outputs_dir: Path) -> list[dict]:
+    """
+    Load the list of published editions from editions.json.
+    
+    Returns list of edition records, newest first.
+    """
+    editions_file = outputs_dir / "editions.json"
+    
+    if not editions_file.exists():
+        return []
+    
+    try:
+        data = json.loads(editions_file.read_text())
+        editions = data.get("editions", [])
+        # Filter to published only, sort by run_id (newest first)
+        published = [e for e in editions if e.get("status") == "published"]
+        return sorted(published, key=lambda e: e.get("run_id", ""), reverse=True)
+    except (json.JSONDecodeError, KeyError) as e:
+        logger.warning(f"   ⚠️ Failed to load editions.json: {e}")
+        return []
+
+
+def find_previous_edition(outputs_dir: Path, current_run_id: str | None = None) -> dict | None:
+    """
+    Find the most recent PUBLISHED previous edition's DocumentSkeleton.
+    
+    Uses outputs/editions.json to determine which editions are official.
+    Test runs not listed in editions.json are excluded.
+    
+    Args:
+        outputs_dir: Path to outputs/ directory
+        current_run_id: Current run's ID to exclude from search
+    
+    Returns:
+        Dict with 'skeleton', 'date', 'run_id' or None if not found
+    """
+    if not outputs_dir.exists():
+        return None
+    
+    # Get published editions from manifest
+    published_editions = _load_published_editions(outputs_dir)
+    
+    if not published_editions:
+        logger.debug("   📚 No published editions in editions.json")
+        return None
+    
+    for edition in published_editions:
+        run_id = edition.get("run_id", "")
+        
+        # Skip current run
+        if current_run_id and run_id == current_run_id:
+            continue
+        
+        folder = outputs_dir / run_id
+        if not folder.exists():
+            logger.warning(f"   ⚠️ Edition folder missing: {run_id}")
+            continue
+        
+        skeleton_path = folder / "agent_outputs" / "02b_document_skeleton.json"
+        if skeleton_path.exists():
+            try:
+                skeleton = json.loads(skeleton_path.read_text())
+                
+                return {
+                    "skeleton": skeleton,
+                    "date": edition.get("date", "unknown"),
+                    "run_id": run_id,
+                    "folder": folder,
+                }
+            except (json.JSONDecodeError, IndexError) as e:
+                logger.warning(f"   ⚠️ Failed to load skeleton from {run_id}: {e}")
+                continue
+    
+    return None
+
+
+def register_edition(outputs_dir: Path, run_id: str, date: str, status: str = "published", notes: str = "") -> None:
+    """
+    Register a new edition in editions.json.
+    
+    Call this after a successful production run to mark it as published.
+    
+    Args:
+        outputs_dir: Path to outputs/ directory
+        run_id: The run_id (folder name) to register
+        date: Date string (YYYY-MM-DD)
+        status: Edition status (published, draft, archived)
+        notes: Optional notes about this edition
+    """
+    editions_file = outputs_dir / "editions.json"
+    
+    # Load existing or create new
+    if editions_file.exists():
+        try:
+            data = json.loads(editions_file.read_text())
+        except json.JSONDecodeError:
+            data = {"schema_version": "1.0", "editions": []}
+    else:
+        data = {
+            "schema_version": "1.0",
+            "description": "Tracks published briefing editions for editorial memory",
+            "editions": []
+        }
+    
+    # Check if already registered
+    existing_ids = {e.get("run_id") for e in data.get("editions", [])}
+    if run_id in existing_ids:
+        logger.info(f"   📚 Edition already registered: {run_id}")
+        return
+    
+    # Add new edition
+    data["editions"].append({
+        "run_id": run_id,
+        "date": date,
+        "status": status,
+        "notes": notes,
+    })
+    
+    editions_file.write_text(json.dumps(data, indent=2))
+    logger.info(f"   📚 Registered edition: {run_id}")
+
+
+# =============================================================================
 # CHECKPOINTING (delegated to orchestrator)
 # =============================================================================
 
@@ -304,11 +431,15 @@ async def run_editor(
     cross_regional_connections: list[str] | None = None,
     calendar_events: list[dict] | None = None,
     orchestrator: PipelineOrchestrator | None = None,
+    previous_edition: dict | None = None,
 ) -> None:
     """
     Run the Editor agent for editorial research and kill/publish decisions.
     
     Uses deep thinking + Tavily to make informed editorial choices.
+    
+    Args:
+        previous_edition: Context from previous week's briefing (skeleton, date, run_id)
     """
     MAX_RETRIES = 3
     
@@ -320,6 +451,7 @@ async def run_editor(
         recommended_organization=recommended_organization,
         cross_regional_connections=cross_regional_connections or [],
         calendar_events=calendar_events or [],
+        previous_edition=previous_edition,
     )
     
     last_error = None
@@ -1199,6 +1331,15 @@ async def _run_pipeline_inner(
     logger.info("✏️  PHASE 3A: Editor Agent (Research & Decisions)")
     logger.info("=" * 60)
     
+    # Find previous edition for editorial continuity
+    outputs_dir = Path(__file__).parent / "outputs"
+    previous_edition = find_previous_edition(outputs_dir, current_run_id=run_id)
+    
+    if previous_edition:
+        logger.info(f"   📚 Previous edition found: {previous_edition['run_id']} ({previous_edition['date']})")
+    else:
+        logger.info("   📚 No previous edition found (first run)")
+    
     # Get thematic clustering data
     thematic_clusters = [c.to_dict() for c in cluster_analysis.thematic_clusters]
     hub_candidates = [c.to_dict() for c in cluster_analysis.hub_candidates]
@@ -1222,6 +1363,7 @@ async def _run_pipeline_inner(
         cross_regional_connections=cross_connections,
         calendar_events=[],  # Calendar disabled
         orchestrator=orchestrator,
+        previous_edition=previous_edition,
     )
     
     orchestrator.save_checkpoint("phase_3a_editor")

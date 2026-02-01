@@ -148,6 +148,9 @@ class EditorInput:
     cross_regional_connections: list[str] = None  # Connections identified in clustering
     calendar_events: list[dict] = None  # Upcoming events for context
     
+    # Previous edition context (for editorial continuity)
+    previous_edition: dict | None = None  # {skeleton, date, run_id} from find_previous_edition()
+    
     def __post_init__(self):
         if self.cross_regional_connections is None:
             self.cross_regional_connections = []
@@ -221,6 +224,104 @@ def _format_thematic_clusters(
                 regions = ", ".join(cluster.get("regions_touched", []))
                 lines.append(f"- {label}: spans {regions}")
             lines.append("")
+    
+    return "\n".join(lines)
+
+
+def _format_previous_edition(previous: dict) -> str:
+    """
+    Format previous edition skeleton into Editor context.
+    
+    Args:
+        previous: Dict with 'skeleton', 'date', 'run_id' from find_previous_edition()
+    
+    Returns:
+        Markdown-formatted context for the Editor prompt
+    """
+    skeleton = previous.get("skeleton", {})
+    date = previous.get("date", "last week")
+    
+    lines = [
+        f"## 📚 PREVIOUS EDITION ({date})",
+        "",
+    ]
+    
+    # Hub mechanism
+    hub_mech = skeleton.get("hub_mechanism")
+    if hub_mech:
+        lines.append(f"**Hub Mechanism:** {hub_mech}")
+        hub_exp = skeleton.get("hub_explanation", "")
+        if hub_exp:
+            lines.append(f"> {hub_exp[:300]}...")
+        lines.append("")
+    
+    # Narrative arc
+    arc = skeleton.get("narrative_arc", "")
+    if arc:
+        lines.append(f"**Narrative Arc:** {arc}")
+        lines.append("")
+    
+    # Published stories table
+    lines.append("**PUBLISHED STORIES:**")
+    lines.append("")
+    lines.append("| Story | Treatment | Cluster ID |")
+    lines.append("|-------|-----------|------------|")
+    
+    # Featured
+    featured = skeleton.get("featured", {})
+    if featured:
+        headline = featured.get("headline", "?")
+        cluster_id = featured.get("source_cluster_id", "?")
+        lines.append(f"| {headline} | FEATURED | {cluster_id} |")
+    
+    # Sections
+    for section in skeleton.get("sections", []):
+        headline = section.get("headline", "?")
+        treatment = section.get("treatment", "?")
+        cluster_id = section.get("source_cluster_id", "?")
+        lines.append(f"| {headline} | {treatment} | {cluster_id} |")
+    
+    lines.append("")
+    
+    # Quick hits
+    quick_hits = skeleton.get("quick_hits", [])
+    if quick_hits:
+        lines.append("**Quick Hits:** " + ", ".join(
+            qh.get("headline", qh.get("region", "?")) for qh in quick_hits
+        ))
+        lines.append("")
+    
+    # Killed clusters - especially HOLD_FOR_NEXT_WEEK
+    killed = skeleton.get("killed", [])
+    if killed:
+        held = [k for k in killed if k.get("reason") == "HOLD_FOR_NEXT_WEEK"]
+        other_killed = len(killed) - len(held)
+        
+        if held:
+            lines.append("**⚠️ HELD FOR THIS WEEK:**")
+            for k in held:
+                cluster_id = k.get("region", k.get("cluster_id", "?"))
+                note = k.get("brief_explanation", "")
+                pic = k.get("pic_score", 0)
+                lines.append(f"- {cluster_id} (PIC: {pic}): {note}")
+            lines.append("")
+        
+        if other_killed:
+            lines.append(f"**Killed last week:** {other_killed} clusters")
+            lines.append("")
+    
+    # Editorial guidance
+    lines.extend([
+        "---",
+        "",
+        "**CONTINUITY GUIDANCE:**",
+        "- **Same story with updates**: Lead with what's NEW, one-sentence recap max",
+        "- **Story resolved**: Quick Hit noting resolution",
+        "- **Story unchanged**: KILL (readers already know)",
+        "- **HELD clusters**: Consider covering this week - they were deferred, not killed",
+        "- **Predictions**: Note if any previous forecasts proved correct/incorrect",
+        "",
+    ])
     
     return "\n".join(lines)
 
@@ -306,8 +407,12 @@ def _build_editor_prompt(input_data: EditorInput) -> str:
             "avg_severity": hub.get("avg_severity", 0),
         })
     
-    prompt = f"""
-## THEMATIC CLUSTERS TO REVIEW
+    # Build previous edition context if available
+    previous_context = ""
+    if input_data.previous_edition:
+        previous_context = _format_previous_edition(input_data.previous_edition) + "\n---\n\n"
+    
+    prompt = f"""{previous_context}## THEMATIC CLUSTERS TO REVIEW
 
 You have received {len(cluster_summaries)} thematic clusters from semantic analysis.
 Each cluster groups related events across regions. Review each and make editorial decisions.
@@ -738,6 +843,39 @@ This structure helps the Architect parse your decisions accurately.
 Use your thinking budget to reason deeply about each decision.
 Use search_web tool to verify significance when unsure about importance.
 </output_expectations>
+
+<editorial_memory>
+When previous edition context is provided:
+
+1. YOU HAVE MEMORY. Use it.
+   - Reference previous coverage naturally
+   - "As we noted last week...", "Our forecast about X..."
+   - Don't pretend each week is a fresh start
+
+2. AVOID REDUNDANCY
+   - Don't re-explain what readers already know
+   - Lead with what's NEW, not backstory
+   - If same story: 80% new analysis, 20% context
+
+3. TRACK TRAJECTORIES
+   - "The situation we flagged last week has now..."
+   - "Contrary to our assessment, X happened instead"
+   - Note if events validated or contradicted your previous analysis
+
+4. RESPECT HOLDS
+   - Stories marked HOLD_FOR_NEXT_WEEK last week deserve fresh consideration
+   - They weren't killed—they were deferred for timing reasons
+   - Check if the inflection point arrived this week
+
+5. KILL UNCHANGED STORIES
+   - If nothing new happened since last week, readers don't need a reminder
+   - Exception: Critical strategic context that bears repeating (rare)
+
+6. PREDICTION ACCOUNTABILITY
+   - If you made a Sherman Kent forecast last week, acknowledge its resolution
+   - Correct predictions build reader trust
+   - Incorrect predictions, honestly noted, build more trust
+</editorial_memory>
 """
 
 

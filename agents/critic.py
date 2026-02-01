@@ -363,21 +363,21 @@ def extract_factual_claims(draft: str) -> list[FactualClaim]:
             ))
             claim_id += 1
         
-        # Find dates
+        # Find dates (skip citation references like [1])
         if not re.search(r'\[\d+\]', sentence):
-        dates = re.findall(
-            r'(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2}(?:,?\s+\d{4})?',
-            sentence,
-            re.IGNORECASE
-        )
-        for date in dates:
-            claims.append(FactualClaim(
-                id=f"claim_{claim_id}",
-                claim_text=date,
-                claim_type="DATE",
-                source_sentence=sentence
-            ))
-            claim_id += 1
+            dates = re.findall(
+                r'(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2}(?:,?\s+\d{4})?',
+                sentence,
+                re.IGNORECASE
+            )
+            for date in dates:
+                claims.append(FactualClaim(
+                    id=f"claim_{claim_id}",
+                    claim_text=date,
+                    claim_type="DATE",
+                    source_sentence=sentence
+                ))
+                claim_id += 1
     
     return claims[:20]
 
@@ -994,7 +994,7 @@ def run_style_critic(
     content_penalty, content_issues = _check_content_preserved(styled_draft, writer_draft)
     
     # Add content issues with clear labeling
-                if content_issues:
+    if content_issues:
         all_issues.insert(0, "⚠️ CONTENT REGRESSION (Stylist broke Writer's analysis):")
         all_issues.extend([f"  {issue}" for issue in content_issues])
     

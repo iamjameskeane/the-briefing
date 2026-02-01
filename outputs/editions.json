@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0",
+  "description": "Tracks published briefing editions for editorial memory",
+  "editions": [
+    {
+      "run_id": "briefing_20260125_110850",
+      "date": "2026-01-25",
+      "status": "published",
+      "notes": "Edition 1 - Sovereignty Commodification hub"
+    }
+  ]
+}
