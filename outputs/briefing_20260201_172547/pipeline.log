@@ -1,0 +1,531 @@
+2026-02-01 17:25:47 [INFO] briefing: 📝 Logging to: /home/james/the-briefing/outputs/briefing_20260201_172547/pipeline.log
+2026-02-01 17:25:47 [INFO] briefing:    🔍 Search results storage reset
+2026-02-01 17:25:47 [INFO] briefing: 
+============================================================
+2026-02-01 17:25:47 [INFO] briefing: 📥 PHASE 1: Aggregation
+2026-02-01 17:25:47 [INFO] briefing: ============================================================
+2026-02-01 17:25:47 [INFO] briefing:    ✅ Collected 491 events from 1 sources
+2026-02-01 17:25:47 [INFO] briefing:    ✅ Regions: ['AMERICAS', 'MIDDLE_EAST', 'AFRICA', 'EUROPE', 'SOUTHEAST_ASIA', 'SOUTH_ASIA', 'OTHER', 'EAST_ASIA', 'CENTRAL_ASIA', 'OCEANIA']
+2026-02-01 17:25:47 [INFO] briefing:    💾 Checkpoint: phase_1_aggregate
+2026-02-01 17:25:47 [INFO] briefing: 
+============================================================
+2026-02-01 17:25:47 [INFO] briefing: 🔬 PHASE 2: Semantic Clustering
+2026-02-01 17:25:47 [INFO] briefing: ============================================================
+2026-02-01 17:25:47 [INFO] briefing: ============================================================
+2026-02-01 17:25:47 [INFO] briefing: PHASE 2: THEMATIC CLUSTERING
+2026-02-01 17:25:47 [INFO] briefing: ============================================================
+2026-02-01 17:25:47 [INFO] briefing: Generating global embeddings for all events...
+2026-02-01 17:25:48 [INFO] briefing: Generating embeddings for 491 events...
+2026-02-01 17:25:48 [INFO] briefing:   Embedding batch 1/5 (100 texts)...
+2026-02-01 17:25:49 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 200 OK"
+2026-02-01 17:25:49 [INFO] briefing:   Embedding batch 2/5 (100 texts)...
+2026-02-01 17:25:48 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 200 OK"
+2026-02-01 17:25:48 [INFO] briefing:   Embedding batch 3/5 (100 texts)...
+2026-02-01 17:25:49 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 200 OK"
+2026-02-01 17:25:49 [INFO] briefing:   Embedding batch 4/5 (100 texts)...
+2026-02-01 17:25:50 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 200 OK"
+2026-02-01 17:25:50 [INFO] briefing:   Embedding batch 5/5 (91 texts)...
+2026-02-01 17:25:51 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 200 OK"
+2026-02-01 17:25:51 [INFO] briefing: 🌍 Performing GLOBAL thematic clustering...
+2026-02-01 17:25:51 [INFO] briefing:    📊 HDBSCAN: 24 clusters, 203 noise, 54 black swan
+2026-02-01 17:25:51 [INFO] briefing: Labeling cluster 22: 44 events, 5 titles, 666 chars
+2026-02-01 17:25:51 [INFO] briefing:    🤖 [ThemeLabeling-Cluster22] gemini-3-pro-preview (defaults)
+2026-02-01 17:25:51 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-02-01 17:26:19 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-preview:generateContent "HTTP/1.1 200 OK"
+2026-02-01 17:26:19 [INFO] briefing: Usage: cache_tokens_details=None cached_content_token_count=None candidates_token_count=8 candidates_tokens_details=None prompt_token_count=154 prompt_tokens_details=[ModalityTokenCount(
+  modality=<MediaModality.TEXT: 'TEXT'>,
+  token_count=154
+)] thoughts_token_count=2284 tool_use_prompt_token_count=None tool_use_prompt_tokens_details=None total_token_count=2446 traffic_type=None
+2026-02-01 17:26:19 [INFO] briefing: ✅ Cluster 22 labeled: Escalating US-Iran Tensions
+2026-02-01 17:26:19 [INFO] briefing: Labeling cluster 14: 26 events, 5 titles, 684 chars
+2026-02-01 17:26:19 [INFO] briefing:    🤖 [ThemeLabeling-Cluster14] gemini-3-pro-preview (defaults)
+2026-02-01 17:26:19 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-02-01 17:26:33 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-preview:generateContent "HTTP/1.1 200 OK"
+2026-02-01 17:26:33 [INFO] briefing: Usage: cache_tokens_details=None cached_content_token_count=None candidates_token_count=4 candidates_tokens_details=None prompt_token_count=130 prompt_tokens_details=[ModalityTokenCount(
+  modality=<MediaModality.TEXT: 'TEXT'>,
+  token_count=130
+)] thoughts_token_count=1160 tool_use_prompt_token_count=None tool_use_prompt_tokens_details=None total_token_count=1294 traffic_type=None
+2026-02-01 17:26:33 [INFO] briefing: ✅ Cluster 14 labeled: Immigration Enforcement Crisis
+2026-02-01 17:26:33 [INFO] briefing: Labeling cluster 19: 24 events, 5 titles, 588 chars
+2026-02-01 17:26:33 [INFO] briefing:    🤖 [ThemeLabeling-Cluster19] gemini-3-pro-preview (defaults)
+2026-02-01 17:26:33 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-02-01 17:26:47 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-preview:generateContent "HTTP/1.1 200 OK"
+2026-02-01 17:26:47 [INFO] briefing: Usage: cache_tokens_details=None cached_content_token_count=None candidates_token_count=4 candidates_tokens_details=None prompt_token_count=134 prompt_tokens_details=[ModalityTokenCount(
+  modality=<MediaModality.TEXT: 'TEXT'>,
+  token_count=134
+)] thoughts_token_count=1073 tool_use_prompt_token_count=None tool_use_prompt_tokens_details=None total_token_count=1211 traffic_type=None
+2026-02-01 17:26:47 [INFO] briefing: ✅ Cluster 19 labeled: Rising Authoritarianism
+2026-02-01 17:26:47 [INFO] briefing: Labeling cluster 2: 18 events, 5 titles, 635 chars
+2026-02-01 17:26:47 [INFO] briefing:    🤖 [ThemeLabeling-Cluster2] gemini-3-pro-preview (defaults)
+2026-02-01 17:26:47 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-02-01 17:27:03 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-preview:generateContent "HTTP/1.1 200 OK"
+2026-02-01 17:27:03 [INFO] briefing: Usage: cache_tokens_details=None cached_content_token_count=None candidates_token_count=5 candidates_tokens_details=None prompt_token_count=147 prompt_tokens_details=[ModalityTokenCount(
+  modality=<MediaModality.TEXT: 'TEXT'>,
+  token_count=147
+)] thoughts_token_count=1375 tool_use_prompt_token_count=None tool_use_prompt_tokens_details=None total_token_count=1527 traffic_type=None
+2026-02-01 17:27:03 [INFO] briefing: ✅ Cluster 2 labeled: Israel-Gaza Conflict
+2026-02-01 17:27:03 [INFO] briefing: Labeling cluster 17: 20 events, 5 titles, 669 chars
+2026-02-01 17:27:03 [INFO] briefing:    🤖 [ThemeLabeling-Cluster17] gemini-3-pro-preview (defaults)
+2026-02-01 17:27:03 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-02-01 17:27:37 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-preview:generateContent "HTTP/1.1 200 OK"
+2026-02-01 17:27:37 [INFO] briefing: Usage: cache_tokens_details=None cached_content_token_count=None candidates_token_count=3 candidates_tokens_details=None prompt_token_count=142 prompt_tokens_details=[ModalityTokenCount(
+  modality=<MediaModality.TEXT: 'TEXT'>,
+  token_count=142
+)] thoughts_token_count=2949 tool_use_prompt_token_count=None tool_use_prompt_tokens_details=None total_token_count=3094 traffic_type=None
+2026-02-01 17:27:37 [INFO] briefing: ✅ Cluster 17 labeled: Venezuela Regime Change
+2026-02-01 17:27:37 [INFO] briefing:    📊 Thematic clusters: 24
+2026-02-01 17:27:37 [INFO] briefing:    🎯 Hub candidates: 7
+2026-02-01 17:27:37 [INFO] briefing:    🎯 Recommended organization: HYBRID
+2026-02-01 17:27:37 [INFO] briefing:    📍 AMERICAS: 9 storylines from thematic clusters
+2026-02-01 17:27:37 [INFO] briefing:    📍 MIDDLE_EAST: 7 storylines from thematic clusters
+2026-02-01 17:27:37 [INFO] briefing:    📍 AFRICA: 5 storylines from thematic clusters
+2026-02-01 17:27:37 [INFO] briefing:    📍 EUROPE: 10 storylines from thematic clusters
+2026-02-01 17:27:37 [INFO] briefing:    📍 SOUTHEAST_ASIA: 2 storylines from thematic clusters
+2026-02-01 17:27:37 [INFO] briefing:    📍 SOUTH_ASIA: 3 storylines from thematic clusters
+2026-02-01 17:27:37 [INFO] briefing:    📍 OTHER: 6 storylines from thematic clusters
+2026-02-01 17:27:37 [INFO] briefing:    📍 EAST_ASIA: 4 storylines from thematic clusters
+2026-02-01 17:27:37 [INFO] briefing:    📍 CENTRAL_ASIA: 1 storylines from thematic clusters
+2026-02-01 17:27:37 [INFO] briefing:    📍 OCEANIA: 1 storylines from thematic clusters
+2026-02-01 17:27:37 [INFO] briefing: Emerging situations: 5
+2026-02-01 17:27:37 [INFO] briefing: Cross-regional connections: 5
+2026-02-01 17:27:37 [INFO] briefing: Total storylines: 48
+2026-02-01 17:27:37 [INFO] briefing: Black swan events: 54
+2026-02-01 17:27:37 [INFO] briefing: Cross-regional: 5
+2026-02-01 17:27:37 [INFO] briefing: Thematic clusters: 24
+2026-02-01 17:27:37 [INFO] briefing: Hub candidates: 7
+2026-02-01 17:27:37 [INFO] briefing:    ✅ Created 48 storylines
+2026-02-01 17:27:37 [INFO] briefing:    ✅ Cross-regional connections: 5
+2026-02-01 17:27:37 [INFO] briefing:    📦 Cluster events map: 24 clusters
+2026-02-01 17:27:37 [INFO] briefing:    💾 Checkpoint: phase_2_cluster
+2026-02-01 17:27:37 [INFO] briefing: 
+============================================================
+2026-02-01 17:27:37 [INFO] briefing: ✏️  PHASE 3A: Editor Agent (Research & Decisions)
+2026-02-01 17:27:37 [INFO] briefing: ============================================================
+2026-02-01 17:27:37 [INFO] briefing:    📚 Previous edition found: briefing_20260125_110850 (2026-01-25)
+2026-02-01 17:27:37 [INFO] briefing:    🎯 Thematic clusters: 24
+2026-02-01 17:27:37 [INFO] briefing:    🎯 Hub candidates: 7
+2026-02-01 17:27:37 [INFO] briefing:    🎯 Recommended organization: HYBRID
+2026-02-01 17:27:37 [INFO] briefing:    ✏️  Editor reviewing 24 clusters with gemini-3-pro-preview...
+2026-02-01 17:27:37 [INFO] briefing:    🤖 [Editor] gemini-3-pro-preview (defaults)
+2026-02-01 17:28:38 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-preview:generateContent "HTTP/1.1 200 OK"
+2026-02-01 17:28:38 [INFO] briefing:    ✅ Editor complete (1 messages, 7779 chars)
+2026-02-01 17:28:38 [INFO] briefing:    ✅ Editor succeeded on attempt 1
+2026-02-01 17:28:38 [INFO] briefing:    💾 Checkpoint: phase_3a_editor
+2026-02-01 17:28:38 [INFO] briefing: 
+============================================================
+2026-02-01 17:28:38 [INFO] briefing: 📐 PHASE 3B: Architect Agent (Structure Decisions)
+2026-02-01 17:28:38 [INFO] briefing: ============================================================
+2026-02-01 17:28:38 [INFO] briefing:    📐 Architect Step 1: Reasoning with gemini-3-pro-preview...
+2026-02-01 17:28:38 [INFO] briefing:    🤖 [Architect-Reasoning] gemini-3-pro-preview (defaults)
+2026-02-01 17:28:38 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-02-01 17:29:06 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-preview:generateContent "HTTP/1.1 200 OK"
+2026-02-01 17:29:06 [INFO] briefing:    ✅ Reasoning complete (8782 chars)
+2026-02-01 17:29:06 [INFO] briefing:    💾 Saved reasoning to 02a_architect_reasoning.txt
+2026-02-01 17:29:06 [INFO] briefing:    📐 Architect Step 2: Formatting to JSON with gemini-3-pro-preview...
+2026-02-01 17:29:06 [INFO] briefing:    🤖 [Architect-Formatter] gemini-3-pro-preview (mime=application/json)
+2026-02-01 17:29:06 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-02-01 17:30:02 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-preview:generateContent "HTTP/1.1 200 OK"
+2026-02-01 17:30:02 [INFO] briefing:    ✅ Formatter complete: 5 sections
+2026-02-01 17:30:02 [INFO] briefing:    ✅ Architect complete:
+2026-02-01 17:30:02 [INFO] briefing:       Featured: Venezuela
+2026-02-01 17:30:02 [INFO] briefing:       Sections: 5 spokes to publish
+2026-02-01 17:30:02 [INFO] briefing:       Killed: 10 clusters
+2026-02-01 17:30:02 [INFO] briefing:       Quick Hits: 4
+2026-02-01 17:30:02 [INFO] briefing:       Organizing: THEMATIC
+2026-02-01 17:30:02 [INFO] briefing:       Hub Mechanism: Coercive Unilateralism vs. Strategic Hedging
+2026-02-01 17:30:02 [INFO] briefing:       Arc: Washington’s shift to kinetic unilateralism achieves tactical shocks in Caracas ...
+2026-02-01 17:30:02 [INFO] briefing:       Transitions: 0 causal, 0 breaks, 0 filler, 5 weak
+2026-02-01 17:30:02 [WARNING] briefing:   💭 'cluster_17 → cluster_22': Lacks causal language - may be descriptive rather than connective
+2026-02-01 17:30:02 [WARNING] briefing:   💭 'cluster_22 → cluster_14': Lacks causal language - may be descriptive rather than connective
+2026-02-01 17:30:02 [WARNING] briefing:   💭 'cluster_14 → cluster_5': Lacks causal language - may be descriptive rather than connective
+2026-02-01 17:30:02 [INFO] briefing:    ✅ Architect succeeded on attempt 1
+2026-02-01 17:30:02 [INFO] briefing:    ✅ Featured: Venezuela
+2026-02-01 17:30:02 [INFO] briefing:    ✅ Publishing: 5 sections
+2026-02-01 17:30:02 [INFO] briefing:    🚫 Killed: 10 clusters
+2026-02-01 17:30:02 [INFO] briefing:    📝 Narrative: Washington’s shift to kinetic unilateralism achieves tactica...
+2026-02-01 17:30:02 [INFO] briefing:    💾 Checkpoint: phase_3b_architect
+2026-02-01 17:30:02 [INFO] briefing: 
+============================================================
+2026-02-01 17:30:02 [INFO] briefing: 🧠 PHASE 4: Analyst Agents (Published Clusters Only)
+2026-02-01 17:30:02 [INFO] briefing: ============================================================
+2026-02-01 17:30:02 [INFO] briefing:    📊 Analyzing 6 published clusters (skipping 18 killed)
+2026-02-01 17:30:02 [INFO] briefing:    📝 Queuing analysis: Escalating US-Iran Tensions (44 events, regions: ['MIDDLE_EAST', 'OTHER', 'EUROPE'])
+2026-02-01 17:30:02 [INFO] briefing:    📝 Queuing analysis: Immigration Enforcement Crisis (26 events, regions: ['AMERICAS', 'EUROPE'])
+2026-02-01 17:30:02 [INFO] briefing:    📝 Queuing analysis: Venezuela Regime Change (20 events, regions: ['AMERICAS', 'SOUTH_ASIA'])
+2026-02-01 17:30:02 [INFO] briefing:    📝 Queuing analysis: cluster_11 (14 events, regions: ['SOUTH_ASIA'])
+2026-02-01 17:30:02 [INFO] briefing:    📝 Queuing analysis: cluster_5 (14 events, regions: ['AMERICAS', 'EUROPE', 'EAST_ASIA'])
+2026-02-01 17:30:02 [INFO] briefing:    📝 Queuing analysis: cluster_7 (5 events, regions: ['EAST_ASIA'])
+2026-02-01 17:30:02 [INFO] briefing:    🧠 [Escalating US-Iran Tensions] Running Analyst Agent with gemini-3-pro-preview...
+2026-02-01 17:30:02 [INFO] briefing:    🤖 [Analyst-Research] gemini-3-pro-preview (defaults)
+2026-02-01 17:30:02 [INFO] briefing:    🧠 [Immigration Enforcement Crisis] Running Analyst Agent with gemini-3-pro-preview...
+2026-02-01 17:30:02 [INFO] briefing:    🤖 [Analyst-Research] gemini-3-pro-preview (defaults)
+2026-02-01 17:30:02 [INFO] briefing:    🧠 [Venezuela Regime Change] Running Analyst Agent with gemini-3-pro-preview...
+2026-02-01 17:30:02 [INFO] briefing:    🤖 [Analyst-Research] gemini-3-pro-preview (defaults)
+2026-02-01 17:30:02 [INFO] briefing:    🧠 [11] Running Analyst Agent with gemini-3-pro-preview...
+2026-02-01 17:30:02 [INFO] briefing:    🤖 [Analyst-Research] gemini-3-pro-preview (defaults)
+2026-02-01 17:30:02 [INFO] briefing:    🧠 [5] Running Analyst Agent with gemini-3-pro-preview...
+2026-02-01 17:30:02 [INFO] briefing:    🤖 [Analyst-Research] gemini-3-pro-preview (defaults)
+2026-02-01 17:30:15 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-preview:generateContent "HTTP/1.1 200 OK"
+2026-02-01 17:30:15 [INFO] briefing:       📞 Tool call: search_web({'query': 'Iran economic indicators 2025 forecast sanctions impact'})
+2026-02-01 17:30:17 [INFO] briefing:        🔍 Search: Iran economic indicators 2025 forecast sanctions impact...
+2026-02-01 17:30:17 [INFO] briefing:       📞 Tool call: search_web({'query': 'Iran succession crisis Mojtaba Khamenei role 2025'})
+2026-02-01 17:30:18 [INFO] briefing:        🔍 Search: Iran succession crisis Mojtaba Khamenei role 2025...
+2026-02-01 17:30:18 [INFO] briefing:       📞 Tool call: search_web({'query': 'Israel strategic doctrine Iran regime change 2025'})
+2026-02-01 17:30:19 [INFO] briefing:        🔍 Search: Israel strategic doctrine Iran regime change 2025...
+2026-02-01 17:30:19 [INFO] briefing:       📞 Tool call: search_web({'query': 'EU IRGC terrorist designation consequences analysis'})
+2026-02-01 17:30:21 [INFO] briefing:        🔍 Search: EU IRGC terrorist designation consequences analysis...
+2026-02-01 17:30:21 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-preview:generateContent "HTTP/1.1 200 OK"
+2026-02-01 17:30:21 [INFO] briefing:       📞 Tool call: search_web({'query': 'UK economic outlook 2026 post-Brexit trade constraints'})
+2026-02-01 17:30:22 [INFO] briefing:        🔍 Search: UK economic outlook 2026 post-Brexit trade constraints...
+2026-02-01 17:30:22 [INFO] briefing:       📞 Tool call: search_web({'query': 'China semiconductor industry status 2026 AI boom'})
+2026-02-01 17:30:23 [INFO] briefing:        🔍 Search: China semiconductor industry status 2026 AI boom...
+2026-02-01 17:30:23 [INFO] briefing:       📞 Tool call: search_web({'query': 'New START treaty expiration February 2026 implications'})
+2026-02-01 17:30:23 [INFO] briefing:        🔍 Search: New START treaty expiration February 2026 implications...
+2026-02-01 17:30:23 [INFO] briefing:       📞 Tool call: search_web({'query': 'Keir Starmer Donald Trump relationship tensions 2025 2026'})
+2026-02-01 17:30:24 [INFO] briefing:        🔍 Search: Keir Starmer Donald Trump relationship tensions 2025 2026...
+2026-02-01 17:30:24 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-preview:generateContent "HTTP/1.1 200 OK"
+2026-02-01 17:30:24 [INFO] briefing:       📞 Tool call: search_web({'query': 'Pakistan Balochistan coordinated attacks recent 2024 2025'})
+2026-02-01 17:30:26 [INFO] briefing:        🔍 Search: Pakistan Balochistan coordinated attacks recent 2024 2025...
+2026-02-01 17:30:26 [INFO] briefing:       📞 Tool call: search_web({'query': 'Tirah Valley Pakistan military operation unrest 2024 2025'})
+2026-02-01 17:30:27 [INFO] briefing:        🔍 Search: Tirah Valley Pakistan military operation unrest 2024 2025...
+2026-02-01 17:30:27 [INFO] briefing:       📞 Tool call: search_web({'query': 'BLA TTP operational alliance Pakistan 2025'})
+2026-02-01 17:30:28 [INFO] briefing:        🔍 Search: BLA TTP operational alliance Pakistan 2025...
+2026-02-01 17:30:28 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-preview:generateContent "HTTP/1.1 200 OK"
+2026-02-01 17:30:28 [INFO] briefing:       📞 Tool call: search_web({'query': 'Venezuela oil infrastructure current state production capacity 2025'})
+2026-02-01 17:30:29 [INFO] briefing:        🔍 Search: Venezuela oil infrastructure current state production capaci...
+2026-02-01 17:30:29 [INFO] briefing:       📞 Tool call: search_web({'query': 'India refinery capability heavy crude Venezuela vs Iran'})
+2026-02-01 17:30:31 [INFO] briefing:        🔍 Search: India refinery capability heavy crude Venezuela vs Iran...
+2026-02-01 17:30:31 [INFO] briefing:       📞 Tool call: search_web({'query': 'Cuba energy dependence Venezuela Mexico 2025 statistics'})
+2026-02-01 17:30:32 [INFO] briefing:        🔍 Search: Cuba energy dependence Venezuela Mexico 2025 statistics...
+2026-02-01 17:30:32 [INFO] briefing:       📞 Tool call: search_web({'query': 'Delcy Rodriguez political stance pragmatism vs ideology'})
+2026-02-01 17:30:33 [INFO] briefing:        🔍 Search: Delcy Rodriguez political stance pragmatism vs ideology...
+2026-02-01 17:30:33 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-preview:generateContent "HTTP/1.1 200 OK"
+2026-02-01 17:30:33 [INFO] briefing:       📞 Tool call: search_web({'query': 'Tom Homan Trump administration role border czar plans 2025'})
+2026-02-01 17:30:35 [INFO] briefing:        🔍 Search: Tom Homan Trump administration role border czar plans 2025...
+2026-02-01 17:30:35 [INFO] briefing:       📞 Tool call: search_web({'query': 'Pam Bondi Attorney General Trump 2025 context'})
+2026-02-01 17:30:36 [INFO] briefing:        🔍 Search: Pam Bondi Attorney General Trump 2025 context...
+2026-02-01 17:30:36 [INFO] briefing:       📞 Tool call: search_web({'query': 'Trump immigration enforcement plans 2025 mass deportations protests'})
+2026-02-01 17:30:37 [INFO] briefing:        🔍 Search: Trump immigration enforcement plans 2025 mass deportations p...
+2026-02-01 17:31:06 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-preview:generateContent "HTTP/1.1 200 OK"
+2026-02-01 17:31:06 [INFO] briefing:    🤖 [Analyst-Finalize] gemini-3-pro-preview (mime=application/json)
+2026-02-01 17:31:06 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-02-01 17:31:09 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-preview:generateContent "HTTP/1.1 200 OK"
+2026-02-01 17:31:09 [INFO] briefing:    🤖 [Analyst-Finalize] gemini-3-pro-preview (mime=application/json)
+2026-02-01 17:31:09 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-02-01 17:31:12 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-preview:generateContent "HTTP/1.1 200 OK"
+2026-02-01 17:31:12 [INFO] briefing:    🤖 [Analyst-Finalize] gemini-3-pro-preview (mime=application/json)
+2026-02-01 17:31:12 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-02-01 17:31:15 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-preview:generateContent "HTTP/1.1 200 OK"
+2026-02-01 17:31:15 [INFO] briefing:    🤖 [Analyst-Finalize] gemini-3-pro-preview (mime=application/json)
+2026-02-01 17:31:15 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-02-01 17:31:17 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-preview:generateContent "HTTP/1.1 200 OK"
+2026-02-01 17:31:17 [INFO] briefing:    🤖 [Analyst-Finalize] gemini-3-pro-preview (mime=application/json)
+2026-02-01 17:31:17 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-02-01 17:31:45 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-preview:generateContent "HTTP/1.1 200 OK"
+2026-02-01 17:31:45 [INFO] briefing:    ✅ [11] Analyst complete: archetype=Center-Periphery Disintegration, actors=3, confidence=HIGH
+2026-02-01 17:31:45 [INFO] briefing:    🧠 [7] Running Analyst Agent with gemini-3-pro-preview...
+2026-02-01 17:31:45 [INFO] briefing:    🤖 [Analyst-Research] gemini-3-pro-preview (defaults)
+2026-02-01 17:31:51 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-preview:generateContent "HTTP/1.1 200 OK"
+2026-02-01 17:31:51 [INFO] briefing:    ✅ [Immigration Enforcement Crisis] Analyst complete: archetype=Globalization Backlash, actors=3, confidence=HIGH
+2026-02-01 17:32:00 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-preview:generateContent "HTTP/1.1 200 OK"
+2026-02-01 17:32:00 [INFO] briefing:    ✅ [Venezuela Regime Change] Analyst complete: archetype=Regional Hegemony, actors=4, confidence=HIGH
+2026-02-01 17:32:02 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-preview:generateContent "HTTP/1.1 200 OK"
+2026-02-01 17:32:02 [INFO] briefing:    ✅ [5] Analyst complete: archetype=Alliance Dilemma (Abandonment vs. Entrapment), actors=4, confidence=HIGH
+2026-02-01 17:32:05 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-preview:generateContent "HTTP/1.1 200 OK"
+2026-02-01 17:32:05 [INFO] briefing:    ✅ [Escalating US-Iran Tensions] Analyst complete: archetype=Diversionary War, actors=4, confidence=HIGH
+2026-02-01 17:32:11 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-preview:generateContent "HTTP/1.1 200 OK"
+2026-02-01 17:32:11 [INFO] briefing:       📞 Tool call: search_web({'query': 'Zhang Youxia purge investigation status 2024 2025'})
+2026-02-01 17:32:12 [INFO] briefing:        🔍 Search: Zhang Youxia purge investigation status 2024 2025...
+2026-02-01 17:32:12 [INFO] briefing:       📞 Tool call: search_web({'query': 'China PLA fuel control regulations corruption 2024 2025'})
+2026-02-01 17:32:13 [INFO] briefing:        🔍 Search: China PLA fuel control regulations corruption 2024 2025...
+2026-02-01 17:32:48 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-preview:generateContent "HTTP/1.1 200 OK"
+2026-02-01 17:32:48 [INFO] briefing:    🤖 [Analyst-Finalize] gemini-3-pro-preview (mime=application/json)
+2026-02-01 17:32:48 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-02-01 17:33:26 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-preview:generateContent "HTTP/1.1 200 OK"
+2026-02-01 17:33:26 [INFO] briefing:    ✅ [7] Analyst complete: archetype=Regional Hegemony, actors=2, confidence=HIGH
+2026-02-01 17:33:26 [INFO] briefing:    ✅ Analyzed 6 clusters
+2026-02-01 17:33:26 [INFO] briefing:    💾 Checkpoint: phase_4_analysts
+2026-02-01 17:33:26 [INFO] briefing: 
+============================================================
+2026-02-01 17:33:26 [INFO] briefing: 📝 PHASE 5: Structure Agents (Parallel)
+2026-02-01 17:33:26 [INFO] briefing: ============================================================
+2026-02-01 17:33:26 [INFO] briefing:    📝 [Venezuela] Running Structure Agent with gemini-3-pro-preview...
+2026-02-01 17:33:26 [INFO] briefing:    🤖 [Structure] gemini-3-pro-preview (mime=application/json)
+2026-02-01 17:33:26 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-02-01 17:33:26 [INFO] briefing:    📝 [Iran] Running Structure Agent with gemini-3-pro-preview...
+2026-02-01 17:33:26 [INFO] briefing:    🤖 [Structure] gemini-3-pro-preview (mime=application/json)
+2026-02-01 17:33:26 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-02-01 17:33:26 [INFO] briefing:    📝 [United States] Running Structure Agent with gemini-3-pro-preview...
+2026-02-01 17:33:26 [INFO] briefing:    🤖 [Structure] gemini-3-pro-preview (mime=application/json)
+2026-02-01 17:33:26 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-02-01 17:33:26 [INFO] briefing:    📝 [UK-China/EU-India] Running Structure Agent with gemini-3-pro-preview...
+2026-02-01 17:33:26 [INFO] briefing:    🤖 [Structure] gemini-3-pro-preview (mime=application/json)
+2026-02-01 17:33:26 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-02-01 17:33:26 [INFO] briefing:    📝 [China] Running Structure Agent with gemini-3-pro-preview...
+2026-02-01 17:33:26 [INFO] briefing:    🤖 [Structure] gemini-3-pro-preview (mime=application/json)
+2026-02-01 17:33:26 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-02-01 17:33:45 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-preview:generateContent "HTTP/1.1 200 OK"
+2026-02-01 17:33:45 [INFO] briefing:    ✅ [China] Structure complete: hook=CONTRAST, paragraphs=3, closing=QUESTION
+2026-02-01 17:33:45 [INFO] briefing:    📝 [Pakistan] Running Structure Agent with gemini-3-pro-preview...
+2026-02-01 17:33:45 [INFO] briefing:    🤖 [Structure] gemini-3-pro-preview (mime=application/json)
+2026-02-01 17:33:45 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-02-01 17:33:48 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-preview:generateContent "HTTP/1.1 200 OK"
+2026-02-01 17:33:48 [INFO] briefing:    ✅ [UK-China/EU-India] Structure complete: hook=CONTRAST, paragraphs=4, closing=WARNING
+2026-02-01 17:33:49 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-preview:generateContent "HTTP/1.1 200 OK"
+2026-02-01 17:33:49 [INFO] briefing:    ✅ [Iran] Structure complete: hook=CONTRAST, paragraphs=4, closing=WARNING
+2026-02-01 17:33:49 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-preview:generateContent "HTTP/1.1 200 OK"
+2026-02-01 17:33:49 [INFO] briefing:    ✅ [United States] Structure complete: hook=STATEMENT, paragraphs=4, closing=PREDICTION
+2026-02-01 17:33:55 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-preview:generateContent "HTTP/1.1 200 OK"
+2026-02-01 17:33:55 [INFO] briefing:    ✅ [Venezuela] Structure complete: hook=CONTRAST, paragraphs=7, closing=IMAGE
+2026-02-01 17:34:03 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-preview:generateContent "HTTP/1.1 200 OK"
+2026-02-01 17:34:03 [INFO] briefing:    ✅ [Pakistan] Structure complete: hook=STATEMENT, paragraphs=3, closing=WARNING
+2026-02-01 17:34:03 [INFO] briefing:    ✅ Created 6 blueprints
+2026-02-01 17:34:03 [INFO] briefing:    💾 Checkpoint: phase_5_structure
+2026-02-01 17:34:03 [INFO] briefing: 
+============================================================
+2026-02-01 17:34:03 [INFO] briefing: ✍️ PHASE 6: Content Pipeline (Writer+Critic → Stylist+Critic)
+2026-02-01 17:34:03 [INFO] briefing: ============================================================
+2026-02-01 17:34:03 [INFO] briefing:    📦 [China] Starting content pipeline with 5 events
+2026-02-01 17:34:03 [INFO] briefing:    ═══ [EAST_ASIA] Starting Writer Loop ═══
+2026-02-01 17:34:03 [INFO] briefing:    📝 [EAST_ASIA] Writer attempt 1/5...
+2026-02-01 17:34:03 [INFO] briefing:    ✍️ [EAST_ASIA] Running Writer Agent with gemini-3-pro-preview...
+2026-02-01 17:34:03 [INFO] briefing:    🤖 [Writer] gemini-3-pro-preview (defaults)
+2026-02-01 17:34:03 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-02-01 17:34:03 [INFO] briefing:    📦 [UK-China/EU-India] Starting content pipeline with 14 events
+2026-02-01 17:34:03 [INFO] briefing:    ═══ [THEMATIC] Starting Writer Loop ═══
+2026-02-01 17:34:03 [INFO] briefing:    📝 [THEMATIC] Writer attempt 1/5...
+2026-02-01 17:34:03 [INFO] briefing:    ✍️ [THEMATIC] Running Writer Agent with gemini-3-pro-preview...
+2026-02-01 17:34:03 [INFO] briefing:    🤖 [Writer] gemini-3-pro-preview (defaults)
+2026-02-01 17:34:03 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-02-01 17:34:03 [INFO] briefing:    📦 [Iran] Starting content pipeline with 44 events
+2026-02-01 17:34:03 [INFO] briefing:    ═══ [MIDDLE_EAST] Starting Writer Loop ═══
+2026-02-01 17:34:03 [INFO] briefing:    📝 [MIDDLE_EAST] Writer attempt 1/5...
+2026-02-01 17:34:03 [INFO] briefing:    ✍️ [MIDDLE_EAST] Running Writer Agent with gemini-3-pro-preview...
+2026-02-01 17:34:03 [INFO] briefing:    🤖 [Writer] gemini-3-pro-preview (defaults)
+2026-02-01 17:34:03 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-02-01 17:34:03 [INFO] briefing:    📦 [United States] Starting content pipeline with 26 events
+2026-02-01 17:34:03 [INFO] briefing:    ═══ [AMERICAS] Starting Writer Loop ═══
+2026-02-01 17:34:03 [INFO] briefing:    📝 [AMERICAS] Writer attempt 1/5...
+2026-02-01 17:34:03 [INFO] briefing:    ✍️ [AMERICAS] Running Writer Agent with gemini-3-pro-preview...
+2026-02-01 17:34:03 [INFO] briefing:    🤖 [Writer] gemini-3-pro-preview (defaults)
+2026-02-01 17:34:03 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-02-01 17:34:03 [INFO] briefing:    📦 [Venezuela] Starting content pipeline with 20 events
+2026-02-01 17:34:03 [INFO] briefing:    ═══ [AMERICAS] Starting Writer Loop ═══
+2026-02-01 17:34:03 [INFO] briefing:    📝 [AMERICAS] Writer attempt 1/5...
+2026-02-01 17:34:03 [INFO] briefing:    ✍️ [AMERICAS] Running Writer Agent with gemini-3-pro-preview...
+2026-02-01 17:34:03 [INFO] briefing:    🤖 [Writer] gemini-3-pro-preview (defaults)
+2026-02-01 17:34:03 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-02-01 17:34:03 [INFO] briefing:    📦 [Pakistan] Starting content pipeline with 14 events
+2026-02-01 17:34:03 [INFO] briefing:    ═══ [SOUTH_ASIA] Starting Writer Loop ═══
+2026-02-01 17:34:03 [INFO] briefing:    📝 [SOUTH_ASIA] Writer attempt 1/5...
+2026-02-01 17:34:03 [INFO] briefing:    ✍️ [SOUTH_ASIA] Running Writer Agent with gemini-3-pro-preview...
+2026-02-01 17:34:03 [INFO] briefing:    🤖 [Writer] gemini-3-pro-preview (defaults)
+2026-02-01 17:34:03 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-02-01 17:34:24 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-preview:generateContent "HTTP/1.1 200 OK"
+2026-02-01 17:34:24 [INFO] briefing:    🔄 [EAST_ASIA] Applying Chain of Density (3 iterations max)...
+2026-02-01 17:34:24 [INFO] briefing:    CoD pass 1: All sacred elements already included, stopping
+2026-02-01 17:34:24 [INFO] briefing:    ✅ CoD complete: 259 → 259 words, 53 → 53 entities
+2026-02-01 17:34:24 [INFO] briefing:    ✅ [EAST_ASIA] CoD complete: 259 → 259 words
+2026-02-01 17:34:24 [INFO] briefing:    ✅ [EAST_ASIA] Writer complete: 259 words
+2026-02-01 17:34:24 [INFO] briefing:    🔍 [EAST_ASIA] Running Content Critic...
+2026-02-01 17:34:24 [INFO] briefing:    ✅ PASSED [EAST_ASIA] Content Score: 90/100
+2026-02-01 17:34:24 [INFO] briefing:    ✅ [EAST_ASIA] Writer approved on attempt 1: 90/100
+2026-02-01 17:34:24 [INFO] briefing:    ═══ [EAST_ASIA] Writer Loop Complete: 90/100 ═══
+2026-02-01 17:34:24 [INFO] briefing:    ═══ [EAST_ASIA] Starting Stylist Loop ═══
+2026-02-01 17:34:24 [INFO] briefing:    ✨ [China] Stylist attempt 1/5...
+2026-02-01 17:34:24 [INFO] briefing:    ✨ [China] Running Stylist Agent with gemini-3-pro-preview...
+2026-02-01 17:34:24 [INFO] briefing:    🤖 [Stylist] gemini-3-pro-preview (defaults)
+2026-02-01 17:34:24 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-02-01 17:34:26 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-preview:generateContent "HTTP/1.1 200 OK"
+2026-02-01 17:34:26 [INFO] briefing:    🔄 [SOUTH_ASIA] Applying Chain of Density (3 iterations max)...
+2026-02-01 17:34:26 [INFO] briefing:    🤖 [Writer-CoD-Pass1] gemini-3-pro-preview (defaults)
+2026-02-01 17:34:26 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-02-01 17:34:27 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-preview:generateContent "HTTP/1.1 200 OK"
+2026-02-01 17:34:27 [INFO] briefing:    🔄 [THEMATIC] Applying Chain of Density (3 iterations max)...
+2026-02-01 17:34:27 [INFO] briefing:    CoD pass 1: All sacred elements already included, stopping
+2026-02-01 17:34:27 [INFO] briefing:    ✅ CoD complete: 385 → 385 words, 85 → 85 entities
+2026-02-01 17:34:27 [INFO] briefing:    ✅ [THEMATIC] CoD complete: 385 → 385 words
+2026-02-01 17:34:27 [INFO] briefing:    ✅ [THEMATIC] Writer complete: 385 words
+2026-02-01 17:34:27 [INFO] briefing:    🔍 [THEMATIC] Running Content Critic...
+2026-02-01 17:34:27 [INFO] briefing:    ✅ PASSED [THEMATIC] Content Score: 100/100
+2026-02-01 17:34:27 [INFO] briefing:    ✅ [THEMATIC] Writer approved on attempt 1: 100/100
+2026-02-01 17:34:27 [INFO] briefing:    ═══ [THEMATIC] Writer Loop Complete: 100/100 ═══
+2026-02-01 17:34:27 [INFO] briefing:    ═══ [THEMATIC] Starting Stylist Loop ═══
+2026-02-01 17:34:27 [INFO] briefing:    ✨ [UK-China] Stylist attempt 1/5...
+2026-02-01 17:34:27 [INFO] briefing:    ✨ [UK-China] Running Stylist Agent with gemini-3-pro-preview...
+2026-02-01 17:34:27 [INFO] briefing:    🤖 [Stylist] gemini-3-pro-preview (defaults)
+2026-02-01 17:34:27 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-02-01 17:34:32 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-preview:generateContent "HTTP/1.1 200 OK"
+2026-02-01 17:34:32 [INFO] briefing:    🔄 [AMERICAS] Applying Chain of Density (3 iterations max)...
+2026-02-01 17:34:32 [INFO] briefing:    CoD pass 1: All sacred elements already included, stopping
+2026-02-01 17:34:32 [INFO] briefing:    ✅ CoD complete: 397 → 397 words, 70 → 70 entities
+2026-02-01 17:34:32 [INFO] briefing:    ✅ [AMERICAS] CoD complete: 397 → 397 words
+2026-02-01 17:34:32 [INFO] briefing:    ✅ [AMERICAS] Writer complete: 397 words
+2026-02-01 17:34:32 [INFO] briefing:    🔍 [AMERICAS] Running Content Critic...
+2026-02-01 17:34:32 [INFO] briefing:    ✅ PASSED [AMERICAS] Content Score: 100/100
+2026-02-01 17:34:32 [INFO] briefing:    ✅ [AMERICAS] Writer approved on attempt 1: 100/100
+2026-02-01 17:34:32 [INFO] briefing:    ═══ [AMERICAS] Writer Loop Complete: 100/100 ═══
+2026-02-01 17:34:32 [INFO] briefing:    ═══ [AMERICAS] Starting Stylist Loop ═══
+2026-02-01 17:34:32 [INFO] briefing:    ✨ [United States] Stylist attempt 1/5...
+2026-02-01 17:34:32 [INFO] briefing:    ✨ [United States] Running Stylist Agent with gemini-3-pro-preview...
+2026-02-01 17:34:32 [INFO] briefing:    🤖 [Stylist] gemini-3-pro-preview (defaults)
+2026-02-01 17:34:32 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-02-01 17:34:37 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-preview:generateContent "HTTP/1.1 200 OK"
+2026-02-01 17:34:38 [INFO] briefing:    🔄 [MIDDLE_EAST] Applying Chain of Density (3 iterations max)...
+2026-02-01 17:34:38 [INFO] briefing:    CoD pass 1: All sacred elements already included, stopping
+2026-02-01 17:34:38 [INFO] briefing:    ✅ CoD complete: 386 → 386 words, 94 → 94 entities
+2026-02-01 17:34:38 [INFO] briefing:    ✅ [MIDDLE_EAST] CoD complete: 386 → 386 words
+2026-02-01 17:34:38 [INFO] briefing:    ✅ [MIDDLE_EAST] Writer complete: 386 words
+2026-02-01 17:34:38 [INFO] briefing:    🔍 [MIDDLE_EAST] Running Content Critic...
+2026-02-01 17:34:38 [INFO] briefing:    ✅ PASSED [MIDDLE_EAST] Content Score: 93/100
+2026-02-01 17:34:38 [INFO] briefing:    ✅ [MIDDLE_EAST] Writer approved on attempt 1: 93/100
+2026-02-01 17:34:38 [INFO] briefing:    ═══ [MIDDLE_EAST] Writer Loop Complete: 93/100 ═══
+2026-02-01 17:34:38 [INFO] briefing:    ═══ [MIDDLE_EAST] Starting Stylist Loop ═══
+2026-02-01 17:34:38 [INFO] briefing:    ✨ [Iran] Stylist attempt 1/5...
+2026-02-01 17:34:38 [INFO] briefing:    ✨ [Iran] Running Stylist Agent with gemini-3-pro-preview...
+2026-02-01 17:34:38 [INFO] briefing:    🤖 [Stylist] gemini-3-pro-preview (defaults)
+2026-02-01 17:34:38 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-02-01 17:34:45 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-preview:generateContent "HTTP/1.1 200 OK"
+2026-02-01 17:34:45 [INFO] briefing:    🔄 [AMERICAS] Applying Chain of Density (3 iterations max)...
+2026-02-01 17:34:45 [INFO] briefing:    CoD pass 1: All sacred elements already included, stopping
+2026-02-01 17:34:45 [INFO] briefing:    ✅ CoD complete: 495 → 495 words, 102 → 102 entities
+2026-02-01 17:34:45 [INFO] briefing:    ✅ [AMERICAS] CoD complete: 495 → 495 words
+2026-02-01 17:34:45 [INFO] briefing:    ✅ [AMERICAS] Writer complete: 495 words
+2026-02-01 17:34:45 [INFO] briefing:    🔍 [AMERICAS] Running Content Critic...
+2026-02-01 17:34:45 [INFO] briefing:    ✅ PASSED [AMERICAS] Content Score: 75/100
+2026-02-01 17:34:45 [INFO] briefing:    ✅ [AMERICAS] Writer approved on attempt 1: 75/100
+2026-02-01 17:34:45 [INFO] briefing:    ═══ [AMERICAS] Writer Loop Complete: 75/100 ═══
+2026-02-01 17:34:45 [INFO] briefing:    ═══ [AMERICAS] Starting Stylist Loop ═══
+2026-02-01 17:34:45 [INFO] briefing:    ✨ [Venezuela] Stylist attempt 1/5...
+2026-02-01 17:34:45 [INFO] briefing:    ✨ [Venezuela] Running Stylist Agent with gemini-3-pro-preview...
+2026-02-01 17:34:45 [INFO] briefing:    🤖 [Stylist] gemini-3-pro-preview (defaults)
+2026-02-01 17:34:45 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-02-01 17:34:55 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-preview:generateContent "HTTP/1.1 200 OK"
+2026-02-01 17:34:55 [INFO] briefing:    💡 [China] Editorial thinking:
+2026-02-01 17:34:55 [INFO] briefing:       Irony: Beijing is destroying its capacity to fight a war in order to ensure the army re...
+2026-02-01 17:34:55 [INFO] briefing:       Quotable: "When competence looks like ambition, no general dares to shine."
+2026-02-01 17:34:55 [INFO] briefing:       Image: "Fearing the auditor's pen more than the enemy's sword." / "Cannibalizing command structures."
+2026-02-01 17:34:55 [INFO] briefing:    ✓ [China] Transformations: Word count maintained (-2%), Contains quotable elements
+2026-02-01 17:34:55 [WARNING] briefing:    ⚠️ [China] Issues: Repetitive starts: 'The' used 6 times, Clichés remain: ['rather']
+2026-02-01 17:34:55 [INFO] briefing:    ✅ [China] Stylist complete: 255 words
+2026-02-01 17:34:55 [INFO] briefing:    🎨 [China] Running Style Critic...
+2026-02-01 17:34:55 [INFO] briefing:    ✅ PASSED [China] Style Score: 97/100 (penalty: -0)
+2026-02-01 17:34:55 [INFO] briefing:    ✅ [China] Stylist approved on attempt 1: 97/100
+2026-02-01 17:34:55 [INFO] briefing:    ═══ [EAST_ASIA] Stylist Loop Complete: 97/100 ═══
+2026-02-01 17:34:55 [INFO] briefing:    ✅ [China] Pipeline complete: content=90/100, style=97/100
+2026-02-01 17:34:57 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-preview:generateContent "HTTP/1.1 200 OK"
+2026-02-01 17:34:57 [INFO] briefing:    💡 [UK-China] Editorial thinking:
+2026-02-01 17:34:57 [INFO] briefing:       Irony: The UK left the European Union to reclaim its "sovereignty," only to find itself...
+2026-02-01 17:34:57 [INFO] briefing:       Quotable: "London is effectively betting on an adversary’s prosperity to subsidize its own stability."
+2026-02-01 17:34:57 [INFO] briefing:       Image: "The City of London acting as a "back door" in Washington's containment wall, where capital flows through the gaps left by sanctions."
+2026-02-01 17:34:57 [INFO] briefing:    ✓ [UK-China] Transformations: Word count maintained (-4%), Contains quotable elements
+2026-02-01 17:34:57 [WARNING] briefing:    ⚠️ [UK-China] Issues: Repetitive starts: 'The' used 3 times, Clichés remain: ['significantly', 'leverage']
+2026-02-01 17:34:57 [INFO] briefing:    ✅ [UK-China] Stylist complete: 371 words
+2026-02-01 17:34:57 [INFO] briefing:    🎨 [UK-China] Running Style Critic...
+2026-02-01 17:34:57 [INFO] briefing:    ✅ PASSED [UK-China] Style Score: 87/100 (penalty: -5)
+2026-02-01 17:34:57 [WARNING] briefing:    ⚠️ [UK-China] Content regression detected: -5 points
+2026-02-01 17:34:57 [INFO] briefing:    ✅ [UK-China] Stylist approved on attempt 1: 87/100
+2026-02-01 17:34:57 [INFO] briefing:    ═══ [THEMATIC] Stylist Loop Complete: 87/100 ═══
+2026-02-01 17:34:57 [INFO] briefing:    ✅ [UK-China/EU-India] Pipeline complete: content=100/100, style=87/100
+2026-02-01 17:34:57 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-preview:generateContent "HTTP/1.1 200 OK"
+2026-02-01 17:34:57 [INFO] briefing:    💡 [United States] Editorial thinking:
+2026-02-01 17:34:57 [INFO] briefing:       Irony: Washington sent a "Border Czar" to Minnesota to project strength, yet simultaneo...
+2026-02-01 17:34:57 [INFO] briefing:       Quotable: "Martyrs are harder to manage than migrants."
+2026-02-01 17:34:57 [INFO] briefing:       Image: "The "Border Czar" arriving to command a siege that his superiors have already privately called off."
+2026-02-01 17:34:57 [INFO] briefing:    ✓ [United States] Transformations: Word count maintained (+1%), Contains quotable elements
+2026-02-01 17:34:57 [WARNING] briefing:    ⚠️ [United States] Issues: Repetitive starts: 'The' used 6 times
+2026-02-01 17:34:57 [INFO] briefing:    ✅ [United States] Stylist complete: 402 words
+2026-02-01 17:34:57 [INFO] briefing:    🎨 [United States] Running Style Critic...
+2026-02-01 17:34:57 [INFO] briefing:    ✅ PASSED [United States] Style Score: 88/100 (penalty: -0)
+2026-02-01 17:34:57 [INFO] briefing:    ✅ [United States] Stylist approved on attempt 1: 88/100
+2026-02-01 17:34:57 [INFO] briefing:    ═══ [AMERICAS] Stylist Loop Complete: 88/100 ═══
+2026-02-01 17:34:57 [INFO] briefing:    ✅ [United States] Pipeline complete: content=100/100, style=88/100
+2026-02-01 17:35:02 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-preview:generateContent "HTTP/1.1 200 OK"
+2026-02-01 17:35:02 [INFO] briefing:    CoD converged at iteration 1 (no entity gain)
+2026-02-01 17:35:02 [INFO] briefing:    ✅ CoD complete: 204 → 204 words, 57 → 57 entities
+2026-02-01 17:35:02 [INFO] briefing:    ✅ [SOUTH_ASIA] CoD complete: 204 → 204 words
+2026-02-01 17:35:02 [INFO] briefing:    ✅ [SOUTH_ASIA] Writer complete: 204 words
+2026-02-01 17:35:02 [INFO] briefing:    🔍 [SOUTH_ASIA] Running Content Critic...
+2026-02-01 17:35:02 [INFO] briefing:    ✅ PASSED [SOUTH_ASIA] Content Score: 98/100
+2026-02-01 17:35:02 [INFO] briefing:    ✅ [SOUTH_ASIA] Writer approved on attempt 1: 98/100
+2026-02-01 17:35:02 [INFO] briefing:    ═══ [SOUTH_ASIA] Writer Loop Complete: 98/100 ═══
+2026-02-01 17:35:02 [INFO] briefing:    ═══ [SOUTH_ASIA] Starting Stylist Loop ═══
+2026-02-01 17:35:02 [INFO] briefing:    ✨ [Pakistan] Stylist attempt 1/5...
+2026-02-01 17:35:02 [INFO] briefing:    ✨ [Pakistan] Running Stylist Agent with gemini-3-pro-preview...
+2026-02-01 17:35:02 [INFO] briefing:    🤖 [Stylist] gemini-3-pro-preview (defaults)
+2026-02-01 17:35:02 [INFO] google_genai.models: AFC is enabled with max remote calls: 10.
+2026-02-01 17:35:06 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-preview:generateContent "HTTP/1.1 200 OK"
+2026-02-01 17:35:06 [INFO] briefing:    💡 [Iran] Editorial thinking:
+2026-02-01 17:35:06 [INFO] briefing:       Irony: The Western pressure campaign is inadvertently saving the hardliners. By deployi...
+2026-02-01 17:35:06 [INFO] briefing:       Quotable: "Dictatorships in distress follow a predictable script: export the chaos."
+2026-02-01 17:35:06 [INFO] briefing:       Image: "The Islamic Republic is dying; a Praetorian military dictatorship is being born." (Visualizing the structural metamorphosis)."
+2026-02-01 17:35:06 [INFO] briefing:    ✓ [Iran] Transformations: Removed 2 clichés, Word count maintained (+4%), Contains quotable elements
+2026-02-01 17:35:06 [WARNING] briefing:    ⚠️ [Iran] Issues: Repetitive starts: 'The' used 3 times, Clichés remain: ['rather']
+2026-02-01 17:35:06 [INFO] briefing:    ✅ [Iran] Stylist complete: 402 words
+2026-02-01 17:35:06 [INFO] briefing:    🎨 [Iran] Running Style Critic...
+2026-02-01 17:35:06 [INFO] briefing:    ✅ PASSED [Iran] Style Score: 84/100 (penalty: -3)
+2026-02-01 17:35:06 [WARNING] briefing:    ⚠️ [Iran] Content regression detected: -3 points
+2026-02-01 17:35:06 [INFO] briefing:    ✅ [Iran] Stylist approved on attempt 1: 84/100
+2026-02-01 17:35:06 [INFO] briefing:    ═══ [MIDDLE_EAST] Stylist Loop Complete: 84/100 ═══
+2026-02-01 17:35:06 [INFO] briefing:    ✅ [Iran] Pipeline complete: content=93/100, style=84/100
+2026-02-01 17:35:23 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-preview:generateContent "HTTP/1.1 200 OK"
+2026-02-01 17:35:23 [INFO] briefing:    💡 [Venezuela] Editorial thinking:
+2026-02-01 17:35:23 [INFO] briefing:       Irony: The "Bolivarian Revolution" didn't end with a heroic last stand against imperial...
+2026-02-01 17:35:23 [INFO] briefing:       Quotable: "The FANB runs on graft, not ideology." (Preserved from original because it is perfect). Alternatively: "Greed is a reliable adhesive."
+2026-02-01 17:35:23 [INFO] briefing:       Image: "The "faucet" of oil revenue being controlled by US sanctions waivers, or the specific image of tankers turning north (Gulf Coast) instead of east (Havana)."
+2026-02-01 17:35:23 [INFO] briefing:    ✓ [Venezuela] Transformations: Word count maintained (+1%), Contains quotable elements
+2026-02-01 17:35:23 [WARNING] briefing:    ⚠️ [Venezuela] Issues: Repetitive starts: 'The' used 7 times, Clichés remain: ['very']
+2026-02-01 17:35:23 [INFO] briefing:    ✅ [Venezuela] Stylist complete: 499 words
+2026-02-01 17:35:23 [INFO] briefing:    🎨 [Venezuela] Running Style Critic...
+2026-02-01 17:35:23 [INFO] briefing:    ✅ PASSED [Venezuela] Style Score: 85/100 (penalty: -0)
+2026-02-01 17:35:23 [INFO] briefing:    ✅ [Venezuela] Stylist approved on attempt 1: 85/100
+2026-02-01 17:35:23 [INFO] briefing:    ═══ [AMERICAS] Stylist Loop Complete: 85/100 ═══
+2026-02-01 17:35:23 [INFO] briefing:    ✅ [Venezuela] Pipeline complete: content=75/100, style=85/100
+2026-02-01 17:35:27 [INFO] httpx: HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-preview:generateContent "HTTP/1.1 200 OK"
+2026-02-01 17:35:27 [INFO] briefing:    💡 [Pakistan] Editorial thinking:
+2026-02-01 17:35:27 [INFO] briefing:       Irony: Rawalpindi is bombing its own territory to protect an economic corridor (CPEC) d...
+2026-02-01 17:35:27 [INFO] briefing:       Quotable: "Geography is the ultimate constraint: Rawalpindi lacks the troop density to garrison the mountainous northwest while holding the vast Baloch desert."
+2026-02-01 17:35:27 [INFO] briefing:       Image: "The "Troop density" problem visualized as a rubber band stretched until it snaps—trying to cover the vertical peaks of the north and the horizontal expanse of the south simultaneously."
+2026-02-01 17:35:27 [INFO] briefing:    ✓ [Pakistan] Transformations: Contains quotable elements
+2026-02-01 17:35:27 [WARNING] briefing:    ⚠️ [Pakistan] Issues: Repetitive starts: 'The' used 3 times, Clichés remain: ['very'], Word count increased +26%
+2026-02-01 17:35:27 [INFO] briefing:    ✅ [Pakistan] Stylist complete: 257 words
+2026-02-01 17:35:27 [INFO] briefing:    🎨 [Pakistan] Running Style Critic...
+2026-02-01 17:35:27 [INFO] briefing:    ✅ PASSED [Pakistan] Style Score: 95/100 (penalty: -0)
+2026-02-01 17:35:27 [INFO] briefing:    ✅ [Pakistan] Stylist approved on attempt 1: 95/100
+2026-02-01 17:35:27 [INFO] briefing:    ═══ [SOUTH_ASIA] Stylist Loop Complete: 95/100 ═══
+2026-02-01 17:35:27 [INFO] briefing:    ✅ [Pakistan] Pipeline complete: content=98/100, style=95/100
+2026-02-01 17:35:27 [INFO] briefing:    ✅ Writer drafts: 6
+2026-02-01 17:35:27 [INFO] briefing:    ✅ Styled drafts: 6
+2026-02-01 17:35:27 [INFO] briefing:    💾 Checkpoint: phase_6_content_pipeline
+2026-02-01 17:35:27 [INFO] briefing:    📚 Saved 100 search results to /home/james/the-briefing/outputs/briefing_20260201_172547/agent_outputs/00_search_results.json
+2026-02-01 17:35:27 [INFO] briefing:    📚 Verification corpus: 288 cluster events, 100 web searches
+2026-02-01 17:35:27 [INFO] briefing:    ✅ Passed: 6/6 sections
+2026-02-01 17:35:27 [INFO] briefing:    📊 Average score: 90.7/100
+2026-02-01 17:35:27 [INFO] briefing: 
+============================================================
+2026-02-01 17:35:27 [INFO] briefing: 📄 PHASE 7: Document Assembly
+2026-02-01 17:35:27 [INFO] briefing: ============================================================
+2026-02-01 17:35:27 [WARNING] briefing:    ⚠️ No content found for spoke: cluster_20 (cluster_20)
+2026-02-01 17:35:27 [INFO] briefing:    ✅ Assembled document: 2663 words
+2026-02-01 17:35:27 [INFO] briefing:    💾 Checkpoint: phase_7_assembly
+2026-02-01 17:35:27 [INFO] briefing: 
+============================================================
+2026-02-01 17:35:27 [INFO] briefing: 🎨 PHASE 8: Image Generation (SKIPPED)
+2026-02-01 17:35:27 [INFO] briefing: ============================================================
+2026-02-01 17:35:27 [INFO] briefing:    ⏭️ Skipping image generation (use --generate-images to enable)
+2026-02-01 17:35:27 [INFO] briefing:    💾 Checkpoint: phase_8_images
+2026-02-01 17:35:27 [INFO] briefing: 
+============================================================
+2026-02-01 17:35:27 [INFO] briefing: 💾 PHASE 9: Storage
+2026-02-01 17:35:27 [INFO] briefing: ============================================================
+2026-02-01 17:35:27 [INFO] briefing:    ✅ Saved to: /home/james/the-briefing/outputs/briefing_20260201_172547/briefing.md
+2026-02-01 17:35:27 [INFO] briefing:    ✅ Metadata saved to: /home/james/the-briefing/outputs/briefing_20260201_172547/metadata.json
+2026-02-01 17:35:27 [INFO] briefing: 
+============================================================
+2026-02-01 17:35:27 [INFO] briefing: ✅ PIPELINE COMPLETE
+2026-02-01 17:35:27 [INFO] briefing: ============================================================
+2026-02-01 17:35:27 [INFO] briefing:    ⏱️ Total time: 580.4s
+2026-02-01 17:35:27 [INFO] briefing:    📊 Regions: 6 analyzed, 6 published
+2026-02-01 17:35:27 [INFO] briefing:    📝 Document: 2663 words
+2026-02-01 17:35:27 [INFO] briefing:    📈 analysts: 203.8s, 100% success
+2026-02-01 17:35:27 [INFO] briefing:    📈 structure: 36.9s, 100% success

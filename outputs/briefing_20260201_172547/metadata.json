@@ -1,0 +1,45 @@
+{
+  "run_id": "briefing_20260201_172547",
+  "version": "3.1",
+  "event_count": 491,
+  "source_count": 1,
+  "regions_analyzed": [
+    "cluster_11",
+    "cluster_14",
+    "cluster_17",
+    "cluster_5",
+    "cluster_22",
+    "cluster_7"
+  ],
+  "regions_published": [
+    "Iran",
+    "United States",
+    "UK-China/EU-India",
+    "China",
+    "Pakistan"
+  ],
+  "regions_killed": [
+    "Rising Authoritarianism",
+    "Disasters",
+    "Ukraine Drone War",
+    "Ukraine Energy/Peace",
+    "Doomsday Clock",
+    "US/UN Relations",
+    "South Sudan",
+    "Niger Attacks",
+    "Japan/Pandas",
+    "Russia Econ"
+  ],
+  "narrative_arc": "Washington\u2019s shift to kinetic unilateralism achieves tactical shocks in Caracas and Tehran but triggers strategic fractures as allies hedge and domestic stability crumbles.",
+  "critic_scores": {
+    "cluster_7": 93,
+    "cluster_5": 93,
+    "cluster_22": 88,
+    "cluster_14": 94,
+    "cluster_17": 80,
+    "cluster_11": 96
+  },
+  "errors": [],
+  "warnings": [],
+  "elapsed_seconds": 580.4373931884766
+}
