@@ -165,4 +165,6 @@ This briefing analyzed **487 events** from realpolitik.world using a 10-phase mu
 
 **Probability language:** Sherman Kent estimative probability scale (ALMOST CERTAIN 93-99%, HIGHLY LIKELY 80-92%, LIKELY 60-79%, etc.).
 
+**Full pipeline logs:** [View complete execution logs on GitHub](https://github.com/iamjameskeane/the-briefing/blob/main/outputs/briefing_20260125_110850/pipeline.log)
+
 *Generated: January 25, 2026*
