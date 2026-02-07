@@ -263,6 +263,38 @@ Be specific: include actor names, event keywords, and dates.""",
     )
 
 
+# =============================================================================
+# MEMORY TOOLS
+# =============================================================================
+
+def get_memory_tools() -> list[types.FunctionDeclaration]:
+    """
+    Get the set of memory-retrieval tools.
+    
+    Allows agents to recall specific details from past editions.
+    """
+    return [
+        types.FunctionDeclaration(
+            name="read_past_briefing",
+            description="""Read the full text (Headline + Rationale/Summary) of a past briefing story or the high-level summary.
+Use this when you see a relevant connection in the 'PREVIOUS COVERAGE INDEX' and need more detail to build continuity.""",
+            parameters=types.Schema(
+                type=types.Type.OBJECT,
+                properties={
+                    "run_id": types.Schema(
+                        type=types.Type.STRING,
+                        description="The Run ID of the past briefing (e.g., 'briefing_20260125_110850')."
+                    ),
+                    "section_id": types.Schema(
+                        type=types.Type.STRING,
+                        description="Optional: The cluster ID/source_cluster_id of the story to read. If omitted, returns the Hub/Arc summary."
+                    ),
+                },
+                required=["run_id"],
+            ),
+        ),
+    ]
+
 def execute_tavily_search(query: str) -> str:
     """
     Execute a Tavily search and return formatted results.
@@ -362,6 +394,14 @@ def execute_tool_call(name: str, args: dict) -> str:
     
     elif name in ["get_event_graph", "get_entity_relationships", "get_causal_chain", "get_impact_chain", "get_entity_events"]:
         return _execute_graph_tool(name, args)
+    
+    elif name == "read_past_briefing":
+        run_id = args.get("run_id")
+        section_id = args.get("section_id")
+        from memory import get_briefing_content
+        result = get_briefing_content(run_id, section_id)
+        logger.info(f"       📚 Memory lookup: {run_id} ({section_id or 'Summary'})")
+        return result
     
     else:
         return json.dumps({"error": f"Unknown tool: {name}"})

@@ -1,0 +1,30 @@
+[
+  {
+    "run_id": "briefing_20260201_172547",
+    "date": "2026-02-01",
+    "hub": "Coercive Unilateralism vs. Strategic Hedging",
+    "arc": "Washington\u2019s shift to kinetic unilateralism achieves tactical shocks in Caracas and Tehran but triggers strategic fractures as allies hedge and domestic stability crumbles.",
+    "headlines": {
+      "cluster_17": "The Caracas Precedent: The Return of Direct Intervention",
+      "cluster_22": "Tehran on the Brink: Coercion Hits Maximum Pressure",
+      "cluster_14": "The Hollow Superpower: Domestic Chaos as a Strategic Constraint",
+      "cluster_5": "The Atlantic Fracture: Allies Seek Economic Lifeboats",
+      "cluster_7": "The Paper Dragon: Xi's Purge Exposes PLA Rot",
+      "cluster_11": "Balochistan Burning: The Overlooked Front"
+    }
+  },
+  {
+    "run_id": "briefing_20260125_110850",
+    "date": "2026-01-25",
+    "hub": "Sovereignty Commodification",
+    "arc": "The post-1945 order is being liquidated, replacing alliance commitments with transactional coercion that triggers kinetic shockwaves from Caracas to Tehran.",
+    "headlines": {
+      "cluster_18": "The Art of the Geopolitical Deal: Alliances Monetized",
+      "cluster_1": "'Homeland First': The Pentagon Codifies the Withdrawal",
+      "cluster_16": "Operation Absolute Resolve: The Return of Gunboat Diplomacy",
+      "cluster_15": "Tehran Burning: The End of the Reformist Illusion",
+      "cluster_19": "The Kurdish Project Collapses into Damascus's Arms",
+      "cluster_0": "The Paper Tiger: Growth Targets Mask Demographic Decay"
+    }
+  }
+]

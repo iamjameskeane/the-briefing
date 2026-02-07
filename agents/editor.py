@@ -29,7 +29,7 @@ from google.genai import types
 
 from config import get_config
 from utils import logger, with_retry, log_model_config
-from tools import get_tavily_search_tool, execute_tool_call
+from tools import get_tavily_search_tool, get_memory_tools, execute_tool_call
 
 if TYPE_CHECKING:
     pass
@@ -150,6 +150,7 @@ class EditorInput:
     
     # Previous edition context (for editorial continuity)
     previous_edition: dict | None = None  # {skeleton, date, run_id} from find_previous_edition()
+    previous_index_prompt: str = ""  # High-level index of past runs for context retrieval
     
     def __post_init__(self):
         if self.cross_regional_connections is None:
@@ -411,6 +412,10 @@ def _build_editor_prompt(input_data: EditorInput) -> str:
     previous_context = ""
     if input_data.previous_edition:
         previous_context = _format_previous_edition(input_data.previous_edition) + "\n---\n\n"
+    
+    # Add high-level index for tool-based retrieval
+    if input_data.previous_index_prompt:
+        previous_context += f"{input_data.previous_index_prompt}\n---\n\n"
     
     prompt = f"""{previous_context}## THEMATIC CLUSTERS TO REVIEW
 
@@ -848,33 +853,32 @@ Use search_web tool to verify significance when unsure about importance.
 When previous edition context is provided:
 
 1. YOU HAVE MEMORY. Use it.
-   - Reference previous coverage naturally
-   - "As we noted last week...", "Our forecast about X..."
-   - Don't pretend each week is a fresh start
+   - Reference previous coverage naturally: "As we noted last week...", "Our forecast about X..."
+   - Don't pretend each week is a fresh start.
 
-2. AVOID REDUNDANCY
-   - Don't re-explain what readers already know
-   - Lead with what's NEW, not backstory
-   - If same story: 80% new analysis, 20% context
+2. PREVIOUS COVERAGE INDEX:
+   - You are provided with a high-level "menu" of past editions.
+   - For any entry in the index, you can use the `read_past_briefing(run_id, cluster_id)` tool to retrieve:
+     - The **Hub Mechanism** and **Narrative Arc** (pass only `run_id`).
+     - The **Editorial Rationale** for a specific story (pass `run_id` and the `cluster_id` from the index).
+   - Use this tool whenever you see a current cluster that seems to connect to a past story, or when you are deciding if a current story is truly "NEW" vs. just an update to a past one.
 
-3. TRACK TRAJECTORIES
+3. AVOID REDUNDANCY:
+   - Don't re-explain what readers already know. Lead with what's NEW.
+   - If a current story is a continuation of a past one, use 80% new analysis and 20% context.
+
+4. TRACK TRAJECTORIES:
    - "The situation we flagged last week has now..."
-   - "Contrary to our assessment, X happened instead"
-   - Note if events validated or contradicted your previous analysis
+   - "Contrary to our assessment, X happened instead."
+   - Note if events validated or contradicted your previous analysis.
 
-4. RESPECT HOLDS
-   - Stories marked HOLD_FOR_NEXT_WEEK last week deserve fresh consideration
-   - They weren't killed—they were deferred for timing reasons
-   - Check if the inflection point arrived this week
+5. RESPECT HOLDS:
+   - Stories marked HOLD_FOR_NEXT_WEEK last week deserve fresh consideration.
+   - Check if the inflection point arrived this week.
 
-5. KILL UNCHANGED STORIES
-   - If nothing new happened since last week, readers don't need a reminder
-   - Exception: Critical strategic context that bears repeating (rare)
-
-6. PREDICTION ACCOUNTABILITY
-   - If you made a Sherman Kent forecast last week, acknowledge its resolution
-   - Correct predictions build reader trust
-   - Incorrect predictions, honestly noted, build more trust
+6. PREDICTION ACCOUNTABILITY:
+   - If you made a Sherman Kent forecast previously, check the index and tool for its resolution.
+   - Correct predictions build reader trust; honest correction of past errors builds even more.
 </editorial_memory>
 """
 
@@ -913,7 +917,7 @@ async def run_editor_agent(
     # Build generation config - only set params if explicitly configured
     editor_config = types.GenerateContentConfig(
         system_instruction=EDITOR_SYSTEM_PROMPT,
-        tools=[get_tavily_search_tool()],
+        tools=[get_tavily_search_tool()] + get_memory_tools(),
     )
     
     # Only set temperature if explicitly configured

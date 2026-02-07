@@ -87,6 +87,7 @@ from state import (
 from storage import save_briefing, upload_image_to_r2
 from tools import reset_search_results, get_all_search_results, save_search_results_log
 from utils import logger, reset_cache, setup_file_logging, close_file_logging
+from memory import BriefingIndex, format_index_for_prompt
 from orchestrator import (
     PipelineOrchestrator,
     create_orchestrator,
@@ -453,6 +454,11 @@ async def run_editor(
         calendar_events=calendar_events or [],
         previous_edition=previous_edition,
     )
+    
+    # Load and format high-level briefing index for prompt
+    index = BriefingIndex()
+    index_data = index.load_index()
+    editor_input.previous_index_prompt = format_index_for_prompt(index_data)
     
     last_error = None
     
@@ -1625,6 +1631,11 @@ async def _run_pipeline_inner(
         # Production: save to R2 and notify
         try:
             save_briefing(document, metadata={})
+            
+            # Update narrative memory index
+            if state.document_skeleton:
+                index = BriefingIndex()
+                index.update_index(run_id, datetime.now().strftime("%Y-%m-%d"), state.document_skeleton)
             logger.info("   ✅ Published to production")
         except Exception as e:
             logger.error(f"   ❌ Publication failed: {e}")
