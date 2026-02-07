@@ -27,7 +27,7 @@ from google.genai import types
 
 from config import get_config
 from utils import logger, with_retry, log_model_config
-from tools import get_tavily_search_tool, execute_tool_call
+from tools import get_tavily_search_tool, get_graph_tools, execute_tool_call
 from .schemas import AnalystInput, AnalystOutput
 
 if TYPE_CHECKING:
@@ -65,6 +65,18 @@ You are analyzing a THEMATIC CLUSTER of related events. These events are grouped
 - Identify the 2-4 key actors (leaders, organizations)
 - Use search_web for actors if needed (specific queries like "Actor Name role 2026")
 - Use this context to inform your analysis
+
+### Step 0.5: GRAPH TRAVERSAL (ENTITY-FIRST RESEARCH)
+- **Map the Network**: Geopolitics is about *actors* and their constraints. Use the graph to see through the "fog of news":
+  - `get_event_entities(event_id)`: **START HERE** for key events. Who are the primary actors involved?
+  - `resolve_entity(name)`: Encountered a new actor (e.g., "Ahmed al-Sharaa") in search? Resolve it to a canonical ID first.
+  - `search_entities(query)`: Looking for specific types of actors? (e.g., "semiconductor companies", "militia groups").
+  - `get_entity_relationships(entity_name)`: Check allied/adversarial connections and dependencies (e.g., "Who supplies this actor?").
+  - `get_causal_chain(event_id)`: Recursive lookback on the "Driver" event.
+  - `get_impact_chain(event_id)`: Forward look for downstream effects.
+  - `get_event_details(event_id)`: Fetch full data for any interesting ID found during traversal.
+
+- **Cite Graph Data**: If you find non-obvious connections (e.g., "Actor A is implicitly linked to Actor B via supply chain"), START your analysis with this insight.
 
 ### Step 1: STEP-BACK ABSTRACTION
 Before analyzing specifics, identify the dominant geopolitical framework.
@@ -244,6 +256,8 @@ This is the FEATURED ANALYSIS for this week's briefing.
    - Use specific queries like "Country context 2026" or "Actor Name role 2026"
    
 2. **THEN**: Produce your analysis using the gathered context.
+   - Use `get_event_graph` on the top events to validate your assumptions about who is involved.
+   - Use `get_causal_chain` to ensure your "Driver" event is actually the root cause.
 
 3. **TRACK SOURCES**: If you used search_web, include the external sources in your output.
    - Extract the key sources you cited from your search results
@@ -299,8 +313,8 @@ async def run_analyst_agent(
 
     prompt = _build_analyst_prompt(input_data)
 
-    # Use shared Tavily search tool
-    tools = [get_tavily_search_tool()]
+    # Use shared Tavily search tool + Graph tools
+    tools = [get_tavily_search_tool()] + get_graph_tools()
 
     # Configure for function calling - only set params if explicitly configured
     gen_config = types.GenerateContentConfig(

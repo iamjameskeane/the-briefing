@@ -204,6 +204,70 @@ Use to answer 'What else has [entity] been doing lately?'.""",
                 required=["entity_name"],
             ),
         ),
+        types.FunctionDeclaration(
+            name="get_event_details",
+            description="""Get the full details (title, summary, severity, sources) of a specific event by its ID.
+Use this when you find an event ID in a graph traversal (causal chain, impact chain) and need to read the actual content.""",
+            parameters=types.Schema(
+                type=types.Type.OBJECT,
+                properties={
+                    "event_id": types.Schema(
+                        type=types.Type.STRING,
+                        description="The ID of the event to retrieve."
+                    ),
+                },
+                required=["event_id"],
+            ),
+        ),
+        types.FunctionDeclaration(
+            name="resolve_entity",
+            description="""Resolve an entity name (e.g. 'Washington', 'CCP', 'TSMC') to its canonical ID and type.
+Use this as the entry point when you encounter a new actor in search results and want to query the graph.""",
+            parameters=types.Schema(
+                type=types.Type.OBJECT,
+                properties={
+                    "name": types.Schema(
+                        type=types.Type.STRING,
+                        description="The name, slug, or alias of the entity."
+                    ),
+                },
+                required=["name"],
+            ),
+        ),
+        types.FunctionDeclaration(
+            name="get_event_entities",
+            description="""Get all entities (countries, companies, leaders) involved in or affected by a specific event.
+Use to answer 'Who are the primary actors here?' for a specific event ID.""",
+            parameters=types.Schema(
+                type=types.Type.OBJECT,
+                properties={
+                    "event_id": types.Schema(
+                        type=types.Type.STRING,
+                        description="The ID of the event."
+                    ),
+                },
+                required=["event_id"],
+            ),
+        ),
+        types.FunctionDeclaration(
+            name="search_entities",
+            description="""Search for entities by name, role, or sector using keyword matching.
+Use this to find actors when you don't have an exact name (e.g., 'semiconductor' or 'iranian leader').""",
+            parameters=types.Schema(
+                type=types.Type.OBJECT,
+                properties={
+                    "query": types.Schema(
+                        type=types.Type.STRING,
+                        description="The search query (name, industry, or role)."
+                    ),
+                    "limit": types.Schema(
+                        type=types.Type.NUMBER,
+                        description="Max results (default: 5)."
+                    ),
+                },
+                required=["query"],
+            ),
+        ),
     ]
 
 
@@ -392,7 +456,7 @@ def execute_tool_call(name: str, args: dict) -> str:
         logger.info(f"       🔍 Search: {query[:60]}...")
         return result
     
-    elif name in ["get_event_graph", "get_entity_relationships", "get_causal_chain", "get_impact_chain", "get_entity_events"]:
+    elif name in ["get_event_graph", "get_entity_relationships", "get_causal_chain", "get_impact_chain", "get_entity_events", "get_event_details", "resolve_entity", "get_event_entities", "search_entities"]:
         return _execute_graph_tool(name, args)
     
     elif name == "read_past_briefing":
@@ -508,6 +572,76 @@ def _execute_graph_tool(name: str, args: dict) -> str:
             
             events = [f"- {e['title']} ({e['event_timestamp'][:10]})" for e in res.data]
             return f"Recent events for {entity_name}:\n" + "\n".join(events)
+
+        elif name == "get_event_details":
+            event_id = args.get("event_id")
+            
+            # Query from events_with_reactions view (matches aggregate.py)
+            res = supabase.table("events_with_reactions").select("*").eq("id", event_id).limit(1).execute()
+            
+            if not res.data:
+                return f"Event '{event_id}' not found."
+            
+            event = res.data[0]
+            summary = event.get("summary", "No summary available.")
+            return json.dumps({
+                "id": event.get("id"),
+                "title": event.get("title"),
+                "summary": summary,
+                "severity": event.get("severity"),
+                "category": event.get("category"),
+                "timestamp": event.get("timestamp"),
+                "location": event.get("location_name"),
+                "sources_count": len(event.get("sources", [])) if isinstance(event.get("sources"), list) else 1
+            }, indent=2)
+
+        elif name == "resolve_entity":
+            name_val = args.get("name")
+            # Use the robust resolve_entity RPC from realpolitik
+            res = supabase.rpc("resolve_entity", {"entity_name": name_val}).execute()
+            
+            if not res.data:
+                return f"Entity '{name_val}' not found in knowledge graph."
+            
+            entity_id = res.data
+            # Get basic info for the resolved entity
+            node_res = supabase.table("nodes").select("name, node_type, slug").eq("id", entity_id).single().execute()
+            node = node_res.data
+            return json.dumps({
+                "id": entity_id,
+                "name": node.get("name"),
+                "type": node.get("node_type"),
+                "slug": node.get("slug")
+            }, indent=2)
+
+        elif name == "get_event_entities":
+            event_id = args.get("event_id")
+            res = supabase.rpc("get_event_entities", {"event_uuid": event_id}).execute()
+            
+            if not res.data:
+                return f"No entities found linked to event {event_id}."
+            
+            entities = [f"- {e['name']} ({e['node_type']}) - relation: {e['relation_type']}" for e in res.data]
+            return f"Entities involved in event {event_id}:\n" + "\n".join(entities)
+
+        elif name == "search_entities":
+            query = args.get("query")
+            limit = min(args.get("limit", 5), 10)
+            
+            # Use ilike on nodes table for a simple keyword search if hybrid_search is unavailable or needs embedding
+            # OR we can try to use the search_vector if it's indexed
+            res = supabase.table("nodes") \
+                .select("id, name, node_type, slug") \
+                .ilike("name", f"%{query}%") \
+                .neq("node_type", "event") \
+                .limit(limit) \
+                .execute()
+            
+            if not res.data:
+                return f"No entities found matching '{query}'."
+            
+            results = [f"- {n['name']} ({n['node_type']}) [slug: {n['slug']}] [id: {n['id']}]" for n in res.data]
+            return f"Search results for '{query}':\n" + "\n".join(results)
 
     except Exception as e:
         logger.warning(f"   ⚠️ Graph tool '{name}' failed: {e}")
