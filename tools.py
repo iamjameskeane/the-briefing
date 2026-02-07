@@ -7,13 +7,34 @@ Common tool definitions and executors used across multiple agents.
 from __future__ import annotations
 
 import json
+import os
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
-from typing import Optional
+from typing import Optional, Any
 
 from google.genai import types
 
 from utils import logger
+
+
+# =============================================================================
+# DATABASE INFRASTRUCTURE
+# =============================================================================
+
+def get_supabase_client():
+    """
+    Create Supabase client from configuration.
+    
+    Shared by aggregation and agent tools.
+    """
+    from supabase import create_client
+    from config import get_config
+    
+    config = get_config()
+    if not config.supabase_url or not config.supabase_service_key:
+        raise ValueError("Supabase configuration (SUPABASE_URL, SUPABASE_SERVICE_KEY) missing")
+    
+    return create_client(config.supabase_url, config.supabase_service_key)
 
 
 # =============================================================================
@@ -74,6 +95,116 @@ def get_search_results_for_verification() -> str:
     for result in _search_results:
         parts.append(f"{result.title} {result.content}")
     return " ".join(parts)
+
+
+# =============================================================================
+# GRAPH TOOLS
+# =============================================================================
+
+def get_graph_tools() -> list[types.FunctionDeclaration]:
+    """
+    Get the set of graph-querying tools for the Constellation knowledge graph.
+    
+    Returns a list of FunctionDeclarations for the Analyst agent.
+    """
+    return [
+        types.FunctionDeclaration(
+            name="get_event_graph",
+            description="""Get the relationship network around THIS specific event.
+Shows all entities involved and their relationships (supply chains, dependencies, alliances).
+PRIORITY TOOL: Call this FIRST to understand the network topology.""",
+            parameters=types.Schema(
+                type=types.Type.OBJECT,
+                properties={
+                    "event_id": types.Schema(
+                        type=types.Type.STRING,
+                        description="The ID of the event to analyze."
+                    ),
+                    "include_indirect": types.Schema(
+                        type=types.Type.BOOLEAN,
+                        description="Whether to include indirect relationships (1 hop away). Default: false"
+                    ),
+                },
+                required=["event_id"],
+            ),
+        ),
+        types.FunctionDeclaration(
+            name="get_entity_relationships",
+            description="""Get all known relationships for an entity from our knowledge graph.
+Use to understand existing connections between countries, organizations, or companies.""",
+            parameters=types.Schema(
+                type=types.Type.OBJECT,
+                properties={
+                    "entity_name": types.Schema(
+                        type=types.Type.STRING,
+                        description="The entity name (e.g., 'Russia', 'TSMC', 'NATO')."
+                    ),
+                    "limit": types.Schema(
+                        type=types.Type.NUMBER,
+                        description="Max number of relationships (default: 10, max: 20)."
+                    ),
+                },
+                required=["entity_name"],
+            ),
+        ),
+        types.FunctionDeclaration(
+            name="get_causal_chain",
+            description="""Trace the chain of events and factors that LED TO this event.
+Use to answer 'Why did this happen?' or 'What's the background?'.""",
+            parameters=types.Schema(
+                type=types.Type.OBJECT,
+                properties={
+                    "event_id": types.Schema(
+                        type=types.Type.STRING,
+                        description="The event ID to trace back from."
+                    ),
+                    "max_depth": types.Schema(
+                        type=types.Type.NUMBER,
+                        description="Steps back to trace (default: 3, max: 5)."
+                    ),
+                },
+                required=["event_id"],
+            ),
+        ),
+        types.FunctionDeclaration(
+            name="get_impact_chain",
+            description="""Trace the downstream impacts and effects of this event.
+Use to answer 'What happens next?' or 'Who's affected?'.""",
+            parameters=types.Schema(
+                type=types.Type.OBJECT,
+                properties={
+                    "event_id": types.Schema(
+                        type=types.Type.STRING,
+                        description="The event ID to trace forward from."
+                    ),
+                    "max_depth": types.Schema(
+                        type=types.Type.NUMBER,
+                        description="Steps forward to trace (default: 3, max: 5)."
+                    ),
+                },
+                required=["event_id"],
+            ),
+        ),
+        types.FunctionDeclaration(
+            name="get_entity_events",
+            description="""Get recent events involving a specific entity.
+Use to answer 'What else has [entity] been doing lately?'.""",
+            parameters=types.Schema(
+                type=types.Type.OBJECT,
+                properties={
+                    "entity_name": types.Schema(
+                        type=types.Type.STRING,
+                        description="The entity name."
+                    ),
+                    "limit": types.Schema(
+                        type=types.Type.NUMBER,
+                        description="Max events to return (default: 5, max: 10)."
+                    ),
+                },
+                required=["entity_name"],
+            ),
+        ),
+    ]
 
 
 # =============================================================================
@@ -217,7 +348,7 @@ def execute_tool_call(name: str, args: dict) -> str:
     Dispatches to the appropriate executor based on tool name.
     
     Args:
-        name: Tool name (e.g., "search_web")
+        name: Tool name (e.g., "search_web", "get_event_graph")
         args: Tool arguments dict
         
     Returns:
@@ -228,8 +359,119 @@ def execute_tool_call(name: str, args: dict) -> str:
         result = execute_tavily_search(query)
         logger.info(f"       🔍 Search: {query[:60]}...")
         return result
+    
+    elif name in ["get_event_graph", "get_entity_relationships", "get_causal_chain", "get_impact_chain", "get_entity_events"]:
+        return _execute_graph_tool(name, args)
+    
     else:
         return json.dumps({"error": f"Unknown tool: {name}"})
+
+
+def _execute_graph_tool(name: str, args: dict) -> str:
+    """Execute a graph-querying tool using Supabase RPCs."""
+    try:
+        supabase = get_supabase_client()
+        
+        if name == "get_event_graph":
+            event_id = args.get("event_id")
+            include_indirect = args.get("include_indirect", False)
+            
+            # 1. Get entities involved in this event
+            response = supabase.table("event_details").select("node_id").eq("node_id", event_id).execute()
+            # In the real system, we'd look up the entities linked to this event.
+            # For this port, we'll mimic the Pythia logic by querying linked nodes.
+            
+            # Since the-briefing might not have the full entity lookup logic yet, 
+            # we'll look for edges where this event_id is the source or target.
+            edges_query = supabase.from_("edges").select(
+                "source:source_id(name, node_type), target:target_id(name, node_type), relation_type, percentage, confidence, polarity"
+            ).or_(f"source_id.eq.{event_id},target_id.eq.{event_id}")
+            
+            edges_res = edges_query.execute()
+            edges = edges_res.data
+            
+            if not edges:
+                return f"No direct graph relationships found for event {event_id}."
+            
+            graph_desc = f"Event Graph for {event_id}:\n"
+            for edge in edges:
+                src = edge.get("source", {}).get("name", "Unknown")
+                tgt = edge.get("target", {}).get("name", "Unknown")
+                rel = edge.get("relation_type", "unknown")
+                pct = f" [{edge['percentage']}%]" if edge.get("percentage") else ""
+                graph_desc += f"- {src} --[{rel}]{pct}--> {tgt}\n"
+            
+            return graph_desc
+
+        elif name == "get_entity_relationships":
+            entity_name = args.get("entity_name")
+            limit = min(args.get("limit", 10), 20)
+            
+            # Resolve entity name to ID first (exact match)
+            res = supabase.table("nodes").select("id").ilike("name", entity_name).limit(1).execute()
+            if not res.data:
+                return f"Entity '{entity_name}' not found in knowledge graph."
+            
+            entity_id = res.data[0]["id"]
+            
+            # Get relationships
+            edges_res = supabase.from_("edges").select(
+                "relation_type, target:target_id(name, node_type), confidence, polarity, percentage"
+            ).eq("source_id", entity_id).limit(limit).execute()
+            
+            if not edges_res.data:
+                return f"No relationships found for '{entity_name}'."
+            
+            rels = [f"- {e.get('relation_type')} {e.get('target', {}).get('name')} (conf: {e.get('confidence', 0)})" for e in edges_res.data]
+            return f"Relationships for {entity_name}:\n" + "\n".join(rels)
+
+        elif name == "get_causal_chain":
+            event_id = args.get("event_id")
+            depth = min(args.get("max_depth", 3), 5)
+            
+            res = supabase.rpc("get_causal_chain", {"event_id": event_id, "max_depth": depth}).execute()
+            if not res.data:
+                return "No causal chain data available."
+            
+            chain = [f"{'  ' * (item['depth']-1)}↳ {item['name']} ({item['relation']})" for item in res.data]
+            return "Causal chain:\n" + "\n".join(chain)
+
+        elif name == "get_impact_chain":
+            event_id = args.get("event_id")
+            depth = min(args.get("max_depth", 3), 5)
+            
+            res = supabase.rpc("get_impact_chain", {
+                "start_node_id": event_id, 
+                "max_depth": depth,
+                "min_weight": 0.1
+            }).execute()
+            
+            if not res.data:
+                return "No impact chain data available."
+            
+            chain = [f"{'  ' * (item['depth']-1)}→ {item['name']} ({item['node_type']}) [{int(item['cumulative_weight']*100)}% impact]" for item in res.data]
+            return "Downstream impacts:\n" + "\n".join(chain)
+
+        elif name == "get_entity_events":
+            entity_name = args.get("entity_name")
+            limit = min(args.get("limit", 5), 10)
+            
+            res_node = supabase.table("nodes").select("id").ilike("name", entity_name).limit(1).execute()
+            if not res_node.data:
+                return f"Entity '{entity_name}' not found."
+            
+            entity_id = res_node.data[0]["id"]
+            res = supabase.rpc("get_entity_events", {"entity_uuid": entity_id, "max_count": limit}).execute()
+            
+            if not res.data:
+                return f"No recent events found for {entity_name}."
+            
+            events = [f"- {e['title']} ({e['event_timestamp'][:10]})" for e in res.data]
+            return f"Recent events for {entity_name}:\n" + "\n".join(events)
+
+    except Exception as e:
+        logger.warning(f"   ⚠️ Graph tool '{name}' failed: {e}")
+        return f"Tool execution failed: {str(e)}"
 
 
 def save_search_results_log(output_dir: str) -> str:

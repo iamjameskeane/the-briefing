@@ -15,6 +15,7 @@ Pillow>=10.0.0                 # For saving generated images
 
 # Storage
 boto3>=1.34.0                  # R2 (S3-compatible)
+supabase>=2.3.0                # Supabase Python client for event retrieval
 redis>=5.0.0                   # Upstash Redis
 requests>=2.31.0               # HTTP requests
 

@@ -25,6 +25,11 @@ import os
 from dataclasses import dataclass, field
 from typing import Literal
 
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
+
 
 # =============================================================================
 # HELPER FUNCTIONS
@@ -100,7 +105,7 @@ class ModelConfig:
 
 # Production models: Gemini 3 Pro Preview for maximum quality
 PRODUCTION_MODELS = ModelConfig(
-    embedding=os.getenv("BRIEFING_EMBEDDING_MODEL", "text-embedding-004"),
+    embedding=os.getenv("BRIEFING_EMBEDDING_MODEL", "gemini-embedding-001"),
     theme=os.getenv("BRIEFING_THEME_MODEL", "gemini-3-pro-preview"),
     editor=os.getenv("BRIEFING_EDITOR_MODEL", "gemini-3-pro-preview"),
     architect=os.getenv("BRIEFING_ARCHITECT_MODEL", "gemini-3-pro-preview"),
@@ -114,7 +119,7 @@ PRODUCTION_MODELS = ModelConfig(
 
 # Test models: Gemini 3 Flash Preview for near-production quality iteration
 TEST_MODELS = ModelConfig(
-    embedding=os.getenv("BRIEFING_EMBEDDING_MODEL", "text-embedding-004"),
+    embedding=os.getenv("BRIEFING_EMBEDDING_MODEL", "gemini-embedding-001"),
     theme=os.getenv("BRIEFING_THEME_MODEL", "gemini-3-flash-preview"),
     editor=os.getenv("BRIEFING_EDITOR_MODEL", "gemini-3-flash-preview"),
     architect=os.getenv("BRIEFING_ARCHITECT_MODEL", "gemini-3-flash-preview"),
@@ -165,6 +170,17 @@ class BriefingConfig:
     )
     tavily_api_key: str = field(
         default_factory=lambda: _env_str("TAVILY_API_KEY", "")
+    )
+    
+    # =========================================================================
+    # SUPABASE (ATLAS)
+    # =========================================================================
+    
+    supabase_url: str = field(
+        default_factory=lambda: _env_str("SUPABASE_URL", "")
+    )
+    supabase_service_key: str = field(
+        default_factory=lambda: _env_str("SUPABASE_SERVICE_KEY", "")
     )
     
     # =========================================================================

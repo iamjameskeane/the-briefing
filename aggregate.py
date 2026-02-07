@@ -12,7 +12,8 @@ from dataclasses import dataclass, field
 from datetime import datetime, timedelta, timezone
 from typing import Literal
 
-import boto3
+from supabase import create_client, Client
+from config import get_config
 
 # Region type (matches the main worker)
 Region = Literal[
@@ -82,46 +83,36 @@ class AggregatedWeek:
         }
 
 
-def get_r2_client():
-    """Create R2 (S3-compatible) client from environment variables."""
-    endpoint_url = os.getenv("R2_ENDPOINT_URL")
-    access_key = os.getenv("R2_ACCESS_KEY_ID")
-    secret_key = os.getenv("R2_SECRET_ACCESS_KEY")
-    
-    if not all([endpoint_url, access_key, secret_key]):
-        raise ValueError("R2 environment variables not fully configured")
-    
-    return boto3.client(
-        "s3",
-        endpoint_url=endpoint_url,
-        aws_access_key_id=access_key,
-        aws_secret_access_key=secret_key,
-    )
+from tools import get_supabase_client
 
 
-def fetch_events_from_r2() -> list[dict]:
+def fetch_events_from_supabase(
+    week_start: datetime, 
+    week_end: datetime
+) -> list[dict]:
     """
-    Fetch events.json from R2.
+    Fetch events from Supabase events_with_reactions view for a specific period.
     
     Returns:
         List of event dictionaries.
     """
-    bucket_name = os.getenv("R2_BUCKET_NAME")
-    if not bucket_name:
-        raise ValueError("R2_BUCKET_NAME not set")
-    
-    s3 = get_r2_client()
+    supabase = get_supabase_client()
     
     try:
-        response = s3.get_object(Bucket=bucket_name, Key="events.json")
-        events = json.loads(response["Body"].read().decode("utf-8"))
-        print(f"📦 Fetched {len(events)} events from R2")
+        # Fetch from the events view which matches our GeoEvent schema
+        response = supabase.table("events_with_reactions") \
+            .select("*") \
+            .gte("timestamp", week_start.isoformat()) \
+            .lte("timestamp", week_end.isoformat()) \
+            .order("timestamp", desc=True) \
+            .execute()
+            
+        events = response.data
+        print(f"📦 Fetched {len(events)} events from Supabase")
         return events
     except Exception as e:
-        if "NoSuchKey" in str(type(e).__name__):
-            print("📭 No events.json found in R2")
-            return []
-        raise
+        print(f"⚠️ Failed to fetch events from Supabase: {e}")
+        return []
 
 
 def parse_event_timestamp(event: dict) -> datetime | None:
@@ -302,17 +293,25 @@ def aggregate_week(week_end: datetime | None = None) -> AggregatedWeek:
     print("📊 PHASE 1: DATA AGGREGATION")
     print("=" * 60)
     
-    # Fetch from R2
-    all_events = fetch_events_from_r2()
+    if week_end is None:
+        week_end = datetime.now(timezone.utc)
     
-    if not all_events:
-        raise ValueError("No events found in R2. Cannot generate briefing.")
+    # Ensure timezone aware
+    if week_end.tzinfo is None:
+        week_end = week_end.replace(tzinfo=timezone.utc)
+        
+    week_start = week_end - timedelta(days=7)
     
-    # Filter to week
-    events, week_start, week_end_actual = filter_events_to_week(all_events, week_end)
+    # Fetch from Supabase with date filter
+    events = fetch_events_from_supabase(week_start, week_end)
     
     if not events:
-        raise ValueError(f"No events found in the past 7 days. Cannot generate briefing.")
+        raise ValueError(f"No events found in Supabase for the past 7 days. Cannot generate briefing.")
+
+    print(f"📅 Week: {week_start.strftime('%Y-%m-%d')} to {week_end.strftime('%Y-%m-%d')}")
+    print(f"   ✓ {len(events)} events in window")
+    
+    # Group by region
     
     # Group by region
     by_region = group_events_by_region(events)
@@ -333,7 +332,7 @@ def aggregate_week(week_end: datetime | None = None) -> AggregatedWeek:
     
     return AggregatedWeek(
         week_start=week_start,
-        week_end=week_end_actual,
+        week_end=week_end,
         events=events,
         by_region=by_region,
         stats=stats,

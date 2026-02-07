@@ -240,7 +240,7 @@ This is the FEATURED ANALYSIS for this week's briefing.
 ## YOUR TASK
 
 1. **FIRST**: Use the search_web tool (from tools.py) to gather current context for major countries and actors if needed (3-8 searches total).
-   - Countries that might be relevant: {', '.join(list(countries_hint)[:5]) if countries_hint else 'Determine from event content'}
+   - Countries that might be relevant: {', '.join(list(countries_hint)[:5]) if countries_hint else 'Determine from event context'}
    - Use specific queries like "Country context 2026" or "Actor Name role 2026"
    
 2. **THEN**: Produce your analysis using the gathered context.
