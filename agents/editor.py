@@ -29,7 +29,7 @@ from google.genai import types
 
 from config import get_config
 from utils import logger, with_retry, log_model_config
-from tools import get_tavily_search_tool, get_memory_tools, execute_tool_call
+from tools import get_search_tools, get_memory_tools, execute_tool_call
 
 if TYPE_CHECKING:
     pass
@@ -852,16 +852,68 @@ Use search_web tool to verify significance when unsure about importance.
 <editorial_memory>
 When previous edition context is provided:
 
-1. YOU HAVE MEMORY. Use it.
-   - Reference previous coverage naturally: "As we noted last week...", "Our forecast about X..."
-   - Don't pretend each week is a fresh start.
+<tool_usage_examples>
+**Example: How Memory Tools Enable Narrative Continuity**
 
-2. PREVIOUS COVERAGE INDEX:
-   - You are provided with a high-level "menu" of past editions.
-   - For any entry in the index, you can use the `read_past_briefing(run_id, cluster_id)` tool to retrieve:
-     - The **Hub Mechanism** and **Narrative Arc** (pass only `run_id`).
-     - The **Editorial Rationale** for a specific story (pass `run_id` and the `cluster_id` from the index).
-   - Use this tool whenever you see a current cluster that seems to connect to a past story, or when you are deciding if a current story is truly "NEW" vs. just an update to a past one.
+Scenario: Current cluster about "Iran Nuclear Talks Stall"
+
+❌ **Without memory tools:**
+"Iran and US fail to reach agreement on nuclear program limits. Talks have been ongoing for months with little progress."
+
+✅ **With memory tools:**
+1. Called `read_past_briefing(run_id="briefing_20260201_172547")`
+   → Last week's featured: "Tehran on the Brink: Domestic Uprising" (6,100 dead)
+2. Found continuity: Last week focused on internal pressure, this week external diplomacy
+
+**Result:**
+"Last week, we reported 6,100 dead in Tehran's streets forced the regime into a corner.
+This week's diplomatic stall isn't about technical disagreements—it's the IRGC 
+using external threat to justify internal crackdown. The nuclear talks are theater; 
+the real audience is domestic."
+
+**Insight:** Memory revealed this is Act 2 of the same story, not a new development.
+Readers get continuity instead of redundant background.
+</tool_usage_examples>
+
+**CRITICAL: DO NOT GUESS OR FILL IN BLANKS**
+
+When you see a current cluster that might relate to a past story:
+
+1. **RETRIEVE, DON'T ASSUME**: 
+   - ❌ BAD: "This continues last week's Iran story"
+   - ✅ GOOD: Call `read_past_briefing(run_id)` to get the actual headlines, analysis, and predictions
+
+2. **BUILD ARCS, DON'T JUST REFERENCE**:
+   - ❌ BAD: "As we noted last week..." (vague reference)
+   - ✅ GOOD: "Last week we predicted X would happen by June. This week's events confirm/contradict that forecast because..."
+
+3. **CHECK PREDICTIONS**:
+   - If past analysis made a forecast, retrieve it and check if it came true
+   - Document: "Our assessment was CORRECT/INCORRECT because..."
+   - This builds trust with readers
+
+4. **TRACE NARRATIVE EVOLUTION**:
+   - Retrieve the past story's angle and analysis
+   - Show how the story has evolved: "Last week this was about X. Now it's about Y."
+   - Connect the dots explicitly using retrieved content
+
+**WHEN TO CALL `read_past_briefing`:**
+- Current cluster theme matches a past hub or story (check the index)
+- You're considering a "continuation" or "update" angle
+- You want to reference a past prediction or forecast
+- You need to avoid redundancy (what did we already tell readers?)
+
+**HOW TO USE THE INDEX:**
+- The index shows dates, run IDs, hub themes, and story counts
+- It's a DISCOVERY tool, not a replacement for retrieval
+- When you spot a potential connection, CALL THE TOOL to get details
+
+**EXAMPLE WORKFLOW:**
+1. See current cluster: "Iran Nuclear Talks Stall"
+2. Check index: "briefing_20260201_172547" has hub "Coercive Unilateralism"
+3. Call `read_past_briefing("briefing_20260201_172547")` 
+4. Get actual headlines and analysis
+5. Build concrete arc: "Last week's 'Tehran on the Brink' reported 6,100 dead. This week's talks are the regime's response to that internal pressure."
 
 3. AVOID REDUNDANCY:
    - Don't re-explain what readers already know. Lead with what's NEW.
@@ -914,10 +966,14 @@ async def run_editor_agent(
 
     prompt = _build_editor_prompt(input_data)
 
+    # Standardize tools: wrap all declarations in a single Tool object
+    all_declarations = get_search_tools() + get_memory_tools()
+    editor_tool = types.Tool(function_declarations=all_declarations)
+
     # Build generation config - only set params if explicitly configured
     editor_config = types.GenerateContentConfig(
         system_instruction=EDITOR_SYSTEM_PROMPT,
-        tools=[get_tavily_search_tool()] + get_memory_tools(),
+        tools=[editor_tool],
     )
     
     # Only set temperature if explicitly configured

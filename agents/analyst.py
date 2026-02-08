@@ -27,7 +27,7 @@ from google.genai import types
 
 from config import get_config
 from utils import logger, with_retry, log_model_config
-from tools import get_tavily_search_tool, get_graph_tools, execute_tool_call
+from tools import get_search_tools, get_graph_tools, execute_tool_call
 from .schemas import AnalystInput, AnalystOutput
 
 if TYPE_CHECKING:
@@ -67,6 +67,34 @@ You are analyzing a THEMATIC CLUSTER of related events. These events are grouped
 - Use this context to inform your analysis
 
 ### Step 0.5: GRAPH TRAVERSAL (ENTITY-FIRST RESEARCH)
+
+<tool_usage_examples>
+**Example: How Graph Tools Reveal Hidden Insights**
+
+Scenario: Analyzing cluster about "US-China Tech Competition"
+
+❌ **Without graph tools:**
+"The US is restricting semiconductor exports to China to maintain technological advantage."
+
+✅ **With graph tools:**
+1. Called `get_event_entities("evt_semiconductor_ban")`
+   → Returns: USA, China, TSMC, ASML, Netherlands
+2. Called `get_entity_relationships("TSMC")`
+   → Allied with: USA, Japan; Supplies: Apple, NVIDIA; Adversary: China
+3. Called `get_entity_relationships("ASML")`
+   → Allied with: Netherlands, USA; Monopoly on: EUV lithography
+
+**Result:**
+"This isn't just US-China competition—it's a TRIPLE chokepoint play:
+- TSMC (Taiwan) controls advanced chip manufacturing
+- ASML (Netherlands) has monopoly on lithography equipment  
+- Netherlands' compliance is the hidden variable determining China's tech ceiling
+
+The real constraint isn't Chinese innovation—it's Dutch export controls."
+
+**Insight:** Graph revealed Netherlands as critical actor, ASML monopoly as structural constraint.
+</tool_usage_examples>
+
 - **Map the Network**: Geopolitics is about *actors* and their constraints. Use the graph to see through the "fog of news":
   - `get_event_entities(event_id)`: **START HERE** for key events. Who are the primary actors involved?
   - `resolve_entity(name)`: Encountered a new actor (e.g., "Ahmed al-Sharaa") in search? Resolve it to a canonical ID first.
@@ -313,13 +341,14 @@ async def run_analyst_agent(
 
     prompt = _build_analyst_prompt(input_data)
 
-    # Use shared Tavily search tool + Graph tools
-    tools = [get_tavily_search_tool()] + get_graph_tools()
+    # Standardize tools: wrap all declarations in a single Tool object
+    all_declarations = get_search_tools() + get_graph_tools()
+    analyst_tool = types.Tool(function_declarations=all_declarations)
 
     # Configure for function calling - only set params if explicitly configured
     gen_config = types.GenerateContentConfig(
         system_instruction=ANALYST_SYSTEM_PROMPT,
-        tools=tools,
+        tools=[analyst_tool],
     )
     
     # Only set temperature if explicitly configured

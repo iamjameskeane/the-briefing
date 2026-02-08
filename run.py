@@ -452,7 +452,7 @@ async def run_editor(
         recommended_organization=recommended_organization,
         cross_regional_connections=cross_regional_connections or [],
         calendar_events=calendar_events or [],
-        previous_edition=previous_edition,
+        previous_edition=None,  # Force Editor to use read_past_briefing tool instead of lazy pre-loading
     )
     
     # Load and format high-level briefing index for prompt

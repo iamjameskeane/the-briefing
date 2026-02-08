@@ -150,7 +150,15 @@ Use to understand existing connections between countries, organizations, or comp
         types.FunctionDeclaration(
             name="get_causal_chain",
             description="""Trace the chain of events and factors that LED TO this event.
-Use to answer 'Why did this happen?' or 'What's the background?'.""",
+
+**When to use:**
+- Event seems sudden but likely has buildup
+- Need to understand root causes vs. proximate triggers
+- Looking for structural constraints that made this inevitable
+
+**Example:** get_causal_chain("venezuela_maduro_capture")
+→ Returns: Oil price collapse → Economic crisis → Protests → US sanctions → Regime fragility
+→ Insight: This wasn't a sudden coup, it's the endpoint of a 5-year cascade""",
             parameters=types.Schema(
                 type=types.Type.OBJECT,
                 properties={
@@ -169,7 +177,15 @@ Use to answer 'Why did this happen?' or 'What's the background?'.""",
         types.FunctionDeclaration(
             name="get_impact_chain",
             description="""Trace the downstream impacts and effects of this event.
-Use to answer 'What happens next?' or 'Who's affected?'.""",
+
+**When to use:**
+- Assessing second-order and third-order consequences
+- Identifying who gets hurt/benefits from this development
+- Building futures wheel predictions
+
+**Example:** get_impact_chain("new_start_treaty_expires")
+→ Returns: Arms race → Defense spending ↑ → Budget pressure → Domestic cuts
+→ Insight: Nuclear policy crisis becomes fiscal crisis within 18 months""",
             parameters=types.Schema(
                 type=types.Type.OBJECT,
                 properties={
@@ -188,7 +204,15 @@ Use to answer 'What happens next?' or 'Who's affected?'.""",
         types.FunctionDeclaration(
             name="get_entity_events",
             description="""Get recent events involving a specific entity.
-Use to answer 'What else has [entity] been doing lately?'.""",
+
+**When to use:**
+- Actor appears in current cluster, need to see their recent pattern
+- Checking if this is escalation or de-escalation vs. their baseline
+- Looking for coordinated multi-front strategies
+
+**Example:** get_entity_events("China")
+→ Returns: Taiwan exercises, Balochistan support, UK trade talks, PLA purge
+→ Insight: Simultaneous pressure on 3 fronts = coordinated campaign, not isolated moves""",
             parameters=types.Schema(
                 type=types.Type.OBJECT,
                 properties={
@@ -221,8 +245,16 @@ Use this when you find an event ID in a graph traversal (causal chain, impact ch
         ),
         types.FunctionDeclaration(
             name="resolve_entity",
-            description="""Resolve an entity name (e.g. 'Washington', 'CCP', 'TSMC') to its canonical ID and type.
-Use this as the entry point when you encounter a new actor in search results and want to query the graph.""",
+            description="""Resolve an entity name to its canonical ID and type (country/company/leader/facility).
+
+**When to use:**
+- You found an actor in web search and want to explore their graph connections
+- Ambiguous names (e.g., 'Washington' = USA or city?)
+- Need entity type to determine which relationship queries make sense
+
+**Example:** resolve_entity("TSMC")
+→ Returns: {id: "tsmc_taiwan", type: "company", sector: "semiconductors"}
+→ Enables: get_entity_relationships("tsmc_taiwan") to map supply chain""",
             parameters=types.Schema(
                 type=types.Type.OBJECT,
                 properties={
@@ -237,7 +269,15 @@ Use this as the entry point when you encounter a new actor in search results and
         types.FunctionDeclaration(
             name="get_event_entities",
             description="""Get all entities (countries, companies, leaders) involved in or affected by a specific event.
-Use to answer 'Who are the primary actors here?' for a specific event ID.""",
+
+**When to use:**
+- Event mentions unfamiliar actors or organizations
+- You need to understand WHO is involved beyond the headline
+- Looking for hidden stakeholders (e.g., supply chain dependencies)
+
+**Example:** Event "China announces Taiwan exercises"
+→ Returns: China, Taiwan, TSMC, Lockheed Martin
+→ Insight: Reveals semiconductor supply chain angle not in headline""",
             parameters=types.Schema(
                 type=types.Type.OBJECT,
                 properties={
@@ -252,7 +292,15 @@ Use to answer 'Who are the primary actors here?' for a specific event ID.""",
         types.FunctionDeclaration(
             name="search_entities",
             description="""Search for entities by name, role, or sector using keyword matching.
-Use this to find actors when you don't have an exact name (e.g., 'semiconductor' or 'iranian leader').""",
+
+**When to use:**
+- You know the sector/role but not exact entity name
+- Exploring who else is involved in a domain (e.g., "semiconductor manufacturers")
+- Finding all actors of a type (e.g., "iranian leaders")
+
+**Example:** search_entities("semiconductor")
+→ Returns: TSMC, Samsung, Intel, ASML
+→ Insight: Maps the complete chokepoint network for chip production""",
             parameters=types.Schema(
                 type=types.Type.OBJECT,
                 properties={
@@ -275,17 +323,16 @@ Use this to find actors when you don't have an exact name (e.g., 'semiconductor'
 # TAVILY SEARCH TOOL
 # =============================================================================
 
-def get_tavily_search_tool() -> types.Tool:
+def get_search_tools() -> list[types.FunctionDeclaration]:
     """
-    Get the Tavily search tool definition for use by any agent.
+    Get the search tool definition for use by any agent.
     
-    Returns a FunctionDeclaration that agents can include in their tools.
+    Returns a list of FunctionDeclarations that agents can include in their tools.
     """
-    return types.Tool(
-        function_declarations=[
-            types.FunctionDeclaration(
-                name="search_web",
-                description="""Search the web for current information about geopolitical events, actors, or context.
+    return [
+        types.FunctionDeclaration(
+            name="search_web",
+            description="""Search the web for current information about geopolitical events, actors, or context.
 
 WHEN TO SEARCH:
 - Recent events you're uncertain about (verify what actually happened)
@@ -312,19 +359,18 @@ BAD SEARCH QUERIES (vague, too broad):
 ❌ "What is happening in Middle East" (too general)
 
 Be specific: include actor names, event keywords, and dates.""",
-                parameters=types.Schema(
-                    type=types.Type.OBJECT,
-                    properties={
-                        "query": types.Schema(
-                            type=types.Type.STRING,
-                            description="Specific search query with dates and keywords (e.g., 'Trump Greenland January 2026', 'Iran protests death toll 2026')"
-                        ),
-                    },
-                    required=["query"],
-                ),
+            parameters=types.Schema(
+                type=types.Type.OBJECT,
+                properties={
+                    "query": types.Schema(
+                        type=types.Type.STRING,
+                        description="Specific search query with dates and keywords (e.g., 'Trump Greenland January 2026', 'Iran protests death toll 2026')"
+                    ),
+                },
+                required=["query"],
             ),
-        ]
-    )
+        ),
+    ]
 
 
 # =============================================================================

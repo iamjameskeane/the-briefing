@@ -142,23 +142,32 @@ def get_briefing_content(run_id: str, cluster_id: Optional[str] = None) -> str:
         return f"Error retrieving content: {e}"
 
 def format_index_for_prompt(index_data: list[dict]) -> str:
-    """Format the index list into a string for an agent's prompt."""
+    """Format the index list into a string for an agent's prompt.
+    
+    Intentionally minimal to force active retrieval via read_past_briefing tool.
+    """
     if not index_data:
         return "No previous editions indexed."
         
     lines = ["## 📚 PREVIOUS COVERAGE INDEX"]
-    lines.append("Use the 'read_past_briefing' tool if a current cluster seems related to these stories.")
+    lines.append("")
+    lines.append("**IMPORTANT**: To check predictions, build narrative continuity, or reference past analysis,")
+    lines.append("you MUST use `read_past_briefing(run_id)` to retrieve the actual content.")
     lines.append("")
     
     for entry in index_data:
         date = entry.get("date", "Unknown")
         run_id = entry.get("run_id", "Unknown")
         hub = entry.get("hub", "REGIONAL")
-        lines.append(f"[{date}] Run ID: {run_id}")
-        lines.append(f"Hub: {hub}")
-        lines.append("Stories:")
-        for cid, headline in entry.get("headlines", {}).items():
-            lines.append(f"  - {headline} ({cid})")
+        arc = entry.get("arc", "")
+        story_count = len(entry.get("headlines", {}))
+        
+        lines.append(f"**[{date}]** `{run_id}`")
+        lines.append(f"  - Hub: {hub}")
+        if arc:
+            lines.append(f"  - Arc: {arc[:120]}...")  # Truncated teaser
+        lines.append(f"  - Stories: {story_count} published")
+        lines.append(f"  - *Call `read_past_briefing('{run_id}')` for headlines, predictions, and analysis*")
         lines.append("")
         
     return "\n".join(lines)
