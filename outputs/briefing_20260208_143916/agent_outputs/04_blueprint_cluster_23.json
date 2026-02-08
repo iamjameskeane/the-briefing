@@ -1,0 +1,67 @@
+{
+  "region": "India-US Trade Deal",
+  "archetype": "PIVOT",
+  "word_target": 200,
+  "hook_type": "CONTRAST",
+  "hook_draft": "For New Delhi, the price of unrestricted access to the American market is closing the tap on Russian crude.",
+  "paragraphs": [
+    {
+      "purpose": "Define the pivot away from non-alignment",
+      "word_target": 45,
+      "key_facts": [
+        "India committing $500B to US investment",
+        "Targeting 7% GDP growth through US market access",
+        "Shift from 'strategic autonomy' to Western alignment"
+      ],
+      "beat": "The old position"
+    },
+    {
+      "purpose": "The Energy Reality Check",
+      "word_target": 60,
+      "key_facts": [
+        "Russian imports hit 38-month low in December 2025",
+        "Russian share of imports dropped to 24.9%",
+        "Trump administration pushing 'Pax Silica' as the energy alternative"
+      ],
+      "beat": "What changed and why"
+    },
+    {
+      "purpose": "The Mathematical Constraint",
+      "word_target": 55,
+      "key_facts": [
+        "Venezuelan production is <1M bpd",
+        "Cannot immediately replace 1.6M bpd of Russian crude",
+        "India likely to use 'hollow compliance' via grey market/swaps"
+      ],
+      "beat": "Constraints forcing the pivot"
+    },
+    {
+      "purpose": "The Strategic Winner/Loser",
+      "word_target": 40,
+      "key_facts": [
+        "Moscow loses its primary Asian revenue anchor",
+        "Washington secures a 'Wedge Strategy' win",
+        "India becomes the Western 'Pax Silica' anchor in Asia"
+      ],
+      "beat": "Who benefits, who loses"
+    }
+  ],
+  "key_events": [
+    {
+      "event_id": "98d10bf0-f586-4777-992b-46b943928ef1",
+      "event_title": "India and US announce $500B trade and energy pact",
+      "emphasis": "HIGH",
+      "how_to_use": "Central driver of the story; cite the $500B figure as the admission fee for Pax Silica.",
+      "role": "Driver event"
+    },
+    {
+      "event_id": "34226300-aa4d-4eab-a550-c4d2695e5df0",
+      "event_title": "Indian oil imports from Russia hit 3-year low",
+      "emphasis": "MEDIUM",
+      "how_to_use": "Use as statistical evidence that the pivot is already manifesting in the data.",
+      "role": "Evidence"
+    }
+  ],
+  "closing_type": "PREDICTION",
+  "closing_draft": "The question is no longer whether India will pivot, but how long it can sustain the high cost of Western energy compliance."
+}

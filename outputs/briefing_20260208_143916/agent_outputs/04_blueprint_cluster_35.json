@@ -1,0 +1,81 @@
+{
+  "region": "Venezuela",
+  "archetype": "TREND",
+  "word_target": 200,
+  "hook_type": "CONTRAST",
+  "hook_draft": "Jorge Rodr\u00edguez sits in Miraflores, but the budget is approved in Washington.",
+  "paragraphs": [
+    {
+      "purpose": "Establish the new power dynamic of 'Economic Trusteeship'",
+      "word_target": 50,
+      "key_facts": [
+        "US reasserting strategic control over Caribbean Basin",
+        "Rodr\u00edguez administration trading sovereignty for stability",
+        "Monthly budget approvals by US officials"
+      ],
+      "beat": "The pattern emerging"
+    },
+    {
+      "purpose": "Detail the legislative mechanism enforcing this trend",
+      "word_target": 60,
+      "key_facts": [
+        "National Assembly passed Amnesty Bill in first vote",
+        "Bill excludes 'gross human rights violators' (US demand)",
+        "Arrest of Maduro ally Alex Saab",
+        "Release of low-level political prisoners"
+      ],
+      "beat": "Evidence this week"
+    },
+    {
+      "purpose": "Explain the drivers forcing this rapid compliance",
+      "word_target": 50,
+      "key_facts": [
+        "Need to secure energy supplies without occupation",
+        "Elimination of Russian/Chinese beachhead",
+        "Rodr\u00edguez needs to deliver specific reforms to survive"
+      ],
+      "beat": "Why accelerating now"
+    },
+    {
+      "purpose": "Define the long-term structural outcome",
+      "word_target": 40,
+      "key_facts": [
+        "End of 25 years of Bolivarian sovereignty",
+        "Emergence of a 'Petro-Protectorate' model"
+      ],
+      "beat": "Structural implication"
+    }
+  ],
+  "key_events": [
+    {
+      "event_id": "13daac73-90a0-4c43-a989-c9aaa2f8e646",
+      "event_title": "Interim leader balances U.S. demands and Chavista expectations",
+      "emphasis": "LEAD",
+      "how_to_use": "Frame as the central tension defining the new government.",
+      "role": "Thematic Anchor"
+    },
+    {
+      "event_id": "d31da467-3316-443d-9f91-7ac8c49fbcc2",
+      "event_title": "National Assembly approves amnesty bill first vote",
+      "emphasis": "SUPPORT",
+      "how_to_use": "Use as concrete proof of the 'pacted transition' in action.",
+      "role": "Primary Evidence"
+    },
+    {
+      "event_id": "acf49fa4-8d2a-4a21-b969-a357e726319b",
+      "event_title": "Maduro ally Saab arrested again",
+      "emphasis": "MENTION",
+      "how_to_use": "Cite as the cost of the amnesty exclusions.",
+      "role": "Supporting Detail"
+    },
+    {
+      "event_id": "63c130bc-42c5-48f4-a5bd-99c3e6b9df3e",
+      "event_title": "Washington and Caracas reopen talks",
+      "emphasis": "SUPPORT",
+      "how_to_use": "Contextualize the acceleration of US oversight.",
+      "role": "Context"
+    }
+  ],
+  "closing_type": "IMAGE",
+  "closing_draft": "Venezuela is emerging not as a restored republic, but as the hemisphere's first modern petro-protectorate."
+}

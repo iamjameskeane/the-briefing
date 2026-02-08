@@ -1,0 +1,29 @@
+{
+  "run_id": "briefing_20260208_143916",
+  "phase": "phase_5_structure",
+  "timestamp": "2026-02-08T14:53:57.214944",
+  "regions_analyzed": [
+    "cluster_55",
+    "cluster_50",
+    "cluster_56",
+    "cluster_23",
+    "cluster_52",
+    "cluster_35"
+  ],
+  "has_skeleton": true,
+  "blueprints_created": [
+    "cluster_35",
+    "cluster_56",
+    "cluster_52",
+    "cluster_55",
+    "cluster_50",
+    "cluster_23"
+  ],
+  "drafts_created": [],
+  "styled_drafts": [],
+  "critique_results": {},
+  "errors": [
+    "2026-02-08T14:53:57.214181: cluster_23: 1 validation error for SectionBlueprint\n  Invalid JSON: EOF while parsing a string at line 11 column 85854 [type=json_invalid, input_value='{\\n  \"region\": \"India-US...`s` `s` `s` `s` `s` `s`', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.12/v/json_invalid"
+  ],
+  "warnings": []
+}

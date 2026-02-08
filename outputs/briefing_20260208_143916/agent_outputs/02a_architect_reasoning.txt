@@ -1,0 +1,124 @@
+## ORGANIZING PRINCIPLE
+THEMATIC
+
+## FEATURED
+Cluster: cluster_55 (The June Ultimatum: Peace at Gunpoint)
+Headline: The June Ultimatum: Peace at Gunpoint
+Angle: CONSTRAINT_REVEALED
+Archetype: LEADER
+Word Target: 500
+Rationale: High impact due to the specific deadline (June) set by Washington, combining military coercion (energy strikes) with a diplomatic hard stop. This defines the briefing's central theme of 'Coercive Stabilization.'
+
+## SECTIONS
+1. Cluster: cluster_56 (Iran Nuclear Standoff)
+   Headline: Tehran's Hollow Negotiation
+   Treatment: FULL
+   Archetype: CRISIS
+   Word Target: 350
+   Position Rationale: Immediate thematic follow-up to the Featured section. If Ukraine is the deadline, Iran is the pressure cooker.
+   Rationale: High impact/volatility. The nub is that Tehran is at the table not because of diplomatic preference, but because domestic collapse (6k dead) leaves them no choice. It's a survival mechanism.
+
+2. Cluster: cluster_52 (Nuclear Arms Control)
+   Headline: The Nuclear Void
+   Treatment: FULL
+   Archetype: CONSTRAINT
+   Word Target: 350
+   Position Rationale: Moves from specific regional conflicts to the broader structural consequence of this unilateral approach.
+   Rationale: Structural shift. The expiration of New START without extension marks the end of the post-Cold War arms control architecture. This is the long-term consequence of the current unilateralist turn.
+
+3. Cluster: cluster_23 (India-US Trade Deal)
+   Headline: The $500 Billion Wedge
+   Treatment: SHORT
+   Archetype: PIVOT
+   Word Target: 200
+   Position Rationale: Demonstrates the economic/diplomatic realignment resulting from the coercion described in previous sections.
+   Rationale: High geopolitical significance. India ditching Russian oil for US trade creates a structural wedge between Moscow and New Delhi, validating the 'transactional' approach.
+
+4. Cluster: cluster_35 (Venezuela's Interim Leader)
+   Headline: Venezuela: The Morning After
+   Treatment: SHORT
+   Archetype: TREND
+   Word Target: 200
+   Position Rationale: Provides a "post-success" case study of what happens after the coercion achieves its immediate aim (regime change).
+   Rationale: Continuity from last week's kinetic shock. Navigating the messy transition of the 'Interim Government' illustrates the difficulty of stabilizing after a forced regime change.
+
+5. Cluster: cluster_50 (Russian General Assassination)
+   Headline: Shadow War in Moscow
+   Treatment: SLEEPER
+   Archetype: SLEEPER
+   Word Target: 150
+   Position Rationale: Endnote suggesting internal fragility in the primary adversary.
+   Rationale: Assassination of a GRU general in Moscow suggests internal rot or deep infiltration, a signal of regime fragility behind the front lines.
+
+## KILLED
+- Cluster: cluster_15 (Greenland Consulates)
+  Reason: BELOW_THRESHOLD
+  PIC Score: 12
+  Events: 22
+  Highest Severity: 7
+  Explanation: Consulate openings are diplomatic housekeeping compared to the kinetic/nuclear stories this week.
+
+- Cluster: cluster_43 (Gaza Humanitarian Crisis)
+  Reason: REDUNDANT
+  PIC Score: 14
+  Events: 41
+  Highest Severity: 8
+  Explanation: Humanitarian crisis is ongoing but eclipsed by the 'Board of Peace' diplomatic maneuvers which are better covered via the US-centric thematic lens.
+
+- Cluster: cluster_53 (Board of Peace)
+  Reason: REDUNDANT
+  PIC Score: 13
+  Events: 6
+  Highest Severity: 6
+  Explanation: The 'Board of Peace' is a detail within the broader theme of Coercive Stabilization, not a standalone story yet.
+
+## QUICK HITS
+1. Region: Africa
+   Headline: Saif al-Islam Gaddafi Assassinated in Zintan
+   Content: The assassination of Muammar Gaddafi's son marks a violent, symbolic end to a dynastic era in Libya, potentially destabilizing the fragile local truce.
+   Event ID: cluster_16
+
+2. Region: Americas
+   Headline: Haiti's Political Vacuum Deepens
+   Content: The expiration of the Transitional Presidential Council's mandate without a successor leaves Port-au-Prince in a dangerous constitutional void.
+   Event ID: cluster_6
+
+3. Region: East Asia
+   Headline: Takaichi Secures Mandate in Japan
+   Content: Prime Minister Sanae Takaichi secures a decisive electoral victory, solidifying a hawkish, pro-US stance in the Pacific.
+   Event ID: cluster_44
+
+4. Region: Americas
+   Headline: Panama Ports: Beijing Evicted
+   Content: In a major win for US influence, Panama evicts Chinese operators from key canal ports, reversing a decade of Beijing's logistical encroachment.
+   Event ID: cluster_34
+
+## SECTION GROUPS
+Group 1: The Ultimatum
+- Sections: cluster_55, cluster_56
+- Rationale: The central manifestation of the theme: The US imposing a hard deadline on the Ukraine war while squeezing Iran.
+
+Group 2: Structural Shifts
+- Sections: cluster_52, cluster_23
+- Rationale: The long-term consequences of this approach: The end of arms control and the realignment of major powers like India.
+
+Group 3: Ripple Effects
+- Sections: cluster_35, cluster_50
+- Rationale: The secondary shocks and messy transitions resulting from the primary coercion.
+
+## TRANSITIONS
+cluster_55 → cluster_56: The coercion visible in the June deadline for Kyiv takes a different form in Oman, where diplomatic talks are less about engagement than capitulation.
+cluster_56 → cluster_52: While Washington squeezes Tehran to limit its nuclear ambitions, it is simultaneously dismantling the global architecture designed to contain them.
+cluster_52 → cluster_23: If the collapse of New START signals the end of cooperation with Moscow, the new trade pact with New Delhi reveals where that diplomatic energy is being redirected.
+cluster_23 → cluster_35: The resource coercion that stripped Russia of its Indian oil market is the same force now reshaping Venezuela's post-Maduro reality.
+cluster_35 → cluster_50: HARD_BREAK
+
+## HUB MECHANISM (if THEMATIC)
+Hub: Coercive Stabilization
+Explanation: A strategic shift from managing conflict to "force-quitting" it through non-negotiable timelines and bilateral pressure. This replaces the old order's consensus-based stability with a fragile, enforced quiet maintained by direct ultimata (deadlines, trade wedges, and kinetic threats).
+Manifestations: Ukraine (June Deadline), Iran (Survival Talks), India (Forced Realignment), Venezuela (Post-Kinetic Transition)
+Angle: TRAJECTORY_SHIFT
+
+## NARRATIVE ARC
+Arc: Washington shifts from kinetic shock to coercive stabilization, imposing a June deadline on global conflicts that replaces alliance-based order with transactional ultimata.
+Explanation: The briefing captures a specific moment where US foreign policy pivots from breaking things (Venezuela, Iran strikes) to dictating the terms of the new reality, with a specific focus on time-bound demands.

@@ -1,0 +1,97 @@
+{
+  "region": "AMERICAS",
+  "geopolitical_archetype": "Regional Hegemony",
+  "archetype_explanation": "The United States is reasserting direct strategic control over the Caribbean Basin by dismantling a hostile regime (Maduro) and installing a managed transition government. This fits the 'Sphere of Influence' model where the hegemon (US) dictates the internal political and economic parameters (monthly oil budget approval, legislative amnesty) of the subordinate state to ensure alignment with its security and energy interests.",
+  "primary_actors": [
+    {
+      "actor": "Caracas (Rodr\u00edguez Interim Admin)",
+      "intent": "Regime survival and personal immunity for the soft-liner elite.",
+      "constraints": {
+        "geographic": "Caribbean proximity to the US facilitates rapid intervention; lack of strategic depth prevents effective resistance to US dictates.",
+        "economic": "Total dependency on US treasury licensing for oil revenue; state coffers are empty without access to blocked funds.",
+        "political": "The 'Two-Front War': Must satisfy US demands for democratization while preventing a coup from hardline Chavista military elements who fear prosecution."
+      },
+      "likely_action": "Implement a 'Pacted Transition'\u2014passing amnesty laws that protect the military hierarchy while allowing opposition participation, trading sovereignty for stability."
+    },
+    {
+      "actor": "Washington",
+      "intent": "Secure energy supplies and eliminate a Russian/Chinese beachhead in the Western Hemisphere without a costly long-term occupation.",
+      "constraints": {
+        "geographic": "Cannot sustain a heavy troop presence in the Venezuelan interior; relies on offshore naval dominance and air superiority.",
+        "economic": "Domestic pressure to keep global oil prices stable requires Venezuelan production to come online quickly.",
+        "political": "Must avoid the optics of a 'puppet government'; needs a veneer of local legitimacy and democratic process to justify the intervention."
+      },
+      "likely_action": "Utilize 'Economic Trusteeship'\u2014approving Venezuelan budgets month-by-month to force compliance on specific legislative reforms (amnesty, electoral board renewal)."
+    },
+    {
+      "actor": "Chavista Security Apparatus (The Deep State)",
+      "intent": "Avoid prison and extradition to the US.",
+      "constraints": {
+        "geographic": "Control the guns and the territory, but trapped by closed borders and airspace.",
+        "economic": "Illicit revenue streams (gold, narcotics) are being interdicted by US presence.",
+        "political": "Excluded from the Amnesty Bill (which bans 'gross human rights violators'), creating a 'Cornered Rat' dynamic."
+      },
+      "likely_action": "Potential for localized mutinies or sabotage of oil infrastructure to leverage better amnesty terms before the transition solidifies."
+    }
+  ],
+  "futures_wheel": {
+    "driver_event": "Legislative approval of Amnesty Bill excluding human rights violators",
+    "driver_event_id": "8e021d6b-be77-4f86-a534-895e59efed9d",
+    "first_order": "Immediate restoration of political rights to opposition leaders (Machado); Release of low-level political prisoners to signal compliance.",
+    "second_order": "Fracture within the Chavista military/intelligence high command; those excluded from amnesty may attempt a counter-coup or flee to irregular groups in the interior.",
+    "third_order": "Emergence of a 'Petro-Protectorate' model: Venezuela stabilizes as a nominal democracy with its economy directly managed by US technocrats, effectively ending 25 years of Bolivarian sovereignty."
+  },
+  "competing_hypotheses": {
+    "consensus": "The Rodr\u00edguez administration successfully navigates the transition, using the amnesty bill to bridge the gap between US demands and Chavista survival.",
+    "contrarian": "The exclusion of 'gross rights violators' in the amnesty bill triggers a desperate insurgency by the military/intelligence leadership, collapsing the interim government.",
+    "contradicting_evidence": [
+      "The amnesty bill explicitly excludes those accused of gross human rights violations, which implicates the top brass of the DGCIM and SEBIN.",
+      "Detention of key financiers like Alex Saab and Ra\u00fal Gorr\u00edn removes the patronage network keeping the military loyal.",
+      "Historical precedent suggests 'cornered' elites with no exit option often choose scorched-earth resistance."
+    ],
+    "evidence_event_ids": [
+      "8e021d6b-be77-4f86-a534-895e59efed9d",
+      "4f9f5111-4040-4708-8a8d-ece5fa36520f",
+      "acf49fa4-8d2a-4a21-b969-a357e726319b"
+    ]
+  },
+  "pmesii_tags": {
+    "political": [
+      "ad506c98-5da2-40f2-b150-8158b45ac453",
+      "8e021d6b-be77-4f86-a534-895e59efed9d",
+      "f4745659-802b-4569-becb-690830b05e75",
+      "d31da467-3316-443d-9f91-7ac8c49fbcc2",
+      "13daac73-90a0-4c43-a989-c9aaa2f8e646"
+    ],
+    "diplomatic": [
+      "63c130bc-42c5-48f4-a5bd-99c3e6b9df3e",
+      "13daac73-90a0-4c43-a989-c9aaa2f8e646"
+    ],
+    "military": [
+      "4f9f5111-4040-4708-8a8d-ece5fa36520f",
+      "acf49fa4-8d2a-4a21-b969-a357e726319b"
+    ]
+  },
+  "confidence": "HIGH",
+  "confidence_rationale": "High confidence due to corroboration across multiple dimensions: legislative text (amnesty bill), executive action (interim presidency), and external verification (US diplomatic statements/military action context). The causal link between US pressure and local legislative compliance is direct and observable.",
+  "external_sources": [
+    {
+      "title": "2026 United States intervention in Venezuela - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/2026_United_States_intervention_in_Venezuela",
+      "publisher": "Wikipedia",
+      "content": "On 3 January 2026, the United States launched a military strike in Venezuela and captured incumbent Venezuelan president Nicol\u00e1s Maduro..."
+    },
+    {
+      "title": "Venezuela's interim president: Who is Delcy Rodriguez?",
+      "url": "https://www.dw.com/en/venezuelas-interim-president-who-is-delcy-rodriguez/a-75400978",
+      "publisher": "DW",
+      "content": "Delcy and her brother Jorge, now president of Venezuela's National Assembly... is now Venezuela's interim president..."
+    },
+    {
+      "title": "Oil and US oversight: How is Venezuela's interim government surviving?",
+      "url": "https://www.aljazeera.com/economy/2026/2/6/oil-and-us-oversight-how-is-venezuelas-interim-government-surviving",
+      "publisher": "Al Jazeera",
+      "content": "Venezuela will submit every month a budget... We will provide for them at the front end what that [oil] money can be used for..."
+    }
+  ]
+}

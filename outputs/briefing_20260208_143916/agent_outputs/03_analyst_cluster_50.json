@@ -1,0 +1,85 @@
+{
+  "region": "EUROPE",
+  "geopolitical_archetype": "Proxy War",
+  "archetype_explanation": "The conflict has transcended the kinetic frontline (Donbas) into 'Gray Zone' decapitation strikes within the strategic rear (Moscow). The targeting of a specific high-value node (Alexeyev)\u2014who manages irregular forces (PMCs/Wagner) and intelligence operations\u2014demonstrates a shift from attrition warfare to systemic disruption. This fits the Proxy War archetype where state actors (Ukraine) or internal factions use assassination to degrade the adversary's command capabilities without full-scale direct engagement in the capital.",
+  "primary_actors": [
+    {
+      "actor": "Moscow (Kremlin)",
+      "intent": "Maintain regime stability and control over irregular military assets (PMCs) while projecting invulnerability in the capital.",
+      "constraints": {
+        "geographic": "Vast, porous borders and a sprawling urban environment (Moscow) that is difficult to completely seal against covert operatives.",
+        "economic": "Reliance on irregular forces (PMCs/volunteers) to supplement manpower without full mobilization, making handlers like Alexeyev critical nodes.",
+        "political": "Internal security services competition (FSB vs GRU) creates intelligence gaps; need to maintain a narrative of control prevents admitting internal security failures."
+      },
+      "likely_action": "Publicly attribute the attack to Ukraine to deflect from security lapses; privately consolidate control over GRU assets and purge potential internal rivals."
+    },
+    {
+      "actor": "Kyiv (GUR)",
+      "intent": "Degrade Russian command and control, psychological warfare, and disrupt the management of Russian irregular forces.",
+      "constraints": {
+        "geographic": "Operational reach into Moscow requires deep cover assets or local proxies, increasing risk of failure.",
+        "economic": "Dependent on Western aid, which often comes with conditions restricting attacks on recognized Russian soil (though this has loosened by 2026).",
+        "political": "Need to balance aggressive operations with the diplomatic optics of ongoing 'peace talks' or negotiations."
+      },
+      "likely_action": "Conduct precision strikes on high-value military intelligence enablers rather than symbolic political targets to maximize operational impact while maintaining plausible deniability."
+    }
+  ],
+  "futures_wheel": {
+    "driver_event": "Attempted Assassination of GRU Lt. Gen. Vladimir Alexeyev",
+    "driver_event_id": "dd55bc6e-9e16-4474-8f63-78b2d57d9b2f",
+    "first_order": "Immediate hospitalization of Russia's key PMC handler; heightened security protocols for Moscow's military elite.",
+    "second_order": "Disruption of command and control for Russian volunteer/PMC units previously managed by Alexeyev; Stalling of the reported 'peace talks' as Moscow claims sabotage.",
+    "third_order": "Structural centralization of Russian irregular warfare management away from individual 'fixers' to rigid institutional control, reducing their battlefield flexibility and responsiveness."
+  },
+  "competing_hypotheses": {
+    "consensus": "Ukrainian intelligence (GUR) orchestrated the hit to decapitate the leadership of Russian irregular forces (PMCs) and disrupt GRU operations.",
+    "contrarian": "Internal Russian purge (FSB cleaning up GRU/Wagner loose ends) disguised as a Ukrainian attack.",
+    "contradicting_evidence": [
+      "The attack occurred deep inside Moscow, a high-security zone.",
+      "Alexeyev was the primary negotiator with Prigozhin (Wagner) in 2023; his removal eliminates a witness/link to that unstable period.",
+      "The rapid identification and capture of the suspect in Dubai suggests pre-existing surveillance or a setup by Russian services.",
+      "The suspect is a Russian citizen (Lyubomir Korba), not a Ukrainian national operative."
+    ],
+    "evidence_event_ids": [
+      "4c070930-d4c4-4328-9575-589c1fd76f04",
+      "dd55bc6e-9e16-4474-8f63-78b2d57d9b2f"
+    ]
+  },
+  "pmesii_tags": {
+    "MILITARY": [
+      "dd55bc6e-9e16-4474-8f63-78b2d57d9b2f",
+      "dd59026f-1deb-4693-8318-ac7ce2614a54",
+      "c6569ce6-9664-451b-a550-635b44807600"
+    ],
+    "POLITICAL": [
+      "e0130de4-48d9-4c89-8482-379d67ce67f0",
+      "6c84f805-7dbf-4173-b101-cb160cb1f4dc"
+    ],
+    "INFORMATION": [
+      "fbce797d-d2bb-4685-bc55-40ca96a14497",
+      "977e4dda-6039-4c78-9c5f-ed4baf7b3d64"
+    ]
+  },
+  "confidence": "MODERATE",
+  "confidence_rationale": "High confidence that the event occurred and Alexeyev is the target (corroborated by multiple major outlets). Moderate confidence in the attribution to Ukraine vs. internal dynamics, given the opacity of Russian security services and the convenient timing relative to 'peace talks' sabotage claims.",
+  "external_sources": [
+    {
+      "title": "Three suspects in shooting of Russian general named",
+      "url": "https://www.bbc.com/news/articles/cy7j6xe8862o",
+      "publisher": "BBC",
+      "content": "Russia says it has identified three suspects... including the man said to have carried out the attack... Lyubomir Korba. Alexeyev is number two in the main directorate of Russia's GRU military intelligence."
+    },
+    {
+      "title": "Arrest in Dubai after shooting of Russian general \u2014 FSB",
+      "url": "https://amp.dw.com/en/arrest-in-dubai-after-shooting-of-russian-general-fsb/a-75859699",
+      "publisher": "Deutsche Welle",
+      "content": "The man suspected of shooting senior Russian military intelligence officer Vladimir Alekseyev in Moscow has been detained in Dubai... The FSB named the Russian national... as Lyubomir Korba."
+    },
+    {
+      "title": "Russian general Vladimir Alekseyev in critical condition after Moscow shooting",
+      "url": "https://www.theguardian.com/world/2026/feb/06/russia-military-general-vladimir-alekseyev",
+      "publisher": "The Guardian",
+      "content": "Alekseyev... has been widely described as a key figure overseeing the country\u2019s private military companies and was among the senior officials dispatched to negotiate with Yevgeny Prigozhin."
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "region": "Nuclear Arms Control",
+  "archetype": "CONSTRAINT",
+  "word_target": 350,
+  "hook_type": "SURPRISE",
+  "hook_draft": "The expiration of the New START treaty was not a diplomatic accident, but a calculated demolition by Washington.",
+  "paragraphs": [
+    {
+      "purpose": "Define the structural trap creating the constraint.",
+      "word_target": 90,
+      "key_facts": [
+        "US Security Dilemma: Parity with Russia vs. rising China",
+        "Incompatibility of bilateral treaties in a tripolar world",
+        "Washington's refusal to cap forces without Beijing"
+      ],
+      "beat": "The binding constraint"
+    },
+    {
+      "purpose": "Detail the specific collapse of the treaty mechanism this week.",
+      "word_target": 100,
+      "key_facts": [
+        "Trump rejects Putin's call to extend caps",
+        "New START expiration leaves zero valid restraints",
+        "China formally shuns calls to enter talks",
+        "Moscow signals 'informal' adherence despite lapse"
+      ],
+      "beat": "How it manifested this week"
+    },
+    {
+      "purpose": "Explain why no actor can back down from this trajectory.",
+      "word_target": 90,
+      "key_facts": [
+        "Beijing's drive for 1,000+ warheads (parity)",
+        "Moscow's reliance on nukes to offset Ukraine losses",
+        "US need to deter two peers simultaneously",
+        "Asymmetric weapons (Poseidon) rendering caps obsolete"
+      ],
+      "beat": "Why it won't change"
+    },
+    {
+      "purpose": "Forecast the new strategic posture emerging from the vacuum.",
+      "word_target": 70,
+      "key_facts": [
+        "Shift from Bipolar Stability to Tripolar Instability",
+        "Activation of warm production lines",
+        "End of the 50-year reduction era"
+      ],
+      "beat": "Implications for strategy"
+    }
+  ],
+  "key_events": [
+    {
+      "event_id": "ed8c672a-c3fe-410a-958f-3db537e3a6ff",
+      "event_title": "Nuclear Arms Control Era Comes to End",
+      "emphasis": "LEAD",
+      "how_to_use": "Frame as the historical turning point.",
+      "role": "Thematic Anchor"
+    },
+    {
+      "event_id": "51b7fbaa-8a20-45db-8a69-64c4e68ca5a3",
+      "event_title": "Trump rejects call from Russia\u2019s Putin to extend cap",
+      "emphasis": "LEAD",
+      "how_to_use": "Use as the specific catalyst for the constraint manifesting.",
+      "role": "Catalyst"
+    },
+    {
+      "event_id": "eaec6bfb-f296-49b6-95a3-c19e71816dfc",
+      "event_title": "China shuns calls to enter nuclear talks",
+      "emphasis": "SUPPORT",
+      "how_to_use": "Cite as the reason US cannot renew bilateral deals.",
+      "role": "Structural Block"
+    },
+    {
+      "event_id": "623c1016-8014-4d20-bd23-eaf54b8de767",
+      "event_title": "Russia says will act responsibly despite expiry",
+      "emphasis": "MENTION",
+      "how_to_use": "Contrast official lapse with informal/temporary restraint.",
+      "role": "Nuance"
+    }
+  ],
+  "closing_type": "PREDICTION",
+  "closing_draft": "Washington is now forced toward a 'Two-War Construct,' requiring an arsenal larger than Moscow and Beijing\u2019s combined."
+}

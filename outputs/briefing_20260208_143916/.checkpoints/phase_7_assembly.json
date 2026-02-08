@@ -1,0 +1,48 @@
+{
+  "run_id": "briefing_20260208_143916",
+  "phase": "phase_7_assembly",
+  "timestamp": "2026-02-08T15:06:10.852612",
+  "regions_analyzed": [
+    "cluster_56",
+    "cluster_35",
+    "cluster_50",
+    "cluster_52",
+    "cluster_23",
+    "cluster_55"
+  ],
+  "has_skeleton": true,
+  "blueprints_created": [
+    "cluster_23",
+    "cluster_35",
+    "cluster_56",
+    "cluster_52",
+    "cluster_50",
+    "cluster_55"
+  ],
+  "drafts_created": [
+    "cluster_23",
+    "cluster_35",
+    "cluster_56",
+    "cluster_52",
+    "cluster_50",
+    "cluster_55"
+  ],
+  "styled_drafts": [
+    "cluster_23",
+    "cluster_35",
+    "cluster_56",
+    "cluster_52",
+    "cluster_50",
+    "cluster_55"
+  ],
+  "critique_results": {
+    "cluster_23": 87,
+    "cluster_35": 87,
+    "cluster_56": 90,
+    "cluster_52": 90,
+    "cluster_50": 92,
+    "cluster_55": 87
+  },
+  "errors": [],
+  "warnings": []
+}

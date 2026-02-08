@@ -1,0 +1,100 @@
+{
+  "region": "MIDDLE_EAST",
+  "geopolitical_archetype": "Coercive Diplomacy",
+  "archetype_explanation": "The dynamic represents a classic 'Compellence Strategy' rather than standard diplomacy. The United States is leveraging the physical presence of military assets (CENTCOM Commander at the negotiating table) and economic strangulation to force a revision of the status quo. Conversely, Iran is utilizing 'Resistance Economy' and nuclear latency as counter-leverage. This is not a search for mutual benefit but a contest of pain tolerance, where the US seeks to compel submission without ground war, and Iran seeks to compel sanctions relief without disarmament.",
+  "primary_actors": [
+    {
+      "actor": "Tehran",
+      "intent": "Regime survival, sanctions relief, and retention of nuclear threshold capability (latency) as an insurance policy against future interventions.",
+      "constraints": {
+        "geographic": "The Zagros Mountains provide some defense, but nuclear facilities are exposed to aerial bombardment (proven by June 2025 strikes). Control of the Strait of Hormuz is a 'suicide switch'\u2014closing it destroys Iran's own revenue.",
+        "economic": "Economy is battered by sanctions and the aftermath of the 2025 conflict. Oil exports are the sole lifeline, creating extreme vulnerability to US maritime interdiction or global price shocks.",
+        "political": "The regime faces a legitimacy crisis following Jan 2026 protests. It cannot afford to look weak before domestic hardliners or the public by capitulating to the 'Great Satan,' yet it cannot survive total economic collapse."
+      },
+      "likely_action": "Will agree to a 'Freeze-for-Cash' interim deal to stabilize the economy but will categorically refuse to negotiate on ballistic missiles, viewing them as the only reliable delivery system for their deterrent."
+    },
+    {
+      "actor": "Washington",
+      "intent": "Prevent a nuclear-armed Iran and reduce regional footprint without engaging in a costly ground war, while securing a 'better deal' than previous administrations.",
+      "constraints": {
+        "geographic": "Projecting power requires reliance on regional bases (Qatar, Bahrain) which are within range of Iranian missiles, creating a vulnerability that limits escalation options.",
+        "economic": "Must avoid a conflict that spikes oil prices, which would fuel domestic inflation and damage the incumbent administration's political standing.",
+        "political": "The administration is caught between an isolationist base demanding troop withdrawals and a hawkish establishment (plus Israel) demanding strict non-proliferation. A 'perfect' deal is politically impossible; a 'good enough' deal is necessary."
+      },
+      "likely_action": "Will pursue a high-pressure diplomatic track backed by visible military threats (CENTCOM presence) to extract capped enrichment levels, likely settling for an imperfect executive agreement rather than a treaty."
+    },
+    {
+      "actor": "Tel Aviv",
+      "intent": "Total dismantlement of Iranian nuclear capabilities and prevention of US-Iran d\u00e9tente that leaves Israel exposed.",
+      "constraints": {
+        "geographic": "Lack of strategic depth makes Israel existentially vulnerable to even a few nuclear-armed missiles. It cannot absorb a first strike.",
+        "economic": "The tech-heavy economy requires regional stability and open shipping lanes; prolonged war of attrition is economically ruinous.",
+        "political": "The ruling coalition relies on security hawks who view any compromise on enrichment as treasonous. The Prime Minister cannot accept a US return to the 2015 JCPOA framework."
+      },
+      "likely_action": "Will act as a 'Spoiler' in the negotiations, utilizing intelligence leaks, cyber operations, or limited strikes to disrupt trust and prevent the US from making concessions deemed dangerous to Israeli security."
+    }
+  ],
+  "futures_wheel": {
+    "driver_event": "Indirect US-Iran Talks in Muscat with CENTCOM Presence",
+    "driver_event_id": "92c7d1a5-4b8b-46c1-9ae0-886ebadcc679",
+    "first_order": "Immediate tactical de-escalation in the Persian Gulf; pause in proxy attacks on US bases as both sides test the diplomatic window.",
+    "second_order": "Diplomatic friction between Washington and Tel Aviv peaks (Feb 11 meeting); Israel initiates lobbying campaign or independent covert actions to harden US terms.",
+    "third_order": "Structural shift toward 'Nuclear Latency Normalization.' The region moves into a cold containment phase where Iran is tacitly accepted as a threshold nuclear state (Japan model) in exchange for regional quiet, forcing Arab neighbors to seek independent security guarantees (nuclear hedging) outside the US umbrella."
+  },
+  "competing_hypotheses": {
+    "consensus": "Talks will produce a limited 'Interim Agreement' (freezing enrichment for partial sanctions relief) to avoid war.",
+    "contrarian": "The talks are a deceptive pause before military escalation. The US is using the failure of these specific talks as a *casus belli* or justification for a decisive strike campaign.",
+    "contradicting_evidence": [
+      "Iran's explicit refusal to discuss missiles (the delivery mechanism) renders any nuclear deal strategically incomplete for the US.",
+      "Presence of a uniformed combat commander (Adm. Cooper) at diplomatic talks suggests an ultimatum is being delivered, not a negotiation.",
+      "President Trump's statement that he 'won't allow Iran to have any enriched uranium' contradicts the technical reality of a compromise deal."
+    ],
+    "evidence_event_ids": [
+      "ee422529-fa70-403c-8550-f1a0ea90b9e5",
+      "0b11e6dc-72ac-4ad1-9530-fff5fc6bd79b",
+      "5fd26887-e182-4723-9c10-082bddf92be7"
+    ]
+  },
+  "pmesii_tags": {
+    "political": [
+      "92c7d1a5-4b8b-46c1-9ae0-886ebadcc679",
+      "06f794fa-bb6d-4321-a4a7-93765fa3e345",
+      "379c04d2-7663-45eb-9279-8964201441b7"
+    ],
+    "military": [
+      "62a55ce1-8746-435e-81fa-0f50ece5c931",
+      "5fd26887-e182-4723-9c10-082bddf92be7",
+      "ee422529-fa70-403c-8550-f1a0ea90b9e5"
+    ],
+    "economic": [
+      "a3637a9c-db72-4424-aff3-693f428cf99f",
+      "da297cf1-4ab4-4963-aa41-d9b3041924ff"
+    ],
+    "information": [
+      "a668305b-9c8f-44cd-a47d-761700ce2053",
+      "e48cc555-89ae-418b-95e2-d63a8b3eee0b"
+    ]
+  },
+  "confidence": "HIGH",
+  "confidence_rationale": "Strong corroboration across multiple independent sources regarding the specific participants (Araghchi, Cooper) and the timeline (post-2025 conflict). The pattern of behavior\u2014US pressure vs. Iranian intransigence on missiles\u2014is consistent with established strategic doctrines.",
+  "external_sources": [
+    {
+      "title": "Iran's Top Diplomat Says Indirect US-Iran Talks in Oman Were 'Good Start'",
+      "url": "https://www.military.com/daily-news/2026/02/06/irans-top-diplomat-says-indirect-us-iran-talks-oman-were-good-start.html",
+      "publisher": "Military.com / AP",
+      "content": "Iran and the United States held indirect talks in Oman... In an unusual development, U.S. Navy Adm. Brad Cooper, the head of the American military\u2019s Central Command, also attended the meeting."
+    },
+    {
+      "title": "Israel says Netanyahu will meet with Trump in Washington on Wednesday",
+      "url": "https://www.pbs.org/newshour/world/israel-says-netanyahu-will-meet-with-trump-in-washington-on-wednesday-about-u-s-iran-talks",
+      "publisher": "PBS NewsHour",
+      "content": "Israeli Prime Minister Benjamin Netanyahu is expected to meet U.S. President Donald Trump on Wednesday (11 February) in Washington."
+    },
+    {
+      "title": "Non-negotiable: Iran says missiles off the table in talks with the US",
+      "url": "https://www.aljazeera.com/news/2026/2/7/iran-says-oman-mediated-talks-with-us-a-good-start",
+      "publisher": "Al Jazeera",
+      "content": "Araghchi told Al Jazeera on Saturday that Iran\u2019s missile programme was \u201cnever negotiable\u201d in Friday\u2019s talks."
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "region": "THEMATIC",
+  "geopolitical_archetype": "Economic Coercion",
+  "archetype_explanation": "Washington is utilizing market access (tariff removal) and 'Pax Silica' integration as coercive leverage to force New Delhi into a 'Wedge Strategy'\u2014severing its energy lifeline with Moscow. This moves beyond standard trade negotiation into structural realignment, using economic statecraft to dismantle the India-Russia strategic axis.",
+  "primary_actors": [
+    {
+      "actor": "New Delhi",
+      "intent": "Maintain 7%+ GDP growth through export access to US markets while preserving strategic autonomy and energy security.",
+      "constraints": {
+        "geographic": "Proximity to hostile China and Pakistan mandates high defense readiness, historically reliant on Russian hardware, creating a security dependency that cannot be severed overnight.",
+        "economic": "Imports 85% of crude oil needs. Discounted Russian oil (saving ~$7B/year) is critical for managing the Current Account Deficit (CAD) and controlling domestic inflation.",
+        "political": "Domestic populace is highly sensitive to fuel price inflation. The government cannot afford an energy shock that would result from abruptly cutting 30-40% of its oil supply."
+      },
+      "likely_action": "Execute a 'hollow compliance' strategy: Sign the US deal for investment/tech benefits and reduce direct Russian imports to satisfy Washington, while rerouting Russian energy through intermediaries (grey market) or blending to maintain volume without official 'Russian' labels."
+    },
+    {
+      "actor": "Washington",
+      "intent": "Decouple India from Russia to starve Moscow's war economy and integrate India into the 'Pax Silica' anti-China supply chain.",
+      "constraints": {
+        "geographic": "Distance from the Indo-Pacific necessitates a strong regional partner (India) to counterbalance China; Washington cannot afford to alienate New Delhi completely.",
+        "economic": "Domestic inflation sensitivity limits the ability to sustain high tariffs on Indian goods without hurting US consumers.",
+        "political": "The 'America First' platform requires visible victories in trade deficit reduction ($500B purchase commitment) to sell the deal domestically."
+      },
+      "likely_action": " leverage the $500B trade carrot to demand compliance on Russia, but likely tolerate partial compliance (e.g., India buying 'Venezuelan' oil that is actually swapped) to keep the anti-China coalition intact."
+    },
+    {
+      "actor": "Moscow",
+      "intent": "Retain India as a primary revenue generator to offset loss of European energy markets.",
+      "constraints": {
+        "geographic": "Lack of pipeline infrastructure to South Asia forces reliance on seaborne trade, which is vulnerable to US maritime sanctions and the 'Shadow Fleet' logistics bottleneck.",
+        "economic": "Western sanctions leave China and India as the only viable buyers for large volumes; losing India would force total dependence on Beijing (monopsony risk).",
+        "political": "Needs to project international legitimacy and 'business as usual' to domestic audience to maintain regime stability."
+      },
+      "likely_action": "Deepen discounts to Indian refiners to make the economic cost of US compliance unbearable for New Delhi; potentially weaponize fertilizer exports (where Russia has high leverage) as a counter-threat."
+    },
+    {
+      "actor": "Caracas",
+      "intent": " leverage US-India alignment to gain sanctions relief and attract foreign investment for dilapidated oil infrastructure.",
+      "constraints": {
+        "geographic": "Located in US near-abroad, making export flows easily monitorable/controllable by US Navy/Treasury.",
+        "economic": "Decades of underinvestment mean production is <1M bpd (2025). Ramping to meet India's demand (replacing Russia's ~1.6M bpd) would take 2+ years and massive CAPEX.",
+        "political": "Regime stability is fragile; turning on the taps for the US/India requires political concessions that endanger the ruling party's grip."
+      },
+      "likely_action": "Promise supply to facilitate the US-India deal but fail to deliver sufficient physical volumes in the short term, forcing India to seek oil elsewhere."
+    }
+  ],
+  "futures_wheel": {
+    "driver_event": "India commits to US trade deal and ending Russian oil purchases",
+    "driver_event_id": "98d10bf0-f586-4777-992b-46b943928ef1",
+    "first_order": "Immediate tactical shift in Indian crude sourcing; Russian import volumes drop (already seen Dec 2025 hitting 3-year low) while nominal orders for US/Venezuelan crude spike.",
+    "second_order": "Global energy market fragmentation; Russia aggressively discounts oil for China/Global South to clear inventory, while India faces short-term refining margin compression due to loss of deep Russian discounts.",
+    "third_order": "Structural re-anchoring of the South Asian economy to the Dollar Sphere. By committing $500B to US goods and integrating into 'Pax Silica', India effectively pivots away from BRICS-led de-dollarization, cementing a bifurcated global economy where New Delhi serves as the Western anchor in Asia."
+  },
+  "competing_hypotheses": {
+    "consensus": "India is undergoing a strategic pivot to the West, trading Russian energy ties for US technology and market access to fuel its manufacturing rise.",
+    "contrarian": "India is engaging in 'performative compliance'; it will sign the deal but claim 'force majeure' or use technical loopholes to continue Russian energy imports because the alternative (Venezuelan/US oil) is insufficient or too expensive.",
+    "contradicting_evidence": [
+      "Venezuelan oil production is currently <1M bpd and requires years to ramp up, mathematically unable to replace India's ~1.6M bpd Russian imports immediately.",
+      "Indian officials 'kept mum' on the specific Russian oil ban clause in press engagements, suggesting internal hesitation.",
+      "Kremlin statement that India is 'free to buy' implies back-channel assurances or knowledge that total decoupling is impossible.",
+      "Russian oil imports dropped in Dec 2025 but remained at 25% of total, indicating a reduction rather than the 'halt' claimed by Trump."
+    ],
+    "evidence_event_ids": [
+      "34226300-aa4d-4eab-a550-c4d2695e5df0",
+      "370f6e3a-41ee-4fa5-b0c3-feb7a4a15689",
+      "da0a9035-0c18-4341-8478-72abc528195e"
+    ]
+  },
+  "pmesii_tags": {
+    "POLITICAL": [
+      "a50d70d8-f735-4214-816e-851eef938b58",
+      "0575493e-edf4-4441-98a5-2358296c0ff8",
+      "350078c3-38e8-4f4d-8412-c0d9d5c9becb"
+    ],
+    "ECONOMIC": [
+      "022416c1-4aa4-4421-9e55-a6e78729baee",
+      "98d10bf0-f586-4777-992b-46b943928ef1",
+      "78f30234-5db5-40d4-9044-f87aaa4f05bb",
+      "be0a952d-f785-45bc-8af8-22a923a17308"
+    ],
+    "INFRASTRUCTURE": [
+      "a50d70d8-f735-4214-816e-851eef938b58"
+    ],
+    "INFORMATION": [
+      "370f6e3a-41ee-4fa5-b0c3-feb7a4a15689",
+      "d4519d27-c70f-4b26-a4db-aec1863c3cda",
+      "34226300-aa4d-4eab-a550-c4d2695e5df0"
+    ]
+  },
+  "confidence": "HIGH",
+  "confidence_rationale": "Strong corroboration between event data (trade deal announcements) and external search context (Dec 2025 oil import drops, Venezuelan capacity limits). The economic constraints are mathematically verifiable (oil volumes vs. capacity), making the 'substitution' narrative physically impossible in the short term, confirming the coercive nature of the deal.",
+  "external_sources": [
+    {
+      "title": "India\u2019s Russian oil imports fall to three-year low as energy mix diversifies",
+      "url": "https://www.nationalheraldindia.com/amp/story/business/indias-russian-oil-imports-fall-to-three-year-low-as-energy-mix-diversifies",
+      "publisher": "National Herald India",
+      "content": "India\u2019s crude oil imports from Russia fell to a 38-month low in December 2025... Russia\u2019s share of India\u2019s overall oil imports dropped to 24.9 per cent."
+    },
+    {
+      "title": "Breaking Down Venezuela's Oil Outlook for the future",
+      "url": "https://auroraer.com/resources/aurora-insights/articles/breaking-down-venezuelas-oil-outlook-for-the-future",
+      "publisher": "Aurora Energy Research",
+      "content": "Oil production has declined significantly... reaching below 1m bbl/d in 2025... In the medium-term (2027-2030), Venezuelan heavy sour production could rise to over ~1m bbl/d if a transitional government is established."
+    },
+    {
+      "title": "Pax Silica: India's Challenge to China Critical Minerals Supply Chain",
+      "url": "https://www.livemint.com/news/pax-silica-india-challenge-china-critical-minerals-supply-chain-future-11770539348966.html",
+      "publisher": "LiveMint",
+      "content": "Launched by the US in December 2025, Pax Silica will look to collaborate across the entire supply chain... US officials are increasingly pushing India to join."
+    }
+  ]
+}

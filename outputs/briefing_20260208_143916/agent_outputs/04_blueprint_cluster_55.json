@@ -1,0 +1,101 @@
+{
+  "region": "The June Ultimatum: Peace at Gunpoint",
+  "archetype": "LEADER",
+  "word_target": 500,
+  "hook_type": "CONTRAST",
+  "hook_draft": "Washington's public stance remains 'as long as it takes,' but its private calendar has been circled in red for June.",
+  "paragraphs": [
+    {
+      "purpose": "Establish the immediate tension between public rhetoric and the private deadline.",
+      "word_target": 50,
+      "key_facts": [
+        "Contrast between 'unwavering support' rhetoric and the hard June deadline"
+      ],
+      "beat": "The Hook"
+    },
+    {
+      "purpose": "Detail the specific news event triggering the analysis.",
+      "word_target": 60,
+      "key_facts": [
+        "Zelenskyy confirms US set June deadline for peace deal",
+        "Washington preparing to 'do business' with Russia post-deal",
+        "Timeline aligns with US midterm election preparations"
+      ],
+      "beat": "The News Peg"
+    },
+    {
+      "purpose": "Define the core structural shift: from Proxy War to Great Power Accommodation.",
+      "word_target": 60,
+      "key_facts": [
+        "Shift from defending Ukraine's territorial integrity to US strategic exit",
+        "Prioritization of US pivot to Indo-Pacific",
+        "Transactional realism replacing 'rules-based order'"
+      ],
+      "beat": "The Nub"
+    },
+    {
+      "purpose": "Provide historical context for why the US is forcing this now.",
+      "word_target": 80,
+      "key_facts": [
+        "Exhaustion of the 'blank check' funding model",
+        "Strategic necessity of freeing resources for China containment",
+        "Domestic economic pressure to normalize energy markets"
+      ],
+      "beat": "The Step-Back"
+    },
+    {
+      "purpose": "Argue how this deadline changes battlefield incentives (Kinetic Diplomacy).",
+      "word_target": 100,
+      "key_facts": [
+        "Russia escalating energy infrastructure strikes to maximize leverage",
+        "Moscow's goal: force Kyiv to negotiate from desperation",
+        "Kyiv's goal: secure 'poison pill' security guarantees (NATO-lite) in exchange for territory"
+      ],
+      "beat": "The Argument"
+    },
+    {
+      "purpose": "Address the risks of this strategy failing (The Contrarian View).",
+      "word_target": 75,
+      "key_facts": [
+        "Risk of disorderly withdrawal if Russia refuses to settle",
+        "Possibility of catastrophic Ukrainian front line collapse",
+        "Dangers of signaling weakness to other revisionist powers"
+      ],
+      "beat": "The Counter-Argument"
+    },
+    {
+      "purpose": "Forecast the likely outcome and its long-term cost.",
+      "word_target": 75,
+      "key_facts": [
+        "Likely outcome: 'Korea-style' frozen conflict/armistice",
+        "Long-term impact: Transactional realism signals conditional security to allies like Taiwan"
+      ],
+      "beat": "The Prescription"
+    }
+  ],
+  "key_events": [
+    {
+      "event_id": "4fdf7b8e-9bb6-480a-8e25-b8bf1f026917",
+      "event_title": "Zelenskyy says US sets June deadline for peace deal, as Russia launches new attacks on energy sites",
+      "emphasis": "LEAD",
+      "how_to_use": "Use to link the diplomatic deadline directly to the kinetic escalation on the ground.",
+      "role": "Central evidence of the 'deadline diplomacy' dynamic."
+    },
+    {
+      "event_id": "e108f5f3-756b-42ef-988c-c2a71e00efad",
+      "event_title": "Zelenskyy says the U.S. is gearing up to do business with Russia",
+      "emphasis": "SUPPORT",
+      "how_to_use": "Use to illustrate the US motivation for the deadline (normalization).",
+      "role": "Supporting evidence for US strategic pivot."
+    },
+    {
+      "event_id": "e15beddd-a1d0-43a5-abd3-000e13eaaa8a",
+      "event_title": "Trump pushes for peace in Ukraine \u2018by June\u2019",
+      "emphasis": "MENTION",
+      "how_to_use": "Mention to show bipartisan alignment on the timeline or the specific administration pressure.",
+      "role": "Context for the political drivers."
+    }
+  ],
+  "closing_type": "WARNING",
+  "closing_draft": "Washington may successfully pivot by summer, but the price of admission is the very rules-based order it claims to defend."
+}

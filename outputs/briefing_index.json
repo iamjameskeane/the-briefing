@@ -1,5 +1,19 @@
 [
   {
+    "run_id": "briefing_20260208_143916",
+    "date": "2026-02-08",
+    "hub": "Coercive Stabilization",
+    "arc": "Washington shifts from kinetic shock to coercive stabilization, imposing a June deadline on global conflicts that replaces alliance-based order with transactional ultimata.",
+    "headlines": {
+      "cluster_23": "The June Ultimatum: Peace at Gunpoint",
+      "cluster_35": "Tehran's Hollow Negotiation",
+      "cluster_50": "The Nuclear Void",
+      "cluster_52": "The $500 Billion Wedge",
+      "cluster_55": "Venezuela: The Morning After",
+      "cluster_56": "Shadow War in Moscow"
+    }
+  },
+  {
     "run_id": "briefing_20260201_172547",
     "date": "2026-02-01",
     "hub": "Coercive Unilateralism vs. Strategic Hedging",

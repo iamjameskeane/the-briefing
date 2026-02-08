@@ -1,0 +1,101 @@
+{
+  "region": "EUROPE",
+  "geopolitical_archetype": "Great Power Accommodation",
+  "archetype_explanation": "The dynamic shifts from 'Proxy War' to 'Great Power Accommodation', where the external patron (USA) prioritizes strategic realignment and domestic economic interests over the client state's (Ukraine) territorial integrity. This forces a settlement based on power realities rather than international law, echoing the 'spheres of influence' model.",
+  "primary_actors": [
+    {
+      "actor": "Washington",
+      "intent": "Extricate from the conflict to pivot resources to the Indo-Pacific and domestic economy while claiming a diplomatic 'win' before midterm elections.",
+      "constraints": {
+        "geographic": "Atlantic isolation grants security regardless of Ukraine's borders; distance reduces urgency compared to European allies.",
+        "economic": "Rising national debt and inflation mandate a reduction in foreign aid ($100bn+ already spent); desire to access Russian energy/minerals to lower global prices.",
+        "political": "Domestic mandate ('America First') rejects indefinite funding of foreign wars; need to stabilize relations with Moscow to peel it away from Beijing."
+      },
+      "likely_action": "Leverage aid dependency to force Kyiv into concessions, utilizing the June 2026 deadline as a hard stop to induce compliance."
+    },
+    {
+      "actor": "Kyiv",
+      "intent": "Ensure state survival, secure binding security guarantees (NATO-equivalent), and recover maximum territory.",
+      "constraints": {
+        "geographic": "Lack of natural barriers on the steppe requires strategic depth or powerful alliances; proximity to Russia is a permanent existential threat.",
+        "economic": "Critical infrastructure acts as a coercive lever (energy grid at 60% capacity); total dependence on Western financial aid for state solvency.",
+        "political": "Public opposition to territorial concessions vs. exhaustion from war; constitutional mandates regarding territorial integrity."
+      },
+      "likely_action": "Accept a 'frozen conflict' under duress but seek to maximize the 'poison pill' costs for Russia (e.g., security guarantees, reconstruction funds) to prevent future invasion."
+    },
+    {
+      "actor": "Moscow",
+      "intent": "Neutralize Ukraine as a strategic threat (No NATO), secure annexed territories, and degrade Western unity.",
+      "constraints": {
+        "geographic": "The North European Plain remains a vulnerability, driving the need for the Dnieper as a defensive line or a buffer zone.",
+        "economic": "Overheating war economy and labor shortages limit the ability to sustain high-intensity offensive operations indefinitely.",
+        "political": "Need to consolidate gains to justify the war's cost to the domestic population; cannot accept a deal that looks like a defeat."
+      },
+      "likely_action": "Escalate attacks on energy infrastructure (kinetic diplomacy) leading up to June to maximize leverage, ensuring Kyiv negotiates from a position of desperation."
+    }
+  ],
+  "futures_wheel": {
+    "driver_event": "US sets rigid June 2026 deadline for peace deal and prepares to normalize business with Russia",
+    "driver_event_id": "e108f5f3-756b-42ef-988c-c2a71e00efad",
+    "first_order": "Russia intensifies energy infrastructure strikes to deplete Ukrainian leverage before talks; European states fracture between those seeking to fill the US void and those seeking accommodation.",
+    "second_order": "A 'frozen line of control' is established without formal recognition of borders; US investment firms begin maneuvering for reconstruction contracts and resource extraction rights in Ukraine.",
+    "third_order": "Structural shift in global security architecture: The credibility of US 'rules-based order' is replaced by transactional realism, signaling to other middle powers (e.g., Taiwan, Poland) that security guarantees are conditional on US domestic politics, spurring nuclear proliferation or autonomous defense policies in the Rimland."
+  },
+  "competing_hypotheses": {
+    "consensus": "The US deadline forces a 'Korea-style' armistice by June 2026, leaving Russia with occupied territories and Ukraine with security guarantees but no NATO membership.",
+    "contrarian": "The peace initiative collapses, leading to a disorderly US withdrawal and a catastrophic collapse of the Ukrainian front lines.",
+    "contradicting_evidence": [
+      "Russia's continued maximalist strikes on energy infrastructure suggest an intent to break the Ukrainian state, not just negotiate.",
+      "Failure of trilateral talks in Abu Dhabi indicates the diplomatic gap remains unbridgeable.",
+      "The '15-year' vs '50-year' security guarantee dispute highlights a lack of trust that may prevent Kyiv from signing."
+    ],
+    "evidence_event_ids": [
+      "4fdf7b8e-9bb6-480a-8e25-b8bf1f026917",
+      "ef188df2-a0aa-472e-b2f8-2a1d3188ecaf"
+    ]
+  },
+  "pmesii_tags": {
+    "political": [
+      "e108f5f3-756b-42ef-988c-c2a71e00efad",
+      "69ba3269-e436-4377-af1f-f16dc1569a25",
+      "e15beddd-a1d0-43a5-abd3-000e13eaaa8a"
+    ],
+    "military": [
+      "4fdf7b8e-9bb6-480a-8e25-b8bf1f026917"
+    ],
+    "economic": [
+      "e108f5f3-756b-42ef-988c-c2a71e00efad",
+      "de0cf1c0-221b-4eb5-8ff8-415c353679ff"
+    ],
+    "infrastructure": [
+      "4fdf7b8e-9bb6-480a-8e25-b8bf1f026917",
+      "de0cf1c0-221b-4eb5-8ff8-415c353679ff"
+    ],
+    "diplomacy": [
+      "8c004f45-15e2-49f6-b17c-f36e8450af38",
+      "f51b726d-3e9c-4fc6-a0e5-301ae80f9129"
+    ]
+  },
+  "confidence": "HIGH",
+  "confidence_rationale": "Multiple corroborating reports from both Kyiv and Washington confirm the June 2026 deadline and the specific nature of the pressure (business resumption, energy strikes). The geopolitical logic aligns with the known 'America First' doctrine of the Trump administration.",
+  "external_sources": [
+    {
+      "title": "Trump's full 28-point Ukraine-Russia peace plan",
+      "url": "https://www.axios.com/2025/11/20/trump-ukraine-peace-plan-28-points-russia",
+      "publisher": "Axios",
+      "content": "President Trump's 28-point plan... would force Kyiv to give up additional territory in the east, cap the size of its military, and agree it will never join NATO... The plan also includes economic components that would see... the U.S. and Russia agreeing to partner long-term in areas like AI and mining."
+    },
+    {
+      "title": "Updated damage assessment finds $524 billion needed for recovery in Ukraine",
+      "url": "https://www.undp.org/ukraine/press-releases/updated-damage-assessment-finds-524-billion-needed-recovery-ukraine-over-next-decade",
+      "publisher": "UNDP",
+      "content": "Total cost of reconstruction and recovery in Ukraine over the next decade will be U.S. $524 billion... energy sector heavily targeted."
+    },
+    {
+      "title": "U.S. offers Ukraine 15-year security guarantee as part of peace plan",
+      "url": "https://www.npr.org/2025/12/29/g-s1-103906/ukraine-russia-trump-zelenskyy-security",
+      "publisher": "NPR",
+      "content": "The United States is offering Ukraine security guarantees for a period of 15 years... Zelenskyy said... he would prefer an American commitment of up to 50 years."
+    }
+  ]
+}

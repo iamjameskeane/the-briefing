@@ -1,0 +1,20 @@
+{
+  "run_id": "briefing_20260208_143916",
+  "phase": "phase_4_analysts",
+  "timestamp": "2026-02-08T14:46:51.050917",
+  "regions_analyzed": [
+    "cluster_55",
+    "cluster_50",
+    "cluster_56",
+    "cluster_23",
+    "cluster_52",
+    "cluster_35"
+  ],
+  "has_skeleton": true,
+  "blueprints_created": [],
+  "drafts_created": [],
+  "styled_drafts": [],
+  "critique_results": {},
+  "errors": [],
+  "warnings": []
+}

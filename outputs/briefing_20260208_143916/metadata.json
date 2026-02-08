@@ -1,0 +1,38 @@
+{
+  "run_id": "briefing_20260208_143916",
+  "version": "3.1",
+  "event_count": 1000,
+  "source_count": 1,
+  "regions_analyzed": [
+    "cluster_56",
+    "cluster_35",
+    "cluster_50",
+    "cluster_52",
+    "cluster_23",
+    "cluster_55"
+  ],
+  "regions_published": [
+    "Iran Nuclear Standoff",
+    "Nuclear Arms Control",
+    "India-US Trade Deal",
+    "Venezuela's Interim Leader",
+    "Russian General Assassination"
+  ],
+  "regions_killed": [
+    "Greenland Consulates",
+    "Gaza Humanitarian Crisis",
+    "Board of Peace"
+  ],
+  "narrative_arc": "Washington shifts from kinetic shock to coercive stabilization, imposing a June deadline on global conflicts that replaces alliance-based order with transactional ultimata.",
+  "critic_scores": {
+    "cluster_23": 87,
+    "cluster_35": 87,
+    "cluster_56": 90,
+    "cluster_52": 90,
+    "cluster_50": 92,
+    "cluster_55": 87
+  },
+  "errors": [],
+  "warnings": [],
+  "elapsed_seconds": 195.9473147392273
+}

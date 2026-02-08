@@ -1,0 +1,73 @@
+{
+  "region": "Russia",
+  "archetype": "SLEEPER",
+  "word_target": 150,
+  "hook_type": "CONTRAST",
+  "hook_draft": "To the public, the shooting of Lieutenant General Vladimir Alexeyev is a security lapse in Moscow; to the intelligence community, it is a surgical strike on the architecture of Russia's shadow war.",
+  "paragraphs": [
+    {
+      "purpose": "Establish the surface event while hinting at the deeper implication.",
+      "word_target": 35,
+      "key_facts": [
+        "Alexeyev shot and wounded in Moscow",
+        "Suspects named and detained",
+        "Moscow officially blames Ukrainian GUR"
+      ],
+      "beat": "Surface calm"
+    },
+    {
+      "purpose": "Reveal the anomaly: the target's unique strategic value.",
+      "word_target": 55,
+      "key_facts": [
+        "Alexeyev is Deputy Chief of GRU",
+        "Managed Wagner and irregular PMC forces",
+        "Serves as the 'fixer' for intelligence operations"
+      ],
+      "beat": "The anomaly beneath"
+    },
+    {
+      "purpose": "Explain why his removal disrupts the system.",
+      "word_target": 35,
+      "key_facts": [
+        "Removal of personal 'fixer' disrupts command chains",
+        "Forces shift from personal loyalty to institutional rigidity",
+        "Risk of internal purges disguised as investigation"
+      ],
+      "beat": "Activation conditions"
+    },
+    {
+      "purpose": "Identify the critical metric to monitor.",
+      "word_target": 25,
+      "key_facts": [
+        "Watch for structural centralization of PMCs",
+        "Monitor potential loss of irregular unit responsiveness"
+      ],
+      "beat": "What to watch for"
+    }
+  ],
+  "key_events": [
+    {
+      "event_id": "5a5a1cdd-0b07-4059-a51e-0b1d973415e9",
+      "event_title": "Deputy chief of Russian military intelligence was shot and wounded in Moscow",
+      "emphasis": "LEAD",
+      "how_to_use": "Use to anchor the opening: a high-level hit inside the capital.",
+      "role": "The inciting incident."
+    },
+    {
+      "event_id": "e0130de4-48d9-4c89-8482-379d67ce67f0",
+      "event_title": "Russia blames Ukraine for attempted assassination of top general",
+      "emphasis": "SUPPORT",
+      "how_to_use": "Mention briefly to establish the official narrative vs the structural reality.",
+      "role": "Contextual framing."
+    },
+    {
+      "event_id": "dd55bc6e-9e16-4474-8f63-78b2d57d9b2f",
+      "event_title": "Vladimir Alexeyev: Three suspects in shooting of Russian general named",
+      "emphasis": "MENTION",
+      "how_to_use": "Use to confirm the tactical details (arrests made) without getting bogged down in names.",
+      "role": "Supporting detail."
+    }
+  ],
+  "closing_type": "QUESTION",
+  "closing_draft": "The question is not whether Alexeyev survives the surgery, but whether the Kremlin's control over its private armies can survive his absence."
+}

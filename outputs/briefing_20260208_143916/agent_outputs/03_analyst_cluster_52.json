@@ -1,0 +1,95 @@
+{
+  "region": "THEMATIC",
+  "geopolitical_archetype": "Security Dilemma",
+  "archetype_explanation": "The US demand for Chinese inclusion in arms control (to secure long-term US parity) has paradoxically led to the expiration of the only existing restraint on Russia (New START). This forces Washington to simultaneously deter two peer competitors, triggering a defensive expansion in Beijing and Moscow that decreases net US security.",
+  "primary_actors": [
+    {
+      "actor": "Washington",
+      "intent": "Bind China's rising nuclear capability while maintaining strategic parity with Russia.",
+      "constraints": {
+        "geographic": "Offshore position requires 'Extended Deterrence' commitments to NATO/Asia allies, necessitating a larger, more flexible arsenal than a purely continental power.",
+        "economic": "Nuclear modernization program (Sentinel ICBM, Columbia class) is already straining budget ($1.5T+ projected); an unconstrained three-way race risks fiscal exhaustion.",
+        "political": "Domestic legislative gridlock makes Senate ratification (67 votes) of any 'Russia-only' treaty impossible; 'Tough on China' consensus forces maximalist demands."
+      },
+      "likely_action": "Will utilize the 'threat' of an unconstrained arms race to force Beijing to the table, likely deploying intermediate-range assets to the Indo-Pacific to create leverage."
+    },
+    {
+      "actor": "Moscow",
+      "intent": "Preserve status as a nuclear superpower to offset conventional degradation from the Ukraine war.",
+      "constraints": {
+        "geographic": "The North European Plain remains indefensible conventionally; nuclear arsenal is the sole guarantee of state survival and territorial integrity.",
+        "economic": "War economy cannot sustain a quantitative arms race against a fully mobilized US industrial base; prefers cost certainty of treaty limits.",
+        "political": "Cannot appear subservient to US demands; cannot alienate Beijing by forcing them into a treaty against their will."
+      },
+      "likely_action": "Will maintain informal adherence to New START caps to save money while loudly developing asymmetric 'doomsday' weapons (Poseidon/Burevestnik) for propaganda value."
+    },
+    {
+      "actor": "Beijing",
+      "intent": "Achieve 'assured retaliation' capability to prevent US nuclear coercion over Taiwan.",
+      "constraints": {
+        "geographic": "SSBN bastions in the South China Sea are vulnerable to US ASW; lack of deep interior rail mobility compared to Russia limits survivability.",
+        "economic": "Slowing domestic growth creates opportunity costs for massive arsenal expansion, but strategic security creates a floor on spending.",
+        "political": "Strategic culture views transparency as a weakness; historically small arsenal relies on opacity ('shell game') for survivability, making inspections unacceptable."
+      },
+      "likely_action": "Will accelerate build-up to 1,000+ warheads (parity) before engaging in any talks, ensuring any future cap locks in their major power status rather than freezing inferiority."
+    }
+  ],
+  "futures_wheel": {
+    "driver_event": "Expiration of New START Treaty",
+    "driver_event_id": "cdbbb95a-ce13-493a-be9c-d58a4bd9da5c",
+    "first_order": "Immediate cessation of on-site inspections and data exchanges (Notification Regime); loss of real-time visibility into Russian force posture.",
+    "second_order": "US and Russia initiate 'warm' production lines and upload non-deployed warheads to delivery systems as a hedging strategy; China interprets this as preparation for first-strike.",
+    "third_order": "Structural shift from 'Bipolar Stability' to 'Tripolar Instability': The US is forced to adopt a 'Two-War Construct' for nuclear planning, requiring an arsenal size larger than Russia and China combined, effectively ending the 50-year era of arms reduction."
+  },
+  "competing_hypotheses": {
+    "consensus": "Unconstrained Arms Race: All three powers rapidly expand deployed warheads, leading to a volatile environment with high risk of accidental escalation.",
+    "contrarian": "Informal Stasis: Economic exhaustion in Russia and fiscal constraints in the US lead to a 'Zombie Treaty' scenario where limits are respected de facto without legal force.",
+    "contradicting_evidence": [
+      "Russia and US agreed to resume high-level military talks immediately after expiration, suggesting a desire for guardrails.",
+      "Russia officially stated it will act 'responsibly' despite expiry.",
+      "Monitor found no evidence of Chinese testing despite US claims, suggesting US intelligence may be politicized to justify buildup."
+    ],
+    "evidence_event_ids": [
+      "1996c835-f6a7-403a-b806-ffad6202b6f8",
+      "623c1016-8014-4d20-bd23-eaf54b8de767",
+      "7decbd41-b76d-404f-af3e-60583afe6817"
+    ]
+  },
+  "pmesii_tags": {
+    "political": [
+      "b724b953-d0a0-42d0-a955-6e7708e6fedc",
+      "d3d52e42-0e2f-41cc-8c9d-e00da69720fa",
+      "eaec6bfb-f296-49b6-95a3-c19e71816dfc"
+    ],
+    "military": [
+      "cdbbb95a-ce13-493a-be9c-d58a4bd9da5c",
+      "ed8c672a-c3fe-410a-958f-3db537e3a6ff",
+      "bf5d7e17-cc94-4cb3-9ec8-2f2586f5b098"
+    ],
+    "information": [
+      "7decbd41-b76d-404f-af3e-60583afe6817"
+    ]
+  },
+  "confidence": "HIGH",
+  "confidence_rationale": "High confidence derived from the convergence of official statements (US/Russia/China) confirming the expiration and their respective red lines. The structural constraints (economic/political) are well-documented and align with observed behaviors.",
+  "external_sources": [
+    {
+      "title": "Goodbye New START: How China's Rise Ended Nuclear Arms Control",
+      "url": "https://thediplomat.com/2026/01/goodbye-new-start-how-chinas-rise-ended-nuclear-arms-control/",
+      "publisher": "The Diplomat",
+      "content": "China's nuclear arsenal has more than doubled, to an estimated 600 warheads as of mid-2024."
+    },
+    {
+      "title": "Pentagon Says Chinese Nuclear Arsenal Still Growing",
+      "url": "https://www.armscontrol.org/act/2025-01/news/pentagon-says-chinese-nuclear-arsenal-still-growing",
+      "publisher": "Arms Control Association",
+      "content": "China could have 1,500 warheads by 2035... suggests that [China] seeks to have the ability to inflict far greater levels of overwhelming damage."
+    },
+    {
+      "title": "No evidence to support US claim China conducted nuclear blast test: Monitor",
+      "url": "https://www.aljazeera.com/news/2026/2/7/no-evidence-to-support-us-claim-china-conducted-nuclear-blast-test-monitor",
+      "publisher": "Al Jazeera",
+      "content": "An international monitor said it has seen no evidence to support the claim by a senior United States official who accused China of carrying out a series of clandestine nuclear tests in 2020."
+    }
+  ]
+}

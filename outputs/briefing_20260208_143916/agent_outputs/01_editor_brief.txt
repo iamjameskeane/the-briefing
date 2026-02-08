@@ -1,0 +1,163 @@
+```json
+{
+  "clusters": [
+    {
+      "cluster_id": "cluster_55",
+      "treatment": "FEATURED",
+      "headline": "The June Ultimatum: Peace at Gunpoint",
+      "angle": "CONSTRAINT_REVEALED",
+      "archetype": "LEADER",
+      "word_target": 500,
+      "rationale": "High impact due to the specific deadline (June) set by Washington, combining military coercion (energy strikes) with a diplomatic hard stop. This defines the briefing's central theme of 'Coercive Stabilization.'"
+    },
+    {
+      "cluster_id": "cluster_56",
+      "treatment": "FULL",
+      "headline": "Tehran's Hollow Negotiation",
+      "angle": "MISSING_THE_POINT",
+      "archetype": "CRISIS",
+      "word_target": 350,
+      "rationale": "High impact/volatility. The nub is that Tehran is at the table not because of diplomatic preference, but because domestic collapse (6k dead) leaves them no choice. It's a survival mechanism."
+    },
+    {
+      "cluster_id": "cluster_52",
+      "treatment": "FULL",
+      "headline": "The Nuclear Void",
+      "angle": "TRAJECTORY_SHIFT",
+      "archetype": "CONSTRAINT",
+      "word_target": 350,
+      "rationale": "Structural shift. The expiration of New START without extension marks the end of the post-Cold War arms control architecture. This is the long-term consequence of the current unilateralist turn."
+    },
+    {
+      "cluster_id": "cluster_23",
+      "treatment": "SHORT",
+      "headline": "The $500 Billion Wedge",
+      "angle": "UNINTENDED_CONSEQUENCE",
+      "archetype": "PIVOT",
+      "word_target": 200,
+      "rationale": "High geopolitical significance. India ditching Russian oil for US trade creates a structural wedge between Moscow and New Delhi, validating the 'transactional' approach."
+    },
+    {
+      "cluster_id": "cluster_35",
+      "treatment": "SHORT",
+      "headline": "Venezuela: The Morning After",
+      "angle": "MIND_CLEARING",
+      "archetype": "TREND",
+      "word_target": 200,
+      "rationale": "Continuity from last week's kinetic shock. Navigating the messy transition of the 'Interim Government' illustrates the difficulty of stabilizing after a forced regime change."
+    },
+    {
+      "cluster_id": "cluster_50",
+      "treatment": "SLEEPER",
+      "headline": "Shadow War in Moscow",
+      "angle": "SLEEPER",
+      "archetype": "SLEEPER",
+      "word_target": 150,
+      "rationale": "Assassination of a GRU general in Moscow suggests internal rot or deep infiltration, a signal of regime fragility behind the front lines."
+    },
+    {
+      "cluster_id": "cluster_16",
+      "treatment": "QUICK_HIT",
+      "headline": "Saif al-Islam Gaddafi Assassinated in Zintan",
+      "angle": "NOVELTY",
+      "archetype": "CRISIS",
+      "word_target": 40,
+      "rationale": "High novelty/symbolic end to an era in Libya, though immediate strategic impact is localized."
+    },
+    {
+      "cluster_id": "cluster_6",
+      "treatment": "QUICK_HIT",
+      "headline": "Haiti's Political Vacuum Deepens",
+      "angle": "CRISIS",
+      "archetype": "CRISIS",
+      "word_target": 30,
+      "rationale": "Ongoing crisis, worth a brief update on the expiration of the transitional mandate."
+    },
+    {
+      "cluster_id": "cluster_44",
+      "treatment": "QUICK_HIT",
+      "headline": "Takaichi Secures Mandate in Japan",
+      "angle": "TREND",
+      "archetype": "TREND",
+      "word_target": 30,
+      "rationale": "Electoral continuity for a key US ally in the Pacific."
+    },
+    {
+      "cluster_id": "cluster_34",
+      "treatment": "QUICK_HIT",
+      "headline": "Panama Ports: Beijing Evicted",
+      "angle": "COMPETITION",
+      "archetype": "COMPETITION",
+      "word_target": 40,
+      "rationale": "Significant win for US influence in the canal zone, reversing Chinese gains."
+    },
+    {
+      "cluster_id": "cluster_15",
+      "treatment": "KILL",
+      "reason": "BELOW_THRESHOLD",
+      "pic_score": 12,
+      "explanation": "Consulate openings are diplomatic housekeeping compared to the kinetic/nuclear stories this week."
+    },
+    {
+      "cluster_id": "cluster_43",
+      "treatment": "KILL",
+      "reason": "REDUNDANT",
+      "pic_score": 14,
+      "explanation": "Humanitarian crisis is ongoing but eclipsed by the 'Board of Peace' diplomatic maneuvers which are better covered via the US-centric thematic lens."
+    },
+    {
+      "cluster_id": "cluster_53",
+      "treatment": "KILL",
+      "reason": "REDUNDANT",
+      "pic_score": 13,
+      "explanation": "The 'Board of Peace' is a detail within the broader theme of Coercive Stabilization, not a standalone story yet."
+    }
+  ],
+  "organizing_principle": "THEMATIC",
+  "hub_theme": "Coercive Stabilization",
+  "hub_explanation": "Washington is moving from kinetic shocks to transactional dictation, attempting to force-quit global conflicts by imposing strict deadlines and bilateral ultimata. This replaces the old order's consensus-based stability with a fragile, enforced quiet maintained by direct pressure.",
+  "hub_angle": "TRAJECTORY_SHIFT",
+  "narrative_arc": "The 'Shock' phase is over; the 'Awe' phase is effectively an ultimatum. Washington is attempting to force-quit global conflicts (Ukraine, Gaza) and force-realign neutrals (India) by June, replacing treaty-based stability with transactional fragility.",
+  "section_groups": [
+    {
+      "title": "The Ultimatum",
+      "group_rationale": "The central manifestation of the theme: The US imposing a hard deadline on the Ukraine war while squeezing Iran."
+    },
+    {
+      "title": "Structural Shifts",
+      "group_rationale": "The long-term consequences of this approach: The end of arms control and the realignment of major powers like India."
+    },
+    {
+      "title": "Ripple Effects",
+      "group_rationale": "The secondary shocks and messy transitions resulting from the primary coercion."
+    }
+  ],
+  "transitions": [
+    {
+      "pair": "The June Ultimatum: Peace at Gunpoint → Tehran's Hollow Negotiation",
+      "type": "MECHANISM",
+      "text": "The coercion visible in the June deadline for Kyiv takes a different form in Oman, where diplomatic talks are less about engagement than capitulation."
+    },
+    {
+      "pair": "Tehran's Hollow Negotiation → The Nuclear Void",
+      "type": "CONSEQUENCE",
+      "text": "While Washington squeezes Tehran to limit its nuclear ambitions, it is simultaneously dismantling the global architecture designed to contain them."
+    },
+    {
+      "pair": "The Nuclear Void → The $500 Billion Wedge",
+      "type": "CONTRAST",
+      "text": "If the collapse of New START signals the end of cooperation with Moscow, the new trade pact with New Delhi reveals where that diplomatic energy is being redirected."
+    },
+    {
+      "pair": "The $500 Billion Wedge → Venezuela: The Morning After",
+      "type": "MECHANISM",
+      "text": "The resource coercion that stripped Russia of its Indian oil market is the same force now reshaping Venezuela's post-Maduro reality."
+    },
+    {
+      "pair": "Venezuela: The Morning After → Shadow War in Moscow",
+      "type": "HARD_BREAK",
+      "text": "HARD_BREAK"
+    }
+  ]
+}
+```

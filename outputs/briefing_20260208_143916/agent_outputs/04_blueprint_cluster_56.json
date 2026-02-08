@@ -1,0 +1,82 @@
+{
+  "region": "Iran Nuclear Standoff",
+  "archetype": "CRISIS",
+  "word_target": 350,
+  "hook_type": "CONTRAST",
+  "hook_draft": "Washington describes the restart of negotiations as 'very good,' but the red lines drawn in Muscat suggest a collision rather than a compromise.",
+  "paragraphs": [
+    {
+      "purpose": "Establish the immediate tactical situation following the Muscat talks.",
+      "word_target": 90,
+      "key_facts": [
+        "Trump characterized talks as 'very good'",
+        "CENTCOM Commander presence at the table",
+        "Tehran declared ballistic missiles 'non-negotiable'"
+      ],
+      "beat": "What just happened"
+    },
+    {
+      "purpose": "Analyze the underlying 'Compellence Strategy' driving the tension.",
+      "word_target": 105,
+      "key_facts": [
+        "US demand for zero enrichment",
+        "Iran's 'Resistance Economy' strategy",
+        "Nuclear latency as insurance policy",
+        "Economic strangulation vs. nuclear threshold"
+      ],
+      "beat": "Why it matters NOW"
+    },
+    {
+      "purpose": "Identify the primary external constraint (Israel) acting as a spoiler.",
+      "word_target": 90,
+      "key_facts": [
+        "Netanyahu visit to Washington on February 11",
+        "Tel Aviv's intent to dismantle, not manage, capabilities",
+        "Potential for intelligence leaks or cyber operations"
+      ],
+      "beat": "Constraints on response"
+    },
+    {
+      "purpose": "Forecast the likely interim outcome and the immediate risk trigger.",
+      "word_target": 65,
+      "key_facts": [
+        "Likely 'Freeze-for-Cash' interim deal",
+        "Shift toward 'Nuclear Latency Normalization'",
+        "Risk of Israeli 'spoiler' actions"
+      ],
+      "beat": "Outlook and triggers"
+    }
+  ],
+  "key_events": [
+    {
+      "event_id": "a3637a9c-db72-4424-aff3-693f428cf99f",
+      "event_title": "Trump: US had 'very good' talks with Iran",
+      "emphasis": "LEAD",
+      "how_to_use": "Use as the deceptive surface calm that masks the underlying tension.",
+      "role": "Narrative Anchor"
+    },
+    {
+      "event_id": "ee422529-fa70-403c-8550-f1a0ea90b9e5",
+      "event_title": "Iran says missiles off the table",
+      "emphasis": "LEAD",
+      "how_to_use": "Contrast immediately with the 'good talks' narrative to show the structural impasse.",
+      "role": "Conflict Indicator"
+    },
+    {
+      "event_id": "c7a6f600-0e7b-4024-87e3-a3aa64cf7b4d",
+      "event_title": "Netanyahu to meet Trump Feb 11",
+      "emphasis": "SUPPORT",
+      "how_to_use": "Frame as the upcoming 'spoiler' event that defines the timeline.",
+      "role": "Timeline Trigger"
+    },
+    {
+      "event_id": "0b11e6dc-72ac-4ad1-9530-fff5fc6bd79b",
+      "event_title": "Trump Won't Allow Iran to Have Any Enriched Uranium",
+      "emphasis": "MENTION",
+      "how_to_use": "Use to illustrate the gap between US demands and Iranian survival requirements.",
+      "role": "Contextual Detail"
+    }
+  ],
+  "closing_type": "WARNING",
+  "closing_draft": "The fate of the deal will not be decided in Muscat, but in Washington on February 11, when Tel Aviv moves to harden the American position."
+}
