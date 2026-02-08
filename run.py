@@ -1213,8 +1213,9 @@ def assemble_document(
 async def run_pipeline(
     mode: str = "test",
     dry_run: bool = True,
-    max_phase: int = 7,
+    max_phase: int = 10,
     skip_images: bool = True,
+    resume_run_id: str | None = None,
 ) -> int:
     """
     Run the full Briefing pipeline.
@@ -1243,15 +1244,25 @@ async def run_pipeline(
     start_time = time.time()
     
     # Initialize state and orchestrator
-    run_id = f"briefing_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
-    run_output_dir = Path(__file__).parent / "outputs" / run_id
-    run_output_dir.mkdir(parents=True, exist_ok=True)
+    if resume_run_id:
+        run_id = resume_run_id
+        run_output_dir = Path(__file__).parent / "outputs" / run_id
+        if not run_output_dir.exists():
+            print(f"❌ Error: Run directory {run_output_dir} not found.")
+            return 1
+        logger.info(f"🔄 Resuming from run: {run_id}")
+    else:
+        run_id = f"briefing_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
+        run_output_dir = Path(__file__).parent / "outputs" / run_id
+        run_output_dir.mkdir(parents=True, exist_ok=True)
     
     # Set up file logging to capture all output
     log_file = setup_file_logging(run_output_dir)
     
     try:
-        return await _run_pipeline_inner(mode, dry_run, max_phase, run_output_dir, start_time, skip_images)
+        return await _run_pipeline_inner(
+            mode, dry_run, max_phase, run_output_dir, start_time, skip_images, resume_run_id
+        )
     finally:
         # Always close file logging, even on early return or exception
         close_file_logging()
@@ -1264,6 +1275,7 @@ async def _run_pipeline_inner(
     run_output_dir: Path,
     start_time: float,
     skip_images: bool = True,
+    resume_run_id: str | None = None,
 ) -> int:
     """Inner pipeline function wrapped by run_pipeline for proper cleanup."""
     
@@ -1277,6 +1289,11 @@ async def _run_pipeline_inner(
         started_at=datetime.now(timezone.utc),
     )
     orchestrator = create_orchestrator(state, output_dir=run_output_dir)
+    
+    loaded_phases = []
+    if resume_run_id:
+        loaded_phases = await hydrate_state_from_run(state, run_output_dir)
+        logger.info(f"   ✅ Hydrated state with {len(loaded_phases)} completed phases")
     
     # ─────────────────────────────────────────────────────────────────────────
     # PHASE 1: AGGREGATION
@@ -1333,46 +1350,49 @@ async def _run_pipeline_inner(
     # ─────────────────────────────────────────────────────────────────────────
     # PHASE 3A: EDITOR AGENT (Editorial Research & Decisions)
     # ─────────────────────────────────────────────────────────────────────────
-    logger.info("\n" + "=" * 60)
-    logger.info("✏️  PHASE 3A: Editor Agent (Research & Decisions)")
-    logger.info("=" * 60)
-    
-    # Find previous edition for editorial continuity
-    outputs_dir = Path(__file__).parent / "outputs"
-    previous_edition = find_previous_edition(outputs_dir, current_run_id=run_id)
-    
-    if previous_edition:
-        logger.info(f"   📚 Previous edition found: {previous_edition['run_id']} ({previous_edition['date']})")
+    if "phase_3a_editor" not in loaded_phases:
+        logger.info("\n" + "=" * 60)
+        logger.info("✏️  PHASE 3A: Editor Agent (Research & Decisions)")
+        logger.info("=" * 60)
+        
+        # Find previous edition for editorial continuity
+        outputs_dir = Path(__file__).parent / "outputs"
+        previous_edition = find_previous_edition(outputs_dir, current_run_id=run_id)
+        
+        if previous_edition:
+            logger.info(f"   📚 Previous edition found: {previous_edition['run_id']} ({previous_edition['date']})")
+        else:
+            logger.info("   📚 No previous edition found (first run)")
+        
+        # Get thematic clustering data
+        thematic_clusters = [c.to_dict() for c in cluster_analysis.thematic_clusters]
+        hub_candidates = [c.to_dict() for c in cluster_analysis.hub_candidates]
+        recommended_org = cluster_analysis.recommended_organization
+        
+        cross_connections = [
+            conn.explanation if hasattr(conn, 'explanation') else str(conn)
+            for conn in cluster_analysis.cross_regional_connections
+        ]
+        
+        logger.info(f"   🎯 Thematic clusters: {len(thematic_clusters)}")
+        logger.info(f"   🎯 Hub candidates: {len(hub_candidates)}")
+        logger.info(f"   🎯 Recommended organization: {recommended_org}")
+        
+        # Run Editor agent
+        await run_editor(
+            state,
+            thematic_clusters=thematic_clusters,
+            hub_candidates=hub_candidates,
+            recommended_organization=recommended_org,
+            cross_regional_connections=cross_connections,
+            calendar_events=[],  # Calendar disabled
+            orchestrator=orchestrator,
+            previous_edition=previous_edition,
+        )
+        
+        orchestrator.save_checkpoint("phase_3a_editor")
     else:
-        logger.info("   📚 No previous edition found (first run)")
-    
-    # Get thematic clustering data
-    thematic_clusters = [c.to_dict() for c in cluster_analysis.thematic_clusters]
-    hub_candidates = [c.to_dict() for c in cluster_analysis.hub_candidates]
-    recommended_org = cluster_analysis.recommended_organization
-    
-    cross_connections = [
-        conn.explanation if hasattr(conn, 'explanation') else str(conn)
-        for conn in cluster_analysis.cross_regional_connections
-    ]
-    
-    logger.info(f"   🎯 Thematic clusters: {len(thematic_clusters)}")
-    logger.info(f"   🎯 Hub candidates: {len(hub_candidates)}")
-    logger.info(f"   🎯 Recommended organization: {recommended_org}")
-    
-    # Run Editor agent
-    await run_editor(
-        state,
-        thematic_clusters=thematic_clusters,
-        hub_candidates=hub_candidates,
-        recommended_organization=recommended_org,
-        cross_regional_connections=cross_connections,
-        calendar_events=[],  # Calendar disabled
-        orchestrator=orchestrator,
-        previous_edition=previous_edition,
-    )
-    
-    orchestrator.save_checkpoint("phase_3a_editor")
+        logger.info("   ⏭️  Skipping Phase 3A (Editor) - Loaded from checkpoint")
     
     if max_phase == 3:
         logger.info("\n✅ Stopping at phase 3")
@@ -1381,20 +1401,23 @@ async def _run_pipeline_inner(
     # ─────────────────────────────────────────────────────────────────────────
     # PHASE 3B: ARCHITECT AGENT (Structure into JSON)
     # ─────────────────────────────────────────────────────────────────────────
-    logger.info("\n" + "=" * 60)
-    logger.info("📐 PHASE 3B: Architect Agent (Structure Decisions)")
-    logger.info("=" * 60)
-    
-    # Run Architect agent (structures Editor decisions into JSON)
-    await run_architect(state, orchestrator=orchestrator)
-    
-    if state.document_skeleton:
-        logger.info(f"   ✅ Featured: {state.document_skeleton.featured.region}")
-        logger.info(f"   ✅ Publishing: {len(state.document_skeleton.sections)} sections")
-        logger.info(f"   🚫 Killed: {len(state.document_skeleton.killed)} clusters")
-        logger.info(f"   📝 Narrative: {state.document_skeleton.narrative_arc[:60]}...")
-    
-    orchestrator.save_checkpoint("phase_3b_architect")
+    if "phase_3b_architect" not in loaded_phases:
+        logger.info("\n" + "=" * 60)
+        logger.info("📐 PHASE 3B: Architect Agent (Structure Decisions)")
+        logger.info("=" * 60)
+        
+        # Run Architect agent (structures Editor decisions into JSON)
+        await run_architect(state, orchestrator=orchestrator)
+        
+        if state.document_skeleton:
+            logger.info(f"   ✅ Featured: {state.document_skeleton.featured.region}")
+            logger.info(f"   ✅ Publishing: {len(state.document_skeleton.sections)} sections")
+            logger.info(f"   🚫 Killed: {len(state.document_skeleton.killed)} clusters")
+            logger.info(f"   📝 Narrative: {state.document_skeleton.narrative_arc[:60]}...")
+        
+        orchestrator.save_checkpoint("phase_3b_architect")
+    else:
+        logger.info("   ⏭️  Skipping Phase 3B (Architect) - Loaded from checkpoint")
     
     if max_phase == 3:
         logger.info("\n✅ Stopping at phase 3 (after Architect)")
@@ -1403,39 +1426,37 @@ async def _run_pipeline_inner(
     # ─────────────────────────────────────────────────────────────────────────
     # PHASE 4: ANALYST AGENTS (only for PUBLISHED clusters)
     # ─────────────────────────────────────────────────────────────────────────
-    logger.info("\n" + "=" * 60)
-    logger.info("🧠 PHASE 4: Analyst Agents (Published Clusters Only)")
-    logger.info("=" * 60)
-    
-    # Get only the clusters that the Architect decided to publish
-    # Use source_cluster_id (cluster_XX) for reliable matching
-    published_cluster_ids = set()
-    if state.document_skeleton:
-        # Featured region
-        if state.document_skeleton.featured.source_cluster_id:
-            published_cluster_ids.add(state.document_skeleton.featured.source_cluster_id)
-        # All sections
-        for section in state.document_skeleton.sections:
-            if section.source_cluster_id:
-                published_cluster_ids.add(section.source_cluster_id)
-    
-    # Filter thematic clusters to only published ones
-    # Match by cluster_id (canonical key)
-    published_clusters = [
-        c for c in cluster_analysis.thematic_clusters
-        if f"cluster_{c.cluster_id}" in published_cluster_ids
-    ]
-    
-    logger.info(f"   📊 Analyzing {len(published_clusters)} published clusters (skipping {len(cluster_analysis.thematic_clusters) - len(published_clusters)} killed)")
-    
-    if published_clusters:
-        state.analyst_outputs = await run_analysts_on_themes(state, published_clusters, orchestrator)
-        logger.info(f"   ✅ Analyzed {len(state.analyst_outputs)} clusters")
+    if "phase_4_analysts" not in loaded_phases:
+        logger.info("\n" + "=" * 60)
+        logger.info("🧠 PHASE 4: Analyst Agents (Published Clusters Only)")
+        logger.info("=" * 60)
+        
+        # Get only the clusters that the Architect decided to publish
+        published_cluster_ids = set()
+        if state.document_skeleton:
+            if state.document_skeleton.featured.source_cluster_id:
+                published_cluster_ids.add(state.document_skeleton.featured.source_cluster_id)
+            for section in state.document_skeleton.sections:
+                if section.source_cluster_id:
+                    published_cluster_ids.add(section.source_cluster_id)
+        
+        published_clusters = [
+            c for c in cluster_analysis.thematic_clusters
+            if f"cluster_{c.cluster_id}" in published_cluster_ids
+        ]
+        
+        logger.info(f"   📊 Analyzing {len(published_clusters)} published clusters")
+        
+        if published_clusters:
+            state.analyst_outputs = await run_analysts_on_themes(state, published_clusters, orchestrator)
+            logger.info(f"   ✅ Analyzed {len(state.analyst_outputs)} clusters")
+        else:
+            logger.warning("   ⚠️ No published clusters to analyze")
+            state.analyst_outputs = {}
+        
+        orchestrator.save_checkpoint("phase_4_analysts")
     else:
-        logger.warning("   ⚠️ No published clusters to analyze")
-        state.analyst_outputs = {}
-    
-    orchestrator.save_checkpoint("phase_4_analysts")
+        logger.info("   ⏭️  Skipping Phase 4 (Analyst) - Loaded from checkpoint")
     
     if max_phase == 4:
         logger.info("\n✅ Stopping at phase 4")
@@ -1444,15 +1465,18 @@ async def _run_pipeline_inner(
     # ─────────────────────────────────────────────────────────────────────────
     # PHASE 5: STRUCTURE AGENTS
     # ─────────────────────────────────────────────────────────────────────────
-    logger.info("\n" + "=" * 60)
-    logger.info("📝 PHASE 5: Structure Agents (Parallel)")
-    logger.info("=" * 60)
-    
-    await run_structure_parallel(state, cluster_events_map, orchestrator)
-    
-    logger.info(f"   ✅ Created {len(state.section_blueprints)} blueprints")
-    
-    orchestrator.save_checkpoint("phase_5_structure")
+    if "phase_5_structure" not in loaded_phases:
+        logger.info("\n" + "=" * 60)
+        logger.info("📝 PHASE 5: Structure Agents (Parallel)")
+        logger.info("=" * 60)
+        
+        await run_structure_parallel(state, cluster_events_map, orchestrator)
+        
+        logger.info(f"   ✅ Created {len(state.section_blueprints)} blueprints")
+        
+        orchestrator.save_checkpoint("phase_5_structure")
+    else:
+        logger.info("   ⏭️  Skipping Phase 5 (Structure) - Loaded from checkpoint")
     
     if max_phase == 5:
         logger.info("\n✅ Stopping at phase 5")
@@ -1666,6 +1690,78 @@ async def _run_pipeline_inner(
     return 0
 
 
+async def hydrate_state_from_run(state: PipelineState, output_dir: Path) -> list[str]:
+    """Hydrate PipelineState from existing agent_outputs in a run directory."""
+    from agents import EditorDecisions
+    from agents.schemas import AnalystOutput
+    from state import DocumentSkeleton, SectionBlueprint
+    
+    agent_output_dir = output_dir / "agent_outputs"
+    if not agent_output_dir.exists():
+        logger.warning(f"   ⚠️ No agent_outputs found in {output_dir}")
+        return []
+
+    loaded_phases = []
+
+    # 1. Editor Brief
+    editor_brief_file = agent_output_dir / "01_editor_brief.txt"
+    if editor_brief_file.exists():
+        state.editor_decisions = EditorDecisions(
+            editorial_brief=editor_brief_file.read_text(),
+            conversation_history=[]  # History not reconstructed in minimal resume
+        )
+        loaded_phases.append("phase_3a_editor")
+
+    # 2. Architect Reasoning & Skeleton
+    architect_reasoning_file = agent_output_dir / "02a_architect_reasoning.txt"
+    if architect_reasoning_file.exists():
+        state.architect_reasoning = architect_reasoning_file.read_text()
+    
+    skeleton_file = agent_output_dir / "02b_document_skeleton.json"
+    if skeleton_file.exists():
+        state.document_skeleton = DocumentSkeleton.model_validate_json(skeleton_file.read_text())
+        loaded_phases.append("phase_3b_architect")
+
+    # 3. Analyst Outputs
+    analyst_files = list(agent_output_dir.glob("03_analyst_*.json"))
+    if analyst_files:
+        for f in analyst_files:
+            # Cluster ID is in the filename slug: 03_analyst_cluster_XX.json
+            cluster_id = f.stem.replace("03_analyst_", "").replace("_", " ")
+            # Try both underscore and space version to be safe
+            raw_id = f.stem.replace("03_analyst_", "")
+            
+            content = f.read_text()
+            analyst_output = AnalystOutput.model_validate_json(content)
+            
+            # Map back to the expected key (cluster_XX)
+            if "_" in raw_id and "cluster" in raw_id:
+                state.analyst_outputs[raw_id] = analyst_output
+            else:
+                state.analyst_outputs[analyst_output.region] = analyst_output
+                
+        loaded_phases.append("phase_4_analysts")
+
+    # 4. Section Blueprints
+    blueprint_files = list(agent_output_dir.glob("04_blueprint_*.json"))
+    if blueprint_files:
+        for f in blueprint_files:
+            # Reconstruct original cluster_id if possible
+            raw_id = f.stem.replace("04_blueprint_", "")
+            
+            content = f.read_text()
+            blueprint = SectionBlueprint.model_validate_json(content)
+            
+            if "_" in raw_id and "cluster" in raw_id:
+                state.section_blueprints[raw_id] = blueprint
+            else:
+                state.section_blueprints[blueprint.region] = blueprint
+                
+        loaded_phases.append("phase_5_structure")
+
+    return loaded_phases
+
+
 # =============================================================================
 # CLI
 # =============================================================================
@@ -1711,6 +1807,12 @@ def main():
         dest="skip_images",
         help="Enable image generation",
     )
+    parser.add_argument(
+        "--resume",
+        type=str,
+        default=None,
+        help="Resume a previous run by ID (e.g., briefing_20260208_143916)",
+    )
     
     args = parser.parse_args()
     
@@ -1719,6 +1821,7 @@ def main():
         dry_run=args.dry_run,
         max_phase=args.max_phase,
         skip_images=args.skip_images,
+        resume_run_id=args.resume,
     ))
 
 
