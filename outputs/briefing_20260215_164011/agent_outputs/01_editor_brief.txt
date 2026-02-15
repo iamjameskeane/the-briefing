@@ -1,0 +1,99 @@
+Here are the editorial decisions for the week of February 15, 2026.
+
+I have established a **THEMATIC** organization based on the hub mechanism of **"Transactional Stabilization."**
+
+We are witnessing the second phase of the administration's foreign policy. January was the "Shock" phase (breaking alliances, threats). February is the "Invoice" phase. Washington is signaling that stability is available, but it must be purchased—with oil (Venezuela), trade concessions (Taiwan/Bangladesh), or total strategic compliance (Japan).
+
+### 1. ORGANIZING PRINCIPLE
+**Type:** THEMATIC
+**Hub Mechanism:** **Transactional Stabilization**
+**Hub Explanation:** Washington has shifted from pure disruption to a model of "conditional order." The US is actively re-stabilizing volatile regions (Venezuela, potentially Iran), but only after extracting structural concessions that service American economic or security interests. Chaos is the lever; stability is the product being sold.
+**Narrative Arc:** "The shock phase is over; the invoice phase has begun. From Caracas to Dhaka, Washington is collecting payment for stability in the form of resource access and commercial allegiance."
+
+### 2. SECTION GROUPS & TITLES
+1.  **The Hub: Maximum Pressure** (Feature)
+2.  **The Invoice: Paying for Stability** (Venezuela, Bangladesh)
+3.  **The Premium: Security Costs** (Japan, Europe)
+4.  **Signals** (Quick Hits)
+
+---
+
+### 3. EDITORIAL DECISIONS
+
+#### **FEATURED: IRAN**
+**Clusters:** `cluster_64` (Carrier), `cluster_66` (Talks), `cluster_17` (Crackdown)
+- **Headline:** The Art of the War Scare: Tehran Between Escalation and Capitulation
+- **Angle:** TRAJECTORY_SHIFT
+- **Archetype:** LEADER
+- **Word Target:** 500
+- **Rationale:** Last week we covered the internal uprising (7,000 dead). This week, the US deployed a second carrier and Trump explicitly called for "change of power" *while simultaneously* scheduling nuclear talks in Geneva. This isn't contradictory; it's the "Madman Theory" applied to negotiation. The tension is high (war risk), but the Nub is that this is likely a prelude to a deal, not an invasion—mirroring the Venezuela playbook.
+- **Key Data:** 2nd Carrier (USS Gerald Ford), Geneva talks scheduled, 7,000+ dead in crackdown (up from 6,100 last week).
+
+#### **FULL SECTION: VENEZUELA**
+**Clusters:** `cluster_19` (Oil sanctions waived), `cluster_34` (Trump visit/Maduro), `cluster_28` (Cuba blockade)
+- **Headline:** The Crude Reality of 'Liberation'
+- **Angle:** UNINTENDED_CONSEQUENCE (or Cynicism Revealed)
+- **Archetype:** PIVOT
+- **Word Target:** 400
+- **Rationale:** The dust has settled on the intervention, and the first move was not democratic institution building, but the US Treasury waiving oil sanctions for majors to resume pumping. Washington has effectively "bought" the Venezuelan oil supply. The connection to Cuba (now facing a total fuel blockade/energy crisis) shows the cost of being on the wrong side of the transaction.
+
+#### **FULL SECTION: BANGLADESH**
+**Clusters:** `cluster_24` (BNP Win), `cluster_41` (US Tariff Deal)
+- **Headline:** Dhaka’s Pivot: A New Client State in South Asia?
+- **Angle:** MISSING_THE_POINT
+- **Archetype:** TREND
+- **Word Target:** 350
+- **Rationale:** The media focus is on the BNP's landslide victory and the restoration of democracy. The *real* geopolitical story is Cluster 41: The US cut tariffs on Bangladeshi garments to 19% and Bangladesh agreed to switch from Indian to US cotton. This is Washington peeling a state away from New Delhi/Beijing's orbit using economic statecraft.
+
+#### **SHORT SECTION: JAPAN & TAIWAN**
+**Clusters:** `cluster_49` (Takaichi win), `cluster_51` (Taiwan Trade Deal)
+- **Headline:** In East Asia, Security Comes with a Surcharge
+- **Angle:** CONSTRAINT_REVEALED
+- **Archetype:** CONSTRAINT
+- **Word Target:** 250
+- **Rationale:** Japan's new PM Takaichi (hawkish supermajority) and Taiwan's new trade deal (cutting tariffs to buy US protection) demonstrate the new reality for allies: The US security umbrella is no longer free. It requires militarization (Japan) and payment (Taiwan).
+
+#### **SHORT SECTION: EUROPE/NATO**
+**Clusters:** `cluster_56` (Rubio at Munich), `cluster_53` (Arctic Sentry)
+- **Headline:** Revitalization or Rent-Seeking?
+- **Angle:** MIND_CLEARING
+- **Archetype:** COMPETITION
+- **Word Target:** 200
+- **Rationale:** Rubio's speech at Munich about "revitalizing" the alliance is diplomatic cover for the reality on the ground: NATO is launching "Arctic Sentry" to secure Greenland, largely to placate Washington's territorial ambitions. Europe is adapting to the transactional order.
+
+#### **QUICK HITS**
+- **Sudan (`cluster_32`):** 6,000 dead in 3 days in El-Fasher. A staggering atrocity that highlights the cost of global distraction.
+- **Russia/Navalny (`cluster_52`):** Five EU nations confirm Navalny killed with "dart frog poison." A bizarre, macabre signal of Kremlin impunity.
+- **Israel/West Bank (`cluster_58`):** New administrative measures amount to "de facto annexation."
+- **US/Climate (`cluster_14`):** Trump revokes the 2009 EPA endangerment finding, removing the legal basis for climate reg.
+
+---
+
+### 4. KILLED CLUSTERS
+- **Ukraine War Updates (`cluster_40`, `cluster_55`):** NOTHING_NEW. The grind continues; the "peace talk" rumors in Cluster 60 are too vague compared to the concrete Geneva talks for Iran.
+- **Philippines/Duterte (`cluster_25`):** BELOW_THRESHOLD. ICC moves are slow; regional impact is lower than the Japan election.
+- **Australia/Herzog (`cluster_13`):** REDUNDANT. Protests are standard; doesn't shift the geopolitical needle.
+- **Various localized protests (Albania, Argentina):** BELOW_THRESHOLD.
+
+---
+
+### 5. TRANSITIONS
+
+**Feature (Iran) → Venezuela**
+- **TYPE:** MECHANISM (Same hub, different stage)
+- **TEXT:** "The coercive pressure currently being applied to Tehran has already achieved its objective in Caracas, where the focus has shifted from conflict to cash flow."
+
+**Venezuela → Bangladesh**
+- **TYPE:** MECHANISM (Economic Statecraft)
+- **TEXT:** "While Washington secures energy assets in the Americas, it is using similar economic levers to secure political allegiance in South Asia."
+
+**Bangladesh → Japan**
+- **TYPE:** HARD_BREAK
+- **TEXT:** (No text - shift to Security Premium group)
+
+**Japan → Europe**
+- **TYPE:** MECHANISM (Allies adapting to US pressure)
+- **TEXT:** "The realization that American security now comes with a surcharge is not limited to the Pacific; in Munich, European leaders are learning the new price of the transatlantic bond."
+
+**Europe → Quick Hits**
+- **TYPE:** HARD_BREAK

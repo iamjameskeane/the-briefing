@@ -1,0 +1,73 @@
+{
+  "region": "Europe",
+  "archetype": "COMPETITION",
+  "word_target": 200,
+  "hook_type": "CONTRAST",
+  "hook_draft": "Washington offered Europe a change of tone in Munich this week, but it has not offered a change of terms.",
+  "paragraphs": [
+    {
+      "purpose": "Define the contest between US hegemonic discipline and European survival.",
+      "word_target": 40,
+      "key_facts": [
+        "Rubio's 'civilizational' rhetoric at Munich",
+        "Shift from benevolent protector to transactional hegemon"
+      ],
+      "beat": "The stakes"
+    },
+    {
+      "purpose": "Outline Washington's strategy of soft words covering hard demands.",
+      "word_target": 50,
+      "key_facts": [
+        "Rubio's call to 'revitalize' friendship",
+        "Underlying demands for tariffs and defense quotas",
+        "Resource shift to Indo-Pacific"
+      ],
+      "beat": "Competitor A's position and moves"
+    },
+    {
+      "purpose": "Detail Europe's split response: public relief vs. private hedging.",
+      "word_target": 50,
+      "key_facts": [
+        "Berlin's need for US nuclear guarantee",
+        "Paris's push for 'Strategic Autonomy'",
+        "Quiet talks on a 'European Nuclear Shield'"
+      ],
+      "beat": "Competitor B's position and moves"
+    },
+    {
+      "purpose": "Assess the structural outcome of this competition.",
+      "word_target": 60,
+      "key_facts": [
+        "Creation of a 'Two-Tier' NATO",
+        "US retains veto power but offloads conventional burden",
+        "Europe faces the 'Alliance Dilemma'"
+      ],
+      "beat": "Assessment: who has advantage"
+    }
+  ],
+  "key_events": [
+    {
+      "event_id": "94e85fbe-3828-4cad-a058-290d9656a533",
+      "event_title": "Munich Security talks: Rubio says US wants to \"revitalise\" transatlantic alliance",
+      "emphasis": "LEAD",
+      "how_to_use": "Use as the primary surface event masking the deeper structural shift.",
+      "role": "Catalyst"
+    },
+    {
+      "event_id": "072993c8-9c3a-4494-885d-cc28f4ce79ec",
+      "event_title": "Secretary of State Marco Rubio pulls out of a high-level meeting on Ukraine",
+      "emphasis": "SUPPORT",
+      "how_to_use": "Mention as evidence of the transactional/dismissive reality beneath the rhetoric.",
+      "role": "Evidence"
+    },
+    {
+      "event_id": "2e0fd8fb-10df-4d51-88bc-dc678a00976c",
+      "event_title": "EU leaders welcome US tone shift in Rubio's Munich speech",
+      "emphasis": "MENTION",
+      "how_to_use": "Contrast their public relief with private anxiety.",
+      "role": "Reaction"
+    }
+  ],
+  "closing_type": "PREDICTION",
+  "closing_draft": "Expect the rapid emergence of a two-tier NATO: Washington provides the nuclear backstop, but Paris and Berlin must now man the conventional ramparts."
+}

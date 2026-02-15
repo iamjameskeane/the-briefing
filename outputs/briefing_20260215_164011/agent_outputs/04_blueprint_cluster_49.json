@@ -1,0 +1,82 @@
+{
+  "region": "East Asia",
+  "archetype": "CONSTRAINT",
+  "word_target": 250,
+  "hook_type": "CONTRAST",
+  "hook_draft": "Sanae Takaichi has secured the political capital to normalize Japan\u2019s military, but her landslide victory activates a structural trap: the classical security dilemma.",
+  "paragraphs": [
+    {
+      "purpose": "Define the binding constraint (the paradox where defensive moves trigger offensive threats).",
+      "word_target": 60,
+      "key_facts": [
+        "Takaichi known as 'Iron Maiden' for hawkish stance",
+        "Goal to amend Article 9 and 'normalize' military status",
+        "Defensive deterrence interpreted by neighbors as offensive capability"
+      ],
+      "beat": "The binding constraint"
+    },
+    {
+      "purpose": "Show how the constraint manifested immediately following the election results.",
+      "word_target": 80,
+      "key_facts": [
+        "LDP secured supermajority giving mandate for constitutional revision",
+        "North Korea responded with immediate 'childish fury'",
+        "Beijing views Takaichi's win as a threat to the First Island Chain",
+        "Taiwan policy now central friction point"
+      ],
+      "beat": "How it manifested this week"
+    },
+    {
+      "purpose": "Explain why this dynamic is locked in and cannot be de-escalated easily.",
+      "word_target": 65,
+      "key_facts": [
+        "Takaichi stated she 'does not fear any challenges'",
+        "Beijing compelled to increase gray-zone coercion around Senkakus",
+        "Zero-sum security definitions make diplomatic assurances impossible"
+      ],
+      "beat": "Why it won't change"
+    },
+    {
+      "purpose": "Outline the strategic shift towards a polarized block system.",
+      "word_target": 45,
+      "key_facts": [
+        "Japan shifting to primary active node of US containment",
+        "Formation of 'Northeast Asian NATO' dynamic",
+        "China accelerating nuclear modernization in response"
+      ],
+      "beat": "Implications for strategy"
+    }
+  ],
+  "key_events": [
+    {
+      "event_id": "3eed747b-925e-4d1d-b555-924b858c1bb3",
+      "event_title": "Japan election results confirm supermajority for Takaichi's party",
+      "emphasis": "LEAD",
+      "how_to_use": "Use as the trigger event that solidifies the constraint.",
+      "role": "Catalyst"
+    },
+    {
+      "event_id": "72d1b4b9-4fde-45dc-88b5-c3897035b9c6",
+      "event_title": "Why Takaichi\u2019s Japan election victory has sparked North Korea\u2019s \u2018childish\u2019 fury",
+      "emphasis": "SUPPORT",
+      "how_to_use": "Quote 'childish fury' to illustrate immediate backlash.",
+      "role": "Evidence of escalation"
+    },
+    {
+      "event_id": "28f0cbab-0354-4322-838c-54dd58307f6e",
+      "event_title": "How Takaichi\u2019s landslide victory will reshape China-Japan security",
+      "emphasis": "SUPPORT",
+      "how_to_use": "Contextualize Beijing's strategic anxiety.",
+      "role": "Context"
+    },
+    {
+      "event_id": "4c0e8050-3eaa-40c5-9ed2-f68700ea641b",
+      "event_title": "Japanese PM after landslide victory: \u2018I do not fear any challenges\u2019",
+      "emphasis": "MENTION",
+      "how_to_use": "Use quote to show resolve/inflexibility.",
+      "role": "Characterization"
+    }
+  ],
+  "closing_type": "WARNING",
+  "closing_draft": "As Tokyo sheds its post-war pacifist identity to become the anchor of US containment, it trades a decades-old diplomatic buffer for a permanent place in Beijing\u2019s crosshairs."
+}

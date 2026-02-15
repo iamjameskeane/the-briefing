@@ -1,0 +1,43 @@
+{
+  "run_id": "briefing_20260215_164011",
+  "phase": "phase_8_images",
+  "timestamp": "2026-02-15T16:47:52.342645",
+  "regions_analyzed": [
+    "cluster_49",
+    "cluster_24",
+    "cluster_19",
+    "cluster_64",
+    "cluster_56"
+  ],
+  "has_skeleton": true,
+  "blueprints_created": [
+    "cluster_56",
+    "cluster_19",
+    "cluster_24",
+    "cluster_49",
+    "cluster_64"
+  ],
+  "drafts_created": [
+    "cluster_56",
+    "cluster_19",
+    "cluster_24",
+    "cluster_49",
+    "cluster_64"
+  ],
+  "styled_drafts": [
+    "cluster_56",
+    "cluster_19",
+    "cluster_24",
+    "cluster_49",
+    "cluster_64"
+  ],
+  "critique_results": {
+    "cluster_56": 87,
+    "cluster_19": 93,
+    "cluster_24": 91,
+    "cluster_49": 82,
+    "cluster_64": 92
+  },
+  "errors": [],
+  "warnings": []
+}

@@ -1,0 +1,143 @@
+## ORGANIZING PRINCIPLE
+THEMATIC
+
+## FEATURED
+Cluster: cluster_64 (US-Iran Tensions Escalation), cluster_66 (Iran Nuclear Diplomacy), cluster_17 (Iran Crackdown)
+Headline: The Art of the War Scare: Tehran Between Escalation and Capitulation
+Angle: TRAJECTORY_SHIFT
+Archetype: LEADER
+Word Target: 500
+Rationale: This represents the active phase of the "Transactional Stabilization" hub. Washington is applying maximum kinetic pressure (2nd carrier group) while simultaneously opening a diplomatic off-ramp (Geneva talks). The juxtaposition of 7,000 dead in domestic crackdowns with high-level nuclear negotiation reveals the cynical core of the new order: human rights are secondary to the strategic transaction.
+
+## SECTIONS
+1. Cluster: cluster_19 (Venezuela Oil Sanctions), cluster_34 (Trump/Maduro), cluster_28 (Cuba Blockade)
+   Headline: The Crude Reality of 'Liberation'
+   Treatment: FULL
+   Archetype: PIVOT
+   Word Target: 400
+   Position Rationale: Illustrates the *completed* transaction. Iran is the pitch; Venezuela is the closed deal.
+   Rationale: The speed at which oil sanctions were waived following the intervention exposes the true objective. The contrast with Cuba's deepening energy crisis highlights the cost of being excluded from the transaction.
+
+2. Cluster: cluster_24 (Bangladesh Political Transition), cluster_41 (US Tariff Deal)
+   Headline: Dhaka’s Pivot: A New Client State in South Asia?
+   Treatment: FULL
+   Archetype: TREND
+   Word Target: 350
+   Position Rationale: Demonstrates the global application of the hub mechanism beyond oil—expanding to trade and supply chains.
+   Rationale: The shift from Indian to US cotton and the tariff cut is the critical geopolitical signal buried under the "democracy restoration" headlines. It fits the "Invoice" theme: stability is provided in exchange for commercial realignment.
+
+3. Cluster: cluster_49 (Japan Election), cluster_51 (Taiwan Trade Deal)
+   Headline: In East Asia, Security Comes with a Surcharge
+   Treatment: SHORT
+   Archetype: CONSTRAINT
+   Word Target: 250
+   Position Rationale: Moves the narrative from client states to established allies, showing that even friends must pay the "stability tax."
+   Rationale: Takaichi's hawkish victory and Taiwan's tariff concessions show that US security guarantees now require reciprocal economic or military payment.
+
+4. Cluster: cluster_56 (Reassuring European Allies), cluster_53 (NATO Arctic Sentry)
+   Headline: Revitalization or Rent-Seeking?
+   Treatment: SHORT
+   Archetype: COMPETITION
+   Word Target: 200
+   Position Rationale: Concludes the "Invoice" section with the transatlantic alliance adapting to the new reality.
+   Rationale: The "Arctic Sentry" mission in Greenland is a specific concession to Washington's territorial interests, dressed up as alliance revitalization.
+
+## KILLED
+- Cluster: cluster_40 (Russia-Ukraine War)
+  Reason: NOTHING_NEW
+  PIC Score: 8
+  Events: 5
+  Highest Severity: 8
+  Explanation: The grind continues without significant strategic shifts compared to the rapid changes in Iran and Venezuela.
+
+- Cluster: cluster_55 (Russian Strikes)
+  Reason: NOTHING_NEW
+  PIC Score: 7
+  Events: 16
+  Highest Severity: 7
+  Explanation: Tactical violence that does not alter the current strategic stalemate.
+
+- Cluster: cluster_25 (Philippines/Duterte)
+  Reason: BELOW_THRESHOLD
+  PIC Score: 6
+  Events: 7
+  Highest Severity: 6
+  Explanation: ICC moves are slow-burning and lack the immediate geopolitical impact of the Japan/Taiwan shifts.
+
+- Cluster: cluster_13 (Australia/Herzog)
+  Reason: REDUNDANT
+  PIC Score: 5
+  Events: 7
+  Highest Severity: 6
+  Explanation: Protest coverage is standard for such visits; no deeper geopolitical signal.
+
+- Cluster: cluster_12 (Argentina Protests)
+  Reason: BELOW_THRESHOLD
+  PIC Score: 5
+  Events: 4
+  Highest Severity: 5
+  Explanation: Domestic labor unrest without broader regional implications.
+
+- Cluster: cluster_10 (Albania Protests)
+  Reason: BELOW_THRESHOLD
+  PIC Score: 5
+  Events: 4
+  Highest Severity: 5
+  Explanation: Localized unrest.
+
+## QUICK HITS
+1. Region: Africa
+   Headline: Sudan's El-Fasher Massacre
+   Content: 6,000 reported dead in three days as the world looks elsewhere.
+   Event ID: cluster_32
+
+2. Region: Europe
+   Headline: Navalny Poison Confirmed
+   Content: Five EU nations confirm use of "dart frog poison," signaling brazen Kremlin impunity.
+   Event ID: cluster_52
+
+3. Region: Middle East
+   Headline: West Bank 'De Facto Annexation'
+   Content: New Israeli administrative measures signal a quiet but permanent shift in territory status.
+   Event ID: cluster_58
+
+4. Region: Americas
+   Headline: US Repeals Climate Finding
+   Content: Trump revokes 2009 EPA endangerment finding, dismantling the legal basis for climate regulation.
+   Event ID: cluster_14
+
+## SECTION GROUPS
+Group 1: The Hub: Maximum Pressure
+- Sections: cluster_64, cluster_66, cluster_17 (Iran Featured)
+- Rationale: Establishes the active "pitch" phase of the transactional model—creating a crisis to sell a solution.
+
+Group 2: The Invoice: Paying for Stability
+- Sections: cluster_19/34 (Venezuela), cluster_24/41 (Bangladesh)
+- Rationale: Case studies of the transaction completed—US intervention followed immediately by resource extraction or trade realignment.
+
+Group 3: The Premium: Security Costs
+- Sections: cluster_49/51 (Japan/Taiwan), cluster_56/53 (Europe)
+- Rationale: Shows how established alliances are being monetized under the new "pay-to-play" security architecture.
+
+## TRANSITIONS
+cluster_64 → cluster_19: MECHANISM (Same hub, different stage)
+[The coercive pressure currently being applied to Tehran has already achieved its objective in Caracas, where the focus has shifted from conflict to cash flow.]
+
+cluster_19 → cluster_24: MECHANISM (Economic Statecraft)
+[While Washington secures energy assets in the Americas, it is using similar economic levers to secure political allegiance in South Asia.]
+
+cluster_24 → cluster_49: HARD_BREAK
+[(No text - shift to Security Premium group)]
+
+cluster_49 → cluster_56: MECHANISM (Allies adapting to US pressure)
+[The realization that American security now comes with a surcharge is not limited to the Pacific; in Munich, European leaders are learning the new price of the transatlantic bond.]
+
+## HUB MECHANISM
+Hub: Mercantile Realism
+Explanation: A shift from "hegemonic stability" (providing order as a public good) to "transactional order" (providing stability as a private service). Washington is liquidating its role as global policeman to become a global security contractor, where protection and stability are available only to those who pay in resources, trade concessions, or strategic compliance.
+Manifestations: Venezuela (Oil for recognition), Bangladesh (Cotton trade for support), Taiwan (Tariffs for protection), Greenland (Territorial concessions for NATO cohesion).
+Angle: UNINTENDED_CONSEQUENCE
+
+## NARRATIVE ARC
+Arc: Washington shifts from kinetic disruption to commercial extraction, converting security crises in Iran and Venezuela into tangible assets while invoicing allies for continued protection.
+Explanation: Captures the "Shock to Invoice" transition identified by the editor, linking the disparate regions through the logic of payment.

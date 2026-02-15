@@ -1,0 +1,25 @@
+{
+  "run_id": "briefing_20260215_164011",
+  "phase": "phase_5_structure",
+  "timestamp": "2026-02-15T16:46:49.371287",
+  "regions_analyzed": [
+    "cluster_49",
+    "cluster_24",
+    "cluster_19",
+    "cluster_64",
+    "cluster_56"
+  ],
+  "has_skeleton": true,
+  "blueprints_created": [
+    "cluster_56",
+    "cluster_19",
+    "cluster_24",
+    "cluster_49",
+    "cluster_64"
+  ],
+  "drafts_created": [],
+  "styled_drafts": [],
+  "critique_results": {},
+  "errors": [],
+  "warnings": []
+}

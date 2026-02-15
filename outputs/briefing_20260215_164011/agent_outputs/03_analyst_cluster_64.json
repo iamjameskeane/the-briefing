@@ -1,0 +1,86 @@
+{
+  "region": "MIDDLE_EAST",
+  "geopolitical_archetype": "Regional Hegemony",
+  "archetype_explanation": "The United States is acting as an aggressive offshore balancer to deny Iran regional hegemony. The shift from 'Containment' to active 'Rollback' (regime change rhetoric) indicates a structural attempt to dismantle Iran's sphere of influence through compellence rather than deterrence.",
+  "primary_actors": [
+    {
+      "actor": "Washington",
+      "intent": "Restore deterrence, force nuclear capitulation, and signal unshakeable dominance to allies (Israel/Gulf States).",
+      "constraints": {
+        "geographic": "The Strait of Hormuz remains a critical chokepoint; kinetic action risks global energy flow disruption.",
+        "economic": "Domestic inflation sensitivity limits tolerance for prolonged oil price spikes caused by conflict.",
+        "political": "Isolationist 'America First' base resists new ground wars; requires quick, low-cost victories (air/naval) or diplomatic capitulation."
+      },
+      "likely_action": "High-intensity coercive diplomacy (brinkmanship) utilizing naval dominance to strangle Iran's economy without committing to ground invasion."
+    },
+    {
+      "actor": "Tehran",
+      "intent": "Ensure regime survival and maintain 'Resistance Axis' credibility while avoiding direct conventional war with US.",
+      "constraints": {
+        "geographic": "Lack of strategic depth for key energy infrastructure along the Persian Gulf coast.",
+        "economic": "Crippling sanctions and currency devaluation limit capacity to sustain prolonged conventional mobilization.",
+        "political": "Internal succession crisis (Khamenei) and public unrest create vulnerability to external pressure promoting 'regime change'."
+      },
+      "likely_action": "Asymmetric escalation (maritime harassment, proxy attacks) and acceleration of nuclear program as insurance policy."
+    }
+  ],
+  "futures_wheel": {
+    "driver_event": "Deployment of 2nd US Carrier (USS Gerald R. Ford) combined with explicit Presidential endorsement of 'Regime Change'",
+    "driver_event_id": "8d9b110d-840f-4204-a888-a71189ac1ac8",
+    "first_order": "Immediate dispersal of Iranian missile assets and high-alert status for IRGC naval forces in the Persian Gulf.",
+    "second_order": "Spike in global oil risk premiums; diplomatic freeze as Tehran interprets US stance as existential threat rather than negotiating tactic.",
+    "third_order": "Fundamental shift in Iranian nuclear doctrine: Tehran concludes survival requires a functional nuclear deterrent, moving from 'threshold state' to 'breakout capability'."
+  },
+  "competing_hypotheses": {
+    "consensus": "The US is employing 'Maximum Pressure 2.0'\u2014using military signaling to induce economic collapse or force a strict deal, without intending full-scale war.",
+    "contrarian": "The US is actively preparing for kinetic strikes to decapitate the Iranian regime or its nuclear infrastructure.",
+    "contradicting_evidence": [
+      "Explicit presidential endorsement of 'regime change' (historically precludes diplomatic off-ramps).",
+      "Simultaneous presence of two carrier strike groups (offensive power projection vs. defensive patrol).",
+      "Coordination with exiled opposition figures (Reza Pahlavi) suggests political planning for post-regime scenarios."
+    ],
+    "evidence_event_ids": [
+      "4fe82899-2a83-4cd8-ae12-9785bde366f3",
+      "1a1a41ac-d969-4de1-8da2-986790d4621d",
+      "657cbc0d-04a6-4db4-8daf-fee48d8ef7c7"
+    ]
+  },
+  "pmesii_tags": {
+    "POLITICAL": [
+      "1a1a41ac-d969-4de1-8da2-986790d4621d",
+      "4fe82899-2a83-4cd8-ae12-9785bde366f3",
+      "5ea2a805-6113-4871-8269-3379e93cf158"
+    ],
+    "MILITARY": [
+      "8d9b110d-840f-4204-a888-a71189ac1ac8",
+      "5a7f885b-8058-4dc5-ae8b-58ff353f85ad",
+      "bf9db74c-9431-4240-afb6-5f2b79e32715"
+    ],
+    "INFORMATION": [
+      "1e07e6b3-41c2-4cba-a696-22450dd5ae5c",
+      "fe578cd2-9acb-4cec-bcc9-5d34e98c79eb"
+    ]
+  },
+  "confidence": "HIGH",
+  "confidence_rationale": "Multiple corroborating reports confirm both the physical deployment of strategic assets (USS Gerald R. Ford) and the specific, high-level political rhetoric regarding regime change.",
+  "external_sources": [
+    {
+      "title": "'Regime Change' in Iran Would Be Best, Trump Deploys USS Gerald R. Ford",
+      "url": "https://sundayguardianlive.com/world/regime-change-in-iran-would-be-best-trump-deploys-uss-gerald-r-ford-to-middle-east-region-nuclear-talks-hold-170287/",
+      "publisher": "Sunday Guardian Live",
+      "content": "President Donald Trump said that a change of government in Iran 'would be the best thing that could happen' and confirmed the deployment of a second aircraft carrier to the Middle East."
+    },
+    {
+      "title": "Trump says regime change in Iran would be 'best thing that could happen'",
+      "url": "https://www.independent.co.uk/news/world/middle-east/trump-iran-regime-change-in-power-b2920274.html",
+      "publisher": "The Independent",
+      "content": "Donald Trump has declared that a change in power in Iran 'would be the best thing that could happen,' as his administration considers military action against Tehran amidst the deployment of a second aircraft carrier group."
+    },
+    {
+      "title": "Second US aircraft carrier is being sent to the Middle East, AP source says",
+      "url": "https://apnews.com/article/trump-iran-aircraft-carrier-military-8db3fab10476949acda8b973be416204",
+      "publisher": "AP News",
+      "content": "The United States will send the world\u2019s largest aircraft carrier to the Middle East to back up another already there... putting more American firepower behind President Donald Trump\u2019s efforts to coerce Iran."
+    }
+  ]
+}

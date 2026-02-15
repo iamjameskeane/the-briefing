@@ -1,0 +1,75 @@
+{
+  "region": "Bangladesh",
+  "archetype": "TREND",
+  "word_target": 350,
+  "hook_type": "CONTRAST",
+  "hook_draft": "New Delhi is accustomed to a Bangladesh that asks for permission; it now faces a neighbor demanding leverage.",
+  "paragraphs": [
+    {
+      "purpose": "Define the structural shift from clientelism to competition.",
+      "word_target": 90,
+      "key_facts": [
+        "Transition from 'Clientelism' to 'Strategic Competition'",
+        "BNP landslide victory ends era of deference",
+        "Dhaka seeking to balance Indian hegemony"
+      ],
+      "beat": "The pattern emerging"
+    },
+    {
+      "purpose": "Detail the immediate post-election demands signaling this shift.",
+      "word_target": 105,
+      "key_facts": [
+        "Tarique Rahman's return from exile (Event 1710f14a)",
+        "Explicit prioritization of Hasina's extradition (Event 12c9bff1)",
+        "Review of Ganga Water Treaty terms (Event 22b33c7d)",
+        "Advisor rhetoric on 'National Interest' (Event e45298b7)"
+      ],
+      "beat": "Evidence this week"
+    },
+    {
+      "purpose": "Explain the domestic and external drivers forcing this acceleration.",
+      "word_target": 90,
+      "key_facts": [
+        "Need for domestic legitimacy via anti-Indian sentiment",
+        "Weaponization of the 2026 Ganga Water Treaty expiration",
+        "Pivot toward Sino-Pak axis for security guarantees"
+      ],
+      "beat": "Why accelerating now"
+    },
+    {
+      "purpose": "Forecast the regional geopolitical impact.",
+      "word_target": 65,
+      "key_facts": [
+        "Risk of 'String of Pearls' encirclement completion",
+        "Scenario of 'Cold Peace'\u2014trade continues, security collapses",
+        "Diplomatic deep freeze likelihood"
+      ],
+      "beat": "Structural implication"
+    }
+  ],
+  "key_events": [
+    {
+      "event_id": "1710f14a-7ad3-41b5-ad45-3b01fb7983eb",
+      "event_title": "Tarique Rahman: From 17-year exile to landslide win",
+      "emphasis": "LEAD",
+      "how_to_use": "Use as the catalyst for the structural pivot.",
+      "role": "The Trigger"
+    },
+    {
+      "event_id": "40d2a8cf-55d0-4666-b842-3b02ca6f3cde",
+      "event_title": "Stopping border killings, Ganga waters treaty, Hasina presence priorities",
+      "emphasis": "LEAD",
+      "how_to_use": "Cite as specific evidence of the new hostile agenda.",
+      "role": "The Evidence"
+    },
+    {
+      "event_id": "e45298b7-a55e-4dac-8c62-19a18f12d716",
+      "event_title": "Bangladesh seeks reset in India ties, onus on New Delhi",
+      "emphasis": "SUPPORT",
+      "how_to_use": "Use quote to illustrate the change in diplomatic tone.",
+      "role": "The Rhetoric"
+    }
+  ],
+  "closing_type": "PREDICTION",
+  "closing_draft": "As the 2026 Ganga Water Treaty expiration approaches, expect water\u2014not just politics\u2014to become the primary vector of regional escalation."
+}

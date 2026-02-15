@@ -1,0 +1,81 @@
+{
+  "region": "Venezuela",
+  "archetype": "PIVOT",
+  "word_target": 400,
+  "hook_type": "CONTRAST",
+  "hook_draft": "For two decades, Caracas served as the primary beachhead for anti-American influence in the Caribbean; today, it is operating effectively as a subsidiary of Houston.",
+  "paragraphs": [
+    {
+      "purpose": "Establish the sharp reversal from hostile proxy to dependent client state.",
+      "word_target": 80,
+      "key_facts": [
+        "Transition from 'Maximum Pressure' to 'Resource Integration'",
+        "Visit by US Energy Secretary Chris Wright",
+        "Reassertion of the Monroe Doctrine"
+      ],
+      "beat": "The old position"
+    },
+    {
+      "purpose": "Explain the mechanics of the pivot: legal waivers facilitating corporate takeover.",
+      "word_target": 140,
+      "key_facts": [
+        "US waives oil sanctions completely",
+        "US majors (Chevron, etc.) permitted to seize control of rehabilitation projects",
+        "Strategic goal: Secure heavy crude and stem migration"
+      ],
+      "beat": "What changed and why"
+    },
+    {
+      "purpose": "Analyze the constraints that forced acceptance by the Interim Government and China.",
+      "word_target": 100,
+      "key_facts": [
+        "Interim government trading sovereignty for survival/liquidity",
+        "Beijing shifting to transactional diplomacy to recover loans",
+        "China purchasing 'legitimate' US-managed Venezuelan oil"
+      ],
+      "beat": "Constraints forcing pivot"
+    },
+    {
+      "purpose": "Outline the structural shifts in the global energy market resulting from this pivot.",
+      "word_target": 80,
+      "key_facts": [
+        "Venezuela breaking OPEC quota discipline",
+        "Long-term deflation of global oil prices",
+        "Financial pressure on Russia and Iran"
+      ],
+      "beat": "Who benefits, who loses"
+    }
+  ],
+  "key_events": [
+    {
+      "event_id": "372c9466-d893-4552-acc3-35ab399176d6",
+      "event_title": "U.S. waives Venezuela oil sanctions as Trump signals visit",
+      "emphasis": "LEAD",
+      "how_to_use": "Use as the primary driver of the pivot.",
+      "role": "The catalyst"
+    },
+    {
+      "event_id": "4b05b721-d385-4f97-bbc7-973487591a69",
+      "event_title": "US allows oil majors to resume Venezuela operations",
+      "emphasis": "LEAD",
+      "how_to_use": "Detail the practical implementation of US policy.",
+      "role": "The mechanism"
+    },
+    {
+      "event_id": "8b35a070-89f3-439c-8f84-9bbb5ddc6916",
+      "event_title": "China bought \u2018legitimate\u2019 Venezuelan oil from US after Maduro seizure",
+      "emphasis": "SUPPORT",
+      "how_to_use": "Evidence of Beijing's acquiescence to the new order.",
+      "role": "Validation"
+    },
+    {
+      "event_id": "e17ac24a-a702-4c3e-af4e-7c529f15c056",
+      "event_title": "US Energy Secretary Chris Wright touts oil production on Venezuela visit",
+      "emphasis": "MENTION",
+      "how_to_use": "Visual proof of US administrative oversight.",
+      "role": "Symbolic anchor"
+    }
+  ],
+  "closing_type": "IMAGE",
+  "closing_draft": "Washington has successfully traded a volatile geopolitical proxy for a stable distressed asset, effectively converting Venezuela from a Russian forward base into an American gas station."
+}

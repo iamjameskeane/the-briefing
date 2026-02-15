@@ -1,0 +1,101 @@
+{
+  "region": "Iran",
+  "archetype": "LEADER",
+  "word_target": 500,
+  "hook_type": "CONTRAST",
+  "hook_draft": "For decades, the unwritten rule of American policy toward Iran was containment, but that rule has just been shredded.",
+  "paragraphs": [
+    {
+      "purpose": "Establish the shift in US posture from passive containment to active hostility.",
+      "word_target": 50,
+      "key_facts": [
+        "Shift from 'Containment' to 'Rollback'",
+        "US acting as aggressive offshore balancer"
+      ],
+      "beat": "The Hook"
+    },
+    {
+      "purpose": "Anchor the analysis in this week's specific triggers: the deployment and the rhetoric.",
+      "word_target": 60,
+      "key_facts": [
+        "Deployment of second aircraft carrier (USS Gerald R. Ford)",
+        "Trump's quote: 'change of power... best thing that could happen'"
+      ],
+      "beat": "The News Peg"
+    },
+    {
+      "purpose": "Define the central tension: this is no longer about behavior modification, but existential threat.",
+      "word_target": 60,
+      "key_facts": [
+        "Distinction between 'deterrence' and 'compellence'",
+        "Tehran interpreting US stance as existential threat"
+      ],
+      "beat": "The Nub"
+    },
+    {
+      "purpose": "Contextualize the military strategy: naval strangulation rather than ground invasion.",
+      "word_target": 80,
+      "key_facts": [
+        "High-intensity coercive diplomacy",
+        "Naval dominance to strangle economy",
+        "Avoidance of ground invasion commitment"
+      ],
+      "beat": "The Step-Back"
+    },
+    {
+      "purpose": "Analyze Tehran's likely asymmetric response to this new pressure.",
+      "word_target": 100,
+      "key_facts": [
+        "Tehran intent: Regime survival",
+        "Likely action: Asymmetric escalation (maritime/proxy)",
+        "Resistance Axis credibility"
+      ],
+      "beat": "The Argument"
+    },
+    {
+      "purpose": "Address the alternative view: this is a negotiation tactic, not a war plan.",
+      "word_target": 75,
+      "key_facts": [
+        "Hypothesis: 'Maximum Pressure 2.0'",
+        "Goal: Induce economic collapse or force strict deal",
+        "US likely trying to avoid full-scale war"
+      ],
+      "beat": "The Counter-Argument"
+    },
+    {
+      "purpose": "Forecast the dangerous 3rd-order effect: the nuclear pivot.",
+      "word_target": 75,
+      "key_facts": [
+        "3rd Order Effect: Shift in nuclear doctrine",
+        "From 'threshold state' to 'breakout capability'",
+        "Nuclear program as insurance policy"
+      ],
+      "beat": "The Prescription"
+    }
+  ],
+  "key_events": [
+    {
+      "event_id": "1e07e6b3-41c2-4cba-a696-22450dd5ae5c",
+      "event_title": "Trump says change of power in Iran would be \u2018best thing\u2019",
+      "emphasis": "LEAD",
+      "how_to_use": "Quote directly in the News Peg to establish the shift to 'Rollback'.",
+      "role": "Trigger"
+    },
+    {
+      "event_id": "657cbc0d-04a6-4db4-8daf-fee48d8ef7c7",
+      "event_title": "US sending second aircraft carrier, world\u2019s largest",
+      "emphasis": "LEAD",
+      "how_to_use": "Pair with the rhetoric to show material escalation.",
+      "role": "Trigger"
+    },
+    {
+      "event_id": "4fe82899-2a83-4cd8-ae12-9785bde366f3",
+      "event_title": "Reza Pahlavi calls on Trump to \u2018help\u2019 Iranian people",
+      "emphasis": "MENTION",
+      "how_to_use": "Use as color for the 'Regime Change' narrative but do not focus on him.",
+      "role": "Color"
+    }
+  ],
+  "closing_type": "WARNING",
+  "closing_draft": "If Tehran concludes that survival requires a deterrent Washington cannot touch, the path leads in only one direction: the bomb."
+}

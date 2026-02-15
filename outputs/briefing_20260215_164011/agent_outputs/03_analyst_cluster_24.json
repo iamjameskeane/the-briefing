@@ -1,0 +1,87 @@
+{
+  "region": "SOUTH_ASIA",
+  "geopolitical_archetype": "Regional Hegemony",
+  "archetype_explanation": "India's dominance in South Asia is being structurally challenged by a regime change in Bangladesh (a traditional client state). The dynamic shifts from 'Clientelism' to 'Strategic Competition,' as Dhaka seeks to balance New Delhi's hegemony by leveraging domestic anti-Indian sentiment and external partnerships (implicitly China/Pakistan).",
+  "primary_actors": [
+    {
+      "actor": "Dhaka (BNP Administration)",
+      "intent": "Consolidate domestic legitimacy by distinguishing itself from the previous pro-India regime and securing the extradition of Sheikh Hasina.",
+      "constraints": {
+        "geographic": "Surrounded by India on three sides; downstream riparian state dependent on India for water flow (54 shared rivers).",
+        "economic": "High dependence on Indian supply chains for essential commodities and energy; garment industry relies on regional stability.",
+        "political": "Tarique Rahman's mandate rests on the 'Gen Z' uprising's anti-status-quo sentiment; he cannot appear soft on New Delhi without risking street-level backlash."
+      },
+      "likely_action": "Will aggressively pursue symbolic victories (Hasina extradition demand) while quietly attempting to maintain essential economic trade, eventually leveraging the expiring Ganga Water Treaty as a rallying cry."
+    },
+    {
+      "actor": "New Delhi",
+      "intent": "Prevent Bangladesh from becoming a sanctuary for anti-India insurgents or a strategic foothold for China.",
+      "constraints": {
+        "geographic": "The 'Chicken's Neck' corridor connecting North East India is vulnerable to a hostile Bangladesh; porous border makes migration control difficult.",
+        "economic": "Need for connectivity to North East India (transit through Bangladesh) to develop the region.",
+        "political": "Cannot extradite long-term ally Sheikh Hasina without shattering credibility with other regional partners; domestic pressure in West Bengal against water concessions."
+      },
+      "likely_action": "Will refuse extradition citing legal protocols, likely stall Ganga Treaty renewal talks as coercive leverage, and increase border securitization."
+    }
+  ],
+  "futures_wheel": {
+    "driver_event": "BNP Landslide Victory & Demand for Hasina Extradition",
+    "driver_event_id": "bba15ba4-74d2-4f45-8fa1-67077dc5a321",
+    "first_order": "Diplomatic deep freeze between Dhaka and New Delhi; recall of envoys or suspension of high-level bilateral visits.",
+    "second_order": "Weaponization of the 2026 Ganga Water Treaty expiration; India signals unwillingness to renew favorable terms, causing agricultural anxiety in Bangladesh.",
+    "third_order": "Structural pivot of Bangladesh towards the 'Sino-Pak' axis for security guarantees and infrastructure, effectively completing the 'String of Pearls' encirclement of India."
+  },
+  "competing_hypotheses": {
+    "consensus": "Pragmatic Realism: Despite hostile rhetoric, economic interdependence forces Dhaka and Delhi into a 'cold peace' where trade continues but security cooperation collapses.",
+    "contrarian": "Ideological Rupture: The BNP-Jamaat coalition prioritizes ideological purity over economics, leading to a complete diplomatic severance and proxy conflict.",
+    "contradicting_evidence": [
+      "Tarique Rahman's call for 'national interest' guiding the Water Treaty suggests a transactional rather than purely ideological approach.",
+      "The massive electoral mandate (2/3 majority) gives BNP enough security to ignore fringe Islamist demands if necessary."
+    ],
+    "evidence_event_ids": [
+      "22b33c7d-3afc-4fa5-afc7-5f83da080310",
+      "69fa4fdd-80d6-4466-b29f-d42c0bf6b981"
+    ]
+  },
+  "pmesii_tags": {
+    "POLITICAL": [
+      "bba15ba4-74d2-4f45-8fa1-67077dc5a321",
+      "e45298b7-a55e-4dac-8c62-19a18f12d716",
+      "785d22db-c4c7-4ce5-938f-49d2f832f2f1"
+    ],
+    "DIPLOMATIC": [
+      "e45298b7-a55e-4dac-8c62-19a18f12d716",
+      "40d2a8cf-55d0-4666-b842-3b02ca6f3cde",
+      "12c9bff1-051c-4078-9638-3e86a06b4336"
+    ],
+    "SOCIAL": [
+      "bba15ba4-74d2-4f45-8fa1-67077dc5a321",
+      "a2b0f45e-e404-44bf-8621-fef913df8af9"
+    ],
+    "INFRASTRUCTURE": [
+      "22b33c7d-3afc-4fa5-afc7-5f83da080310"
+    ]
+  },
+  "confidence": "HIGH",
+  "confidence_rationale": "The event cluster is highly consistent with historical patterns of BNP-India relations. Multiple sources confirm the landslide nature of the victory and the specific demands regarding Sheikh Hasina, providing a clear trajectory for the diplomatic conflict.",
+  "external_sources": [
+    {
+      "title": "Bangladesh's BNP wins big in historic parliamentary election",
+      "url": "https://edition.cnn.com/2026/02/12/asia/bangladesh-election-results-rahman-bnp-win-intl-hnk",
+      "publisher": "CNN",
+      "content": "Bangladesh\u2019s opposition Bangladesh Nationalist Party (BNP) won a landslide parliamentary election... returning to power after nearly two decades... positioning party leader Tarique Rahman to become prime minister."
+    },
+    {
+      "title": "\u2018Send her back\u2019: BNP to formally seek Sheikh Hasina\u2019s extradition from India",
+      "url": "https://www.wionews.com/world/-send-her-back-bnp-to-formally-seek-sheikh-hasina-s-extradition-from-india-after-election-win-1770984518638",
+      "publisher": "WION",
+      "content": "After a landslide win, Bangladesh\u2019s BNP said it will seek Sheikh Hasina\u2019s extradition from India... Hasina rejected the election as illegal."
+    },
+    {
+      "title": "India, Bangladesh begin talks on Ganges treaty",
+      "url": "https://timesofindia.indiatimes.com/world/south-asia/india-bangladesh-begin-talks-on-ganges-treaty/articleshow/126293965.cms",
+      "publisher": "The Times of India",
+      "content": "India and Bangladesh have begun talks on renewing the Ganges Water Sharing Treaty, set to expire in Dec 2026."
+    }
+  ]
+}

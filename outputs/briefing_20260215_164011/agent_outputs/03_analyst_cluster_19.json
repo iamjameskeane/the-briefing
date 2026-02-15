@@ -1,0 +1,93 @@
+{
+  "region": "AMERICAS",
+  "geopolitical_archetype": "Regional Hegemony",
+  "archetype_explanation": "The US is aggressively reasserting the Monroe Doctrine by converting Venezuela from a hostile proxy of external powers (China/Russia) into a dependent client state. The transition from 'Maximum Pressure' (sanctions) to 'Resource Integration' (direct investment) following the forcible removal of Maduro demonstrates a shift from containment to active sphere-of-influence management.",
+  "primary_actors": [
+    {
+      "actor": "Washington",
+      "intent": "Secure stable heavy crude supply, displace Chinese/Russian influence in the Caribbean, and stem migration flows via economic stabilization.",
+      "constraints": {
+        "geographic": "Proximity to Venezuela necessitates controlling the Caribbean basin to prevent hostile foreign military footholds.",
+        "economic": "Domestic inflation sensitivity requires increasing global oil supply; US refineries specifically need heavy crude which Venezuela possesses.",
+        "political": "The Trump administration faces legislative pressure (Democrats demanding transparency on oil proceeds) and must deliver tangible economic wins to justify the intervention."
+      },
+      "likely_action": "Accelerate capitalization of Venezuela's oil sector while maintaining tight political control over the Rodriguez interim government to ensure exclusivity."
+    },
+    {
+      "actor": "Caracas (Interim Govt)",
+      "intent": "Regime survival and economic liquidity to prevent military coup or social collapse following Maduro's removal.",
+      "constraints": {
+        "geographic": "Located in the US 'near abroad' with no effective defense against US power projection (proven by Maduro's capture).",
+        "economic": "Total dependence on oil exports for state revenue; infrastructure is dilapidated and requires Western technical expertise to function.",
+        "political": "Delcy Rodriguez lacks Maduro's ideological cult of personality and depends entirely on US validation and military non-interference to govern."
+      },
+      "likely_action": "Complete capitulation to US energy demands in exchange for political amnesty and financial lifelines."
+    },
+    {
+      "actor": "Beijing",
+      "intent": "Recover billions in outstanding loans and maintain energy security.",
+      "constraints": {
+        "geographic": "Distance prevents effective military support for Venezuelan proxies; US dominance in the Caribbean is absolute.",
+        "economic": "Need for energy imports overrides ideological solidarity; pragmatic purchase of 'US-seized' Venezuelan oil indicates acceptance of new reality.",
+        "political": "Unwilling to escalate conflict with US over a 'lost cause' regime in America's backyard."
+      },
+      "likely_action": "Pivot to transactional diplomacy, purchasing oil from whoever controls the taps (US or Interim Gov) while cutting political losses."
+    }
+  ],
+  "futures_wheel": {
+    "driver_event": "US waives Venezuela oil sanctions and allows majors to resume operations",
+    "driver_event_id": "4b05b721-d385-4f97-bbc7-973487591a69",
+    "first_order": "Major US oil firms (Chevron, etc.) seize control of rehabilitation projects; Venezuelan state revenue spikes immediately.",
+    "second_order": "Stabilization of the Venezuelan currency and labor market; sharp decline in outbound migration, handing Washington a domestic political win.",
+    "third_order": "Venezuela structurally realigns as a US energy satellite, breaking OPEC quota discipline and lowering long-term global oil prices, effectively defunding Russia/Iran."
+  },
+  "competing_hypotheses": {
+    "consensus": "The Rodriguez interim government successfully transitions Venezuela into a US client state, stabilizing energy markets.",
+    "contrarian": "Internal factionalism or sabotage by excluded Maduro loyalists creates a quagmire, forcing the US into a costly security guarantee role.",
+    "contradicting_evidence": [
+      "Diosdado Cabello (Maduro loyalist) remains influential despite prisoner releases.",
+      "Democratic legislative pressure in US could slow down necessary investment capital.",
+      "China's purchase of seized oil suggests they are funding the status quo, potentially keeping rival factions alive."
+    ],
+    "evidence_event_ids": [
+      "8b35a070-89f3-439c-8f84-9bbb5ddc6916",
+      "e17ac24a-a702-4c3e-af4e-7c529f15c056"
+    ]
+  },
+  "pmesii_tags": {
+    "POLITICAL": [
+      "372c9466-d893-4552-acc3-35ab399176d6",
+      "e17ac24a-a702-4c3e-af4e-7c529f15c056"
+    ],
+    "ECONOMIC": [
+      "4b05b721-d385-4f97-bbc7-973487591a69",
+      "8b35a070-89f3-439c-8f84-9bbb5ddc6916"
+    ],
+    "MILITARY": [],
+    "INFRASTRUCTURE": [
+      "4b05b721-d385-4f97-bbc7-973487591a69"
+    ]
+  },
+  "confidence": "HIGH",
+  "confidence_rationale": "Strong convergence of evidence: US official visits, specific policy waivers, and confirmation of oil sales to China all point to a unified trajectory of re-engagement/domination. The geopolitical incentives for all actors (US need for oil, Venezuela need for cash, China need for pragmatism) align perfectly.",
+  "external_sources": [
+    {
+      "title": "US Energy Secretary Chris Wright touts oil production on Venezuela visit",
+      "url": "https://apnews.com/article/venezuela-oil-trump-wright-visit-rodriguez-b06f79d4d95ad69759d648c7b1b86dbf",
+      "publisher": "AP News",
+      "content": "Venezuelan acting President Delcy Rodriguez, right, meets with U.S. Energy Secretary Chris Wright... visit that further asserts the U.S. government\u2019s self-appointed role in turning around Venezuela\u2019s dilapidated energy sector."
+    },
+    {
+      "title": "China bought 'legitimate' Venezuelan oil from US after Maduro seizure",
+      "url": "https://www.scmp.com/news/world/united-states-canada/article/3343368/china-bought-legitimate-venezuelan-oil-us-after-maduro-seizure-energy-secretary-says",
+      "publisher": "SCMP",
+      "content": "China has purchased Venezuelan crude oil that was sold by the US following Washington's seizure of President Nicol\u00e1s Maduro in January... 'China has already bought some of the crude that\u2019s been sold by the US government,' Wright told the media."
+    },
+    {
+      "title": "U.S. Capture of Venezuela's Nicol\u00e1s Maduro: Considerations for Congress",
+      "url": "https://www.congress.gov/crs_external_products/IN/PDF/IN12618/IN12618.5.pdf",
+      "publisher": "Congressional Research Service",
+      "content": "On January 3, 2026, President Trump announced that the U.S. military had launched strikes across Venezuela that culminated in the capture and arrest of President Nicol\u00e1s Maduro."
+    }
+  ]
+}

@@ -1,0 +1,180 @@
+{
+  "featured": {
+    "region": "Iran",
+    "source_cluster_id": "cluster_64",
+    "headline": "The Art of the War Scare: Tehran Between Escalation and Capitulation",
+    "angle": "TRAJECTORY_SHIFT",
+    "story_archetype": "LEADER",
+    "word_target": 500,
+    "rationale": "This represents the active phase of the \"Transactional Stabilization\" hub. Washington is applying maximum kinetic pressure (2nd carrier group) while simultaneously opening a diplomatic off-ramp (Geneva talks). The juxtaposition of 7,000 dead in domestic crackdowns with high-level nuclear negotiation reveals the cynical core of the new order: human rights are secondary to the strategic transaction."
+  },
+  "sections": [
+    {
+      "region": "Venezuela",
+      "source_cluster_id": "cluster_19",
+      "headline": "The Crude Reality of 'Liberation'",
+      "treatment": "FULL",
+      "archetype": "PIVOT",
+      "word_target": 400,
+      "combine_with": null,
+      "position_rationale": "Illustrates the *completed* transaction. Iran is the pitch; Venezuela is the closed deal.",
+      "rationale": "The speed at which oil sanctions were waived following the intervention exposes the true objective. The contrast with Cuba's deepening energy crisis highlights the cost of being excluded from the transaction."
+    },
+    {
+      "region": "Bangladesh",
+      "source_cluster_id": "cluster_24",
+      "headline": "Dhaka\u2019s Pivot: A New Client State in South Asia?",
+      "treatment": "FULL",
+      "archetype": "TREND",
+      "word_target": 350,
+      "combine_with": null,
+      "position_rationale": "Demonstrates the global application of the hub mechanism beyond oil\u2014expanding to trade and supply chains.",
+      "rationale": "The shift from Indian to US cotton and the tariff cut is the critical geopolitical signal buried under the \"democracy restoration\" headlines. It fits the \"Invoice\" theme: stability is provided in exchange for commercial realignment."
+    },
+    {
+      "region": "East Asia",
+      "source_cluster_id": "cluster_49",
+      "headline": "In East Asia, Security Comes with a Surcharge",
+      "treatment": "SHORT",
+      "archetype": "CONSTRAINT",
+      "word_target": 250,
+      "combine_with": null,
+      "position_rationale": "Moves the narrative from client states to established allies, showing that even friends must pay the \"stability tax.\"",
+      "rationale": "Takaichi's hawkish victory and Taiwan's tariff concessions show that US security guarantees now require reciprocal economic or military payment."
+    },
+    {
+      "region": "Europe",
+      "source_cluster_id": "cluster_56",
+      "headline": "Revitalization or Rent-Seeking?",
+      "treatment": "SHORT",
+      "archetype": "COMPETITION",
+      "word_target": 200,
+      "combine_with": null,
+      "position_rationale": "Concludes the \"Invoice\" section with the transatlantic alliance adapting to the new reality.",
+      "rationale": "The \"Arctic Sentry\" mission in Greenland is a specific concession to Washington's territorial interests, dressed up as alliance revitalization."
+    }
+  ],
+  "killed": [
+    {
+      "region": "Ukraine",
+      "reason": "NOTHING_NEW",
+      "pic_score": 8.0,
+      "events_count": 5,
+      "highest_severity": 8,
+      "brief_explanation": "The grind continues without significant strategic shifts compared to the rapid changes in Iran and Venezuela."
+    },
+    {
+      "region": "Russia",
+      "reason": "NOTHING_NEW",
+      "pic_score": 7.0,
+      "events_count": 16,
+      "highest_severity": 7,
+      "brief_explanation": "Tactical violence that does not alter the current strategic stalemate."
+    },
+    {
+      "region": "Philippines",
+      "reason": "BELOW_THRESHOLD",
+      "pic_score": 6.0,
+      "events_count": 7,
+      "highest_severity": 6,
+      "brief_explanation": "ICC moves are slow-burning and lack the immediate geopolitical impact of the Japan/Taiwan shifts."
+    },
+    {
+      "region": "Australia",
+      "reason": "REDUNDANT",
+      "pic_score": 5.0,
+      "events_count": 7,
+      "highest_severity": 6,
+      "brief_explanation": "Protest coverage is standard for such visits; no deeper geopolitical signal."
+    },
+    {
+      "region": "Argentina",
+      "reason": "BELOW_THRESHOLD",
+      "pic_score": 5.0,
+      "events_count": 4,
+      "highest_severity": 5,
+      "brief_explanation": "Domestic labor unrest without broader regional implications."
+    },
+    {
+      "region": "Albania",
+      "reason": "BELOW_THRESHOLD",
+      "pic_score": 5.0,
+      "events_count": 4,
+      "highest_severity": 5,
+      "brief_explanation": "Localized unrest."
+    }
+  ],
+  "quick_hits": [
+    {
+      "region": "Africa",
+      "headline": "Sudan's El-Fasher Massacre",
+      "content": "6,000 reported dead in three days as the world looks elsewhere.",
+      "event_id": "cluster_32",
+      "event_ids": []
+    },
+    {
+      "region": "Europe",
+      "headline": "Navalny Poison Confirmed",
+      "content": "Five EU nations confirm use of \"dart frog poison,\" signaling brazen Kremlin impunity.",
+      "event_id": "cluster_52",
+      "event_ids": []
+    },
+    {
+      "region": "Middle East",
+      "headline": "West Bank 'De Facto Annexation'",
+      "content": "New Israeli administrative measures signal a quiet but permanent shift in territory status.",
+      "event_id": "cluster_58",
+      "event_ids": []
+    },
+    {
+      "region": "Americas",
+      "headline": "US Repeals Climate Finding",
+      "content": "Trump revokes 2009 EPA endangerment finding, dismantling the legal basis for climate regulation.",
+      "event_id": "cluster_14",
+      "event_ids": []
+    }
+  ],
+  "narrative_arc": "Washington shifts from kinetic disruption to commercial extraction, converting security crises in Iran and Venezuela into tangible assets while invoicing allies for continued protection.",
+  "narrative_arc_explanation": "Captures the \"Shock to Invoice\" transition identified by the editor, linking the disparate regions through the logic of payment.",
+  "section_groups": [
+    {
+      "title": "The Hub: Maximum Pressure",
+      "sections": [
+        "cluster_64"
+      ],
+      "group_rationale": "Establishes the active \"pitch\" phase of the transactional model\u2014creating a crisis to sell a solution."
+    },
+    {
+      "title": "The Invoice: Paying for Stability",
+      "sections": [
+        "cluster_19",
+        "cluster_24"
+      ],
+      "group_rationale": "Case studies of the transaction completed\u2014US intervention followed immediately by resource extraction or trade realignment."
+    },
+    {
+      "title": "The Premium: Security Costs",
+      "sections": [
+        "cluster_49",
+        "cluster_56"
+      ],
+      "group_rationale": "Shows how established alliances are being monetized under the new \"pay-to-play\" security architecture."
+    }
+  ],
+  "transitions": {
+    "cluster_64 \u2192 cluster_19": "[The coercive pressure currently being applied to Tehran has already achieved its objective in Caracas, where the focus has shifted from conflict to cash flow.]",
+    "cluster_19 \u2192 cluster_24": "[While Washington secures energy assets in the Americas, it is using similar economic levers to secure political allegiance in South Asia.]",
+    "cluster_24 \u2192 cluster_49": "HARD_BREAK",
+    "cluster_49 \u2192 cluster_56": "[The realization that American security now comes with a surcharge is not limited to the Pacific; in Munich, European leaders are learning the new price of the transatlantic bond.]"
+  },
+  "organizing_principle": "THEMATIC",
+  "hub_mechanism": "Mercantile Realism",
+  "hub_explanation": "A shift from \"hegemonic stability\" (providing order as a public good) to \"transactional order\" (providing stability as a private service). Washington is liquidating its role as global policeman to become a global security contractor, where protection and stability are available only to those who pay in resources, trade concessions, or strategic compliance.",
+  "hub_manifestations": [
+    "Venezuela",
+    "Bangladesh",
+    "Taiwan",
+    "Greenland"
+  ],
+  "hub_angle": "UNINTENDED_CONSEQUENCE"
+}

@@ -1,0 +1,38 @@
+{
+  "run_id": "briefing_20260215_164011",
+  "version": "3.1",
+  "event_count": 1000,
+  "source_count": 1,
+  "regions_analyzed": [
+    "cluster_49",
+    "cluster_24",
+    "cluster_19",
+    "cluster_64",
+    "cluster_56"
+  ],
+  "regions_published": [
+    "Venezuela",
+    "Bangladesh",
+    "East Asia",
+    "Europe"
+  ],
+  "regions_killed": [
+    "Ukraine",
+    "Russia",
+    "Philippines",
+    "Australia",
+    "Argentina",
+    "Albania"
+  ],
+  "narrative_arc": "Washington shifts from kinetic disruption to commercial extraction, converting security crises in Iran and Venezuela into tangible assets while invoicing allies for continued protection.",
+  "critic_scores": {
+    "cluster_56": 87,
+    "cluster_19": 93,
+    "cluster_24": 91,
+    "cluster_49": 82,
+    "cluster_64": 92
+  },
+  "errors": [],
+  "warnings": [],
+  "elapsed_seconds": 461.23088097572327
+}

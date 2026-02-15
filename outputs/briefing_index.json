@@ -1,5 +1,18 @@
 [
   {
+    "run_id": "briefing_20260215_164011",
+    "date": "2026-02-15",
+    "hub": "Mercantile Realism",
+    "arc": "Washington shifts from kinetic disruption to commercial extraction, converting security crises in Iran and Venezuela into tangible assets while invoicing allies for continued protection.",
+    "headlines": {
+      "cluster_64": "The Art of the War Scare: Tehran Between Escalation and Capitulation",
+      "cluster_19": "The Crude Reality of 'Liberation'",
+      "cluster_24": "Dhaka\u2019s Pivot: A New Client State in South Asia?",
+      "cluster_49": "In East Asia, Security Comes with a Surcharge",
+      "cluster_56": "Revitalization or Rent-Seeking?"
+    }
+  },
+  {
     "run_id": "briefing_20260208_143916",
     "date": "2026-02-08",
     "hub": "Coercive Stabilization",
